@@ -1,0 +1,16 @@
+PODS:
+  - MPService (0.1.0)
+
+DEPENDENCIES:
+  - MPService (from `../`)
+
+EXTERNAL SOURCES:
+  MPService:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MPService: a9b2ba91e7db8cc1bf8284fffa9fd08b133fc888
+
+PODFILE CHECKSUM: 47107b72986fc9c9fb0d88f30563b76455ce80cc
+
+COCOAPODS: 1.11.3

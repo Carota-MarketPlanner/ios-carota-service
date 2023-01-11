@@ -1,0 +1,22 @@
+{
+  "name": "MPService",
+  "version": "0.1.0",
+  "summary": "A short description of MPService.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Elias Ferreira/MPService",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Elias Ferreira": "eliasferreira.pro@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/Elias Ferreira/MPService.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "MPService/Classes/**/*"
+}
