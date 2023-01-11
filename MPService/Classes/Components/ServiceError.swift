@@ -1,8 +1,8 @@
 //
 //  ServiceError.swift
-//  MPService
+//  iOS Concurrency
 //
-//  Created by Elias Ferreira on 11/01/23.
+//  Created by Elias Ferreira on 10/01/23.
 //
 
 import Foundation
