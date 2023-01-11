@@ -11,10 +11,13 @@
 		20CD2D9BB99F384A03B61DB46C1F3C96 /* MPService-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D81B6B0C42ACADB641A305347E5CC02C /* MPService-dummy.m */; };
 		4203C267FEDAF795403008BA085527E6 /* Pods-MPService_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D1064BAF870ADC04C79E95956118B7D4 /* Pods-MPService_Tests-dummy.m */; };
 		6B5DD1453356B4CECAED19A6C83A6A85 /* Pods-MPService_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E393C76EB6F0153B49666969FA0E1D1 /* Pods-MPService_Example-dummy.m */; };
-		9CC8B5FE134E97C4B8789FD1406DE165 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848F5F3F183F41C5AA80E8B5E80B65FD /* ReplaceMe.swift */; };
 		A0F6390DC7A64E8A854AB7BEDD6F8215 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		CE1676EBD75BCF54BE4AA7EA6460C00A /* MPService-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C05187BF9DB568C7746DDE207D54A78 /* MPService-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE64039A51C0223B33EEC389281764F7 /* Pods-MPService_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3329E3B648D9D2D477993E375CB718 /* Pods-MPService_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DEA9F24B296F7C450085E6F1 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F249296F7C450085E6F1 /* HTTPMethod.swift */; };
+		DEA9F24C296F7C450085E6F1 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F24A296F7C450085E6F1 /* ServiceError.swift */; };
+		DEA9F24E296F7C520085E6F1 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F24D296F7C520085E6F1 /* Service.swift */; };
+		DEA9F250296F7C660085E6F1 /* MPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F24F296F7C660085E6F1 /* MPService.swift */; };
 		E0737036CEF4FF931F60213CF172C70B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		EF93613C75AD0E146F5CDF856CB4EB0C /* Pods-MPService_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9791C61E2ACE4E02A12D5E21A9EB351B /* Pods-MPService_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -37,29 +40,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		072264C30C479C0569B32AA21B64E139 /* Pods-MPService_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-MPService_Tests"; path = Pods_MPService_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		072264C30C479C0569B32AA21B64E139 /* Pods_MPService_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MPService_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AF20757D577EA520FED971FE4119A58 /* Pods-MPService_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MPService_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		1852AE54BD884C43A7AD80DDF47DDB05 /* Pods-MPService_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MPService_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		38D068CFB91A5D81016FC382813F6C6C /* Pods-MPService_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MPService_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		39E33AB556D93A6E04F58EC193DD288D /* MPService */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MPService; path = MPService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39E33AB556D93A6E04F58EC193DD288D /* MPService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MPService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D07DB7D7D31D08DCA07D17A7D87C8F /* Pods-MPService_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MPService_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		4A6ABA2B2534EB1AF122DCD9865DBC21 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		4A6ABA2B2534EB1AF122DCD9865DBC21 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4F3329E3B648D9D2D477993E375CB718 /* Pods-MPService_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MPService_Example-umbrella.h"; sourceTree = "<group>"; };
 		53BC65F9158E45A84E3FFF08386270FC /* Pods-MPService_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MPService_Tests.modulemap"; sourceTree = "<group>"; };
 		5478F36B882C59131589DDCD308FB44C /* MPService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MPService.release.xcconfig; sourceTree = "<group>"; };
-		5DDC485C63DBEBF6740DD4E1698EA835 /* Pods-MPService_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-MPService_Example"; path = Pods_MPService_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DDC485C63DBEBF6740DD4E1698EA835 /* Pods_MPService_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MPService_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64843E8AEC4C41D7387DA86B27A8CDB1 /* Pods-MPService_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MPService_Example.modulemap"; sourceTree = "<group>"; };
 		64D8C8D76E28774352B90A65A8D3B808 /* MPService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MPService.debug.xcconfig; sourceTree = "<group>"; };
 		6C05187BF9DB568C7746DDE207D54A78 /* MPService-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MPService-umbrella.h"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		776242AF9DB9E6D484CCC279F7B2245C /* Pods-MPService_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MPService_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		8369C610CFB46CE8FB4194A34C343D00 /* MPService-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MPService-Info.plist"; sourceTree = "<group>"; };
-		848F5F3F183F41C5AA80E8B5E80B65FD /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = MPService/Classes/ReplaceMe.swift; sourceTree = "<group>"; };
 		859E783B5B74D049D53BB44C361B16A4 /* Pods-MPService_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MPService_Example-frameworks.sh"; sourceTree = "<group>"; };
 		88573245BEBD0EEE581BD4F93A6C4CA0 /* Pods-MPService_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MPService_Tests-Info.plist"; sourceTree = "<group>"; };
 		8E393C76EB6F0153B49666969FA0E1D1 /* Pods-MPService_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MPService_Example-dummy.m"; sourceTree = "<group>"; };
 		9791C61E2ACE4E02A12D5E21A9EB351B /* Pods-MPService_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MPService_Tests-umbrella.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A43B7542CEEACD7C8CECC7532987F0CF /* MPService.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MPService.modulemap; sourceTree = "<group>"; };
 		ADE773730EEB93696D4281E39DB207D8 /* MPService-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MPService-prefix.pch"; sourceTree = "<group>"; };
 		AF320594D6C35925439BDDFEA0E69EB4 /* Pods-MPService_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MPService_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -67,8 +69,12 @@
 		D1064BAF870ADC04C79E95956118B7D4 /* Pods-MPService_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MPService_Tests-dummy.m"; sourceTree = "<group>"; };
 		D81B6B0C42ACADB641A305347E5CC02C /* MPService-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MPService-dummy.m"; sourceTree = "<group>"; };
 		DC0D33A02C1E3B93B3643AA478EFDC97 /* Pods-MPService_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MPService_Example.release.xcconfig"; sourceTree = "<group>"; };
-		DD5EC5DDEAC62AB5389BC57C408F914A /* MPService.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MPService.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		E924B2317ED766F577BE341B8EBBD621 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		DD5EC5DDEAC62AB5389BC57C408F914A /* MPService.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = MPService.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		DEA9F249296F7C450085E6F1 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		DEA9F24A296F7C450085E6F1 /* ServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		DEA9F24D296F7C520085E6F1 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		DEA9F24F296F7C660085E6F1 /* MPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MPService.swift; path = MPService/Classes/MPService.swift; sourceTree = "<group>"; };
+		E924B2317ED766F577BE341B8EBBD621 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F2C47D7F2289FD7A22CD1BE104195E06 /* Pods-MPService_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MPService_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,9 +125,9 @@
 		26DC1AE0D1530F55B8B14C1DF26EA82B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				39E33AB556D93A6E04F58EC193DD288D /* MPService */,
-				5DDC485C63DBEBF6740DD4E1698EA835 /* Pods-MPService_Example */,
-				072264C30C479C0569B32AA21B64E139 /* Pods-MPService_Tests */,
+				39E33AB556D93A6E04F58EC193DD288D /* MPService.framework */,
+				5DDC485C63DBEBF6740DD4E1698EA835 /* Pods_MPService_Example.framework */,
+				072264C30C479C0569B32AA21B64E139 /* Pods_MPService_Tests.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -178,7 +184,9 @@
 		750173F1FE7B42820CB4A95C12DE4B55 /* MPService */ = {
 			isa = PBXGroup;
 			children = (
-				848F5F3F183F41C5AA80E8B5E80B65FD /* ReplaceMe.swift */,
+				DEA9F24F296F7C660085E6F1 /* MPService.swift */,
+				DEA9F248296F7B740085E6F1 /* Protocols */,
+				DEA9F247296F7B6D0085E6F1 /* Components */,
 				A25462E6439C6F70681C446826BEB0F9 /* Pod */,
 				5525264993F4CF28B6CB0157893CD7A3 /* Support Files */,
 			);
@@ -213,6 +221,25 @@
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEA9F247296F7B6D0085E6F1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DEA9F249296F7C450085E6F1 /* HTTPMethod.swift */,
+				DEA9F24A296F7C450085E6F1 /* ServiceError.swift */,
+			);
+			name = Components;
+			path = MPService/Classes/Components;
+			sourceTree = "<group>";
+		};
+		DEA9F248296F7B740085E6F1 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DEA9F24D296F7C520085E6F1 /* Service.swift */,
+			);
+			name = Protocols;
+			path = MPService/Classes/Protocols;
 			sourceTree = "<group>";
 		};
 		E474A7DAF1BFEC4C64D1AC9488DA81F9 /* Development Pods */ = {
@@ -268,7 +295,7 @@
 			);
 			name = MPService;
 			productName = MPService;
-			productReference = 39E33AB556D93A6E04F58EC193DD288D /* MPService */;
+			productReference = 39E33AB556D93A6E04F58EC193DD288D /* MPService.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		6776EB76A4D7C98C4AA33A08C380A215 /* Pods-MPService_Tests */ = {
@@ -287,7 +314,7 @@
 			);
 			name = "Pods-MPService_Tests";
 			productName = Pods_MPService_Tests;
-			productReference = 072264C30C479C0569B32AA21B64E139 /* Pods-MPService_Tests */;
+			productReference = 072264C30C479C0569B32AA21B64E139 /* Pods_MPService_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		E785084DFC31D765E5F7A5C21AA6A436 /* Pods-MPService_Example */ = {
@@ -306,7 +333,7 @@
 			);
 			name = "Pods-MPService_Example";
 			productName = Pods_MPService_Example;
-			productReference = 5DDC485C63DBEBF6740DD4E1698EA835 /* Pods-MPService_Example */;
+			productReference = 5DDC485C63DBEBF6740DD4E1698EA835 /* Pods_MPService_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -317,6 +344,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					5660C347C5977B12BD1C2CD3D22B802F = {
+						LastSwiftMigration = 1420;
+					};
+				};
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -367,8 +399,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEA9F250296F7C660085E6F1 /* MPService.swift in Sources */,
+				DEA9F24C296F7C450085E6F1 /* ServiceError.swift in Sources */,
+				DEA9F24E296F7C520085E6F1 /* Service.swift in Sources */,
+				DEA9F24B296F7C450085E6F1 /* HTTPMethod.swift in Sources */,
 				20CD2D9BB99F384A03B61DB46C1F3C96 /* MPService-dummy.m in Sources */,
-				9CC8B5FE134E97C4B8789FD1406DE165 /* ReplaceMe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,7 +457,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-MPService_Example/Pods-MPService_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-MPService_Example/Pods-MPService_Example.modulemap";
@@ -456,7 +491,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-MPService_Tests/Pods-MPService_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-MPService_Tests/Pods-MPService_Tests.modulemap";
@@ -528,8 +563,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -551,7 +585,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-MPService_Tests/Pods-MPService_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-MPService_Tests/Pods-MPService_Tests.modulemap";
@@ -573,6 +607,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 64D8C8D76E28774352B90A65A8D3B808 /* MPService.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -585,7 +620,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MPService/MPService-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MPService/MPService-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/MPService/MPService.modulemap";
 				PRODUCT_MODULE_NAME = MPService;
@@ -593,6 +628,7 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -682,7 +718,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-MPService_Example/Pods-MPService_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-MPService_Example/Pods-MPService_Example.modulemap";
@@ -703,6 +739,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5478F36B882C59131589DDCD308FB44C /* MPService.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -715,7 +752,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/MPService/MPService-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/MPService/MPService-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/MPService/MPService.modulemap";
 				PRODUCT_MODULE_NAME = MPService;
