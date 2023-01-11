@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.author           = { 'Elias Ferreira' => 'eliasferreira.pro@gmail.com' }
   s.source           = { :git => 'https://github.com/MarketPlanner/ios-mp-service', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '15.0'
 
   s.source_files = 'MPService/Classes/**/*'
   
