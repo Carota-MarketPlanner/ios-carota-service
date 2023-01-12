@@ -89,10 +89,11 @@
 		DEA9F2B8296F9C3D0085E6F1 /* MPServiceExample */ = {
 			isa = PBXGroup;
 			children = (
-				DEA9F2DA296FA3430085E6F1 /* Shared */,
+				DEA9F2DA296FA3430085E6F1 /* App */,
+				DEA9F2DB296FA67F0085E6F1 /* Resources */,
+				DEA9F2C7296FA1270085E6F1 /* Model */,
 				DEA9F2D5296FA22E0085E6F1 /* View */,
 				DEA9F2D2296FA1D10085E6F1 /* ViewModel */,
-				DEA9F2C7296FA1270085E6F1 /* Model */,
 				DEA9F2BF296F9C3F0085E6F1 /* Preview Content */,
 			);
 			path = MPServiceExample;
@@ -135,13 +136,20 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		DEA9F2DA296FA3430085E6F1 /* Shared */ = {
+		DEA9F2DA296FA3430085E6F1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DEA9F2B9296F9C3D0085E6F1 /* MPServiceApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DEA9F2DB296FA67F0085E6F1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				DEA9F2BD296F9C3F0085E6F1 /* Assets.xcassets */,
-				DEA9F2B9296F9C3D0085E6F1 /* MPServiceApp.swift */,
 			);
-			path = Shared;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
