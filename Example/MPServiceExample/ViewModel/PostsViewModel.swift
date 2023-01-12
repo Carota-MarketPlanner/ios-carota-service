@@ -14,20 +14,30 @@ class PostViewModel: ObservableObject {
     @Published var showAlert = false
     @Published var errorMessage: String?
     
-    var apiService = MPService(baseURL: "https://jsonplaceholder.typicode.com/")
+    var service = MPService(baseURL: "https://jsonplaceholder.typicode.com/")
     
     @MainActor
     func fetchPosts(for userId: Int?) async {
         if let userId = userId {
             isLoading.toggle()
-            defer {
-                isLoading.toggle()
-            }
-            do {
-                posts = try await apiService.request("users/\(userId)/posts")
-            } catch {
-                showAlert = true
-                errorMessage = error.localizedDescription
+            service.request("users/\(userId)/posts") { (result: Result<[Post], ServiceError>) in
+                defer {
+                    DispatchQueue.main.async {
+                        self.isLoading.toggle()
+                    }
+                }
+                
+                switch result {
+                case .success(let posts):
+                    DispatchQueue.main.async {
+                        self.posts = posts
+                    }
+                case .failure(let error):
+                    DispatchQueue.main.async {
+                        self.showAlert = true
+                        self.errorMessage = error.errorDescription
+                    }
+                }
             }
         }
     }

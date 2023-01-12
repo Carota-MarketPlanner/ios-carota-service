@@ -14,7 +14,7 @@ class UsersViewModel: ObservableObject {
     @Published var showAlert = false
     @Published var errorMessage: String?
     
-    let apiService = MPService(baseURL: "https://jsonplaceholder.typicode.com")
+    let service = MPService(baseURL: "https://jsonplaceholder.typicode.com")
     
     @MainActor
     func fetchUsers() async {
@@ -23,7 +23,7 @@ class UsersViewModel: ObservableObject {
             isLoading.toggle()
         }
         do {
-            users = try await apiService.request("/users")
+            users = try await service.request("/users")
         } catch {
             showAlert = true
             errorMessage = error.localizedDescription
