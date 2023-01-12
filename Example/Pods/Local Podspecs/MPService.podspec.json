@@ -1,9 +1,9 @@
 {
   "name": "MPService",
   "version": "0.1.0",
-  "summary": "A short description of MPService.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Elias Ferreira/MPService",
+  "summary": "A Network Service provider to supply MarketPlanner App.",
+  "description": "Service is a framework to serve MarketPlanner, all the requests should be\nhandled by this module",
+  "homepage": "https://github.com/MarketPlanner/ios-mp-service",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,11 @@
     "Elias Ferreira": "eliasferreira.pro@gmail.com"
   },
   "source": {
-    "git": "https://github.com/Elias Ferreira/MPService.git",
+    "git": "https://github.com/MarketPlanner/ios-mp-service",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "10.0"
+    "ios": "15.0"
   },
   "source_files": "MPService/Classes/**/*"
 }
