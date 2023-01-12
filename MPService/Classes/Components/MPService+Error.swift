@@ -6,14 +6,17 @@
 //
 
 import Foundation
+extension MPService {
+    public enum Error {
+        case invalidURL
+        case invalidResponseStatus
+        case dataTaskError(String?)
+        case corruptData
+        case decodinError(String)
+    }
+}
 
-public enum ServiceError: LocalizedError {
-    case invalidURL
-    case invalidResponseStatus
-    case dataTaskError(String?)
-    case corruptData
-    case decodinError(String)
-    
+extension MPService.Error: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .invalidURL:
@@ -29,3 +32,12 @@ public enum ServiceError: LocalizedError {
         }
     }
 }
+
+/*
+
+MARK: Guiding Resources
+
+https://nshipster.com/swift-foundation-error-protocols/
+https://www.vadimbulavin.com/the-power-of-namespacing-in-swift/
+ 
+*/

@@ -22,5 +22,5 @@ protocol Service {
                            method: HTTPMethod,
                            dateDecodingStrategy: JSONDecoder.DateDecodingStrategy,
                            keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy,
-                           completion: @escaping (Result<T, ServiceError>) -> Void)
+                           completion: @escaping (Result<T, MPService.Error>) -> Void)
 }

@@ -11,9 +11,7 @@ public class MPService: Service {
     
     let baseURL: String
     
-    public init(baseURL: String) {
-        self.baseURL = baseURL
-    }
+    public init(baseURL: String) { self.baseURL = baseURL }
     
     public func request<T: Decodable>(_ endpoint: String,
                            method: HTTPMethod = .GET,
@@ -21,7 +19,7 @@ public class MPService: Service {
                            keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) async throws -> T {
         
         guard let url = URL(string: baseURL+endpoint) else {
-            throw ServiceError.invalidURL
+            throw MPService.Error.invalidURL
         }
         
         do {
@@ -35,7 +33,7 @@ public class MPService: Service {
             let (data, response) = try await URLSession.shared.data(for: request)
             
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                throw ServiceError.invalidResponseStatus
+                throw MPService.Error.invalidResponseStatus
             }
             
             let decoder = JSONDecoder()
@@ -46,11 +44,11 @@ public class MPService: Service {
                 let users = try decoder.decode(T.self, from: data)
                 return users
             } catch {
-                throw ServiceError.decodinError(error.localizedDescription)
+                throw MPService.Error.decodinError(error.localizedDescription)
             }
             
         } catch {
-            throw ServiceError.dataTaskError(error.localizedDescription)
+            throw MPService.Error.dataTaskError(error.localizedDescription)
         }
         
     }
@@ -59,7 +57,7 @@ public class MPService: Service {
                            method: HTTPMethod = .GET,
                            dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,
                            keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys,
-                           completion: @escaping (Result<T, ServiceError>) -> Void) {
+                           completion: @escaping (Result<T, MPService.Error>) -> Void) {
         
         guard let url = URL(string: baseURL+endpoint) else {
             completion(.failure(.invalidURL))
