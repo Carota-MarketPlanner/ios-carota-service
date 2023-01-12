@@ -4,10 +4,5 @@ platform :ios, '15.0'
 
 target 'MPService_Example' do
   pod 'MPService', :path => '../'
-
-  target 'MPService_Tests' do
-    inherit! :search_paths
-
-    
-  end
+ 
 end
