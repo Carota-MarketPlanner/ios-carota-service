@@ -16,6 +16,6 @@ protocol Service {
     func request<T: Decodable>(_ endpoint: String, method: HTTPMethod) async throws -> T
     
     /// Get function using clousure.
-    func request<T: Decodable>(_ endpoint: String, method: HTTPMethod, completion: @escaping (Result<T, ServiceError>) -> Void)
+    func request<T: Decodable>(_ endpoint: String, method: HTTPMethod, completion: @escaping (Result<T, MPError>) -> Void)
     
 }

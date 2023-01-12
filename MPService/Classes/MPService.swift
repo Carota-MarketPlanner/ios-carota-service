@@ -9,7 +9,7 @@ import Foundation
 
 public class MPService: Service {
     
-    public typealias MPResult<T> = Result<T, ServiceError>
+    public typealias MPResult<T> = Result<T, MPError>
     public typealias Handler<T> = (MPResult<T>) -> Void
     
     let baseURL: String
@@ -19,32 +19,25 @@ public class MPService: Service {
     public func request<T: Decodable>(_ endpoint: String, method: HTTPMethod = .get) async throws -> T {
         
         guard let url = URL(string: baseURL+endpoint) else {
-            throw ServiceError.invalidURL
+            throw MPError.invalidURL
         }
         
         do {
-            var request = URLRequest(url: url)
-            request.httpMethod = method.rawValue
-//            request.allHTTPHeaderFields = [
-//                "Content-Type": contentType,
-//                "Authorization": "Token \(token)"
-//            ]
-        
-            let (data, response) = try await URLSession.shared.data(for: request)
+            let (data, response) = try await URLSession.shared.data(for: getRequest(for: url, and: method))
             
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                throw ServiceError.invalidResponseStatus
+                throw MPError.invalidResponseStatus
             }
             
             do {
                 let users = try JSONDecoder().decode(T.self, from: data)
                 return users
             } catch {
-                throw ServiceError.decodinError(error.localizedDescription)
+                throw MPError.decodinError(error.localizedDescription)
             }
             
         } catch {
-            throw ServiceError.dataTaskError(error.localizedDescription)
+            throw MPError.dataTaskError(error.localizedDescription)
         }
         
     }
@@ -56,6 +49,35 @@ public class MPService: Service {
             return
         }
         
+        let task = URLSession.shared.dataTask(with: getRequest(for: url, and: method)) {
+            completion(self.result(data: $0, response: $1, error: $2))
+        }
+        
+        task.resume()
+    }
+    
+    func result<T: Decodable>(data: Data?, response: URLResponse?, error: Swift.Error?) -> MPResult<T> {
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            return .failure(.invalidResponseStatus)
+        }
+        
+        guard error == nil else {
+            return .failure(.dataTaskError(error?.localizedDescription))
+        }
+        
+        guard let data = data else {
+            return .failure(.corruptData)
+        }
+        
+        do {
+            let users = try JSONDecoder().decode(T.self, from: data)
+            return .success(users)
+        } catch {
+            return .failure(.decodinError(error.localizedDescription))
+        }
+    }
+    
+    func getRequest(for url: URL, and method: HTTPMethod) -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
 //        request.allHTTPHeaderFields = [
@@ -63,31 +85,7 @@ public class MPService: Service {
 //            "Authorization": "Token \(token)"
 //        ]
         
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                completion(.failure(.invalidResponseStatus))
-                return
-            }
-            
-            guard error == nil else {
-                completion(.failure(.dataTaskError(error?.localizedDescription)))
-                return
-            }
-            
-            guard let data = data else {
-                completion(.failure(.corruptData))
-                return
-            }
-            
-            do {
-                let users = try JSONDecoder().decode(T.self, from: data)
-                completion(.success(users))
-            } catch {
-                completion(.failure(.decodinError(error.localizedDescription)))
-            }
-        }
-        
-        task.resume()
+        return request
     }
 }
 
