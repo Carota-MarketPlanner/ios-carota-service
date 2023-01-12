@@ -8,19 +8,14 @@
 import Foundation
 
 protocol Service {
+    
     /// The base URL to the API.
     var baseURL: String { get }
     
     /// Get function using async and await.
-    func request<T: Decodable>(_ endpoint: String,
-                           method: HTTPMethod,
-                           dateDecodingStrategy: JSONDecoder.DateDecodingStrategy,
-                           keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy) async throws -> T
+    func request<T: Decodable>(_ endpoint: String, method: HTTPMethod) async throws -> T
     
     /// Get function using clousure.
-    func request<T: Decodable>(_ endpoint: String,
-                           method: HTTPMethod,
-                           dateDecodingStrategy: JSONDecoder.DateDecodingStrategy,
-                           keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy,
-                           completion: @escaping (Result<T, MPService.Error>) -> Void)
+    func request<T: Decodable>(_ endpoint: String, method: HTTPMethod, completion: @escaping (Result<T, ServiceError>) -> Void)
+    
 }

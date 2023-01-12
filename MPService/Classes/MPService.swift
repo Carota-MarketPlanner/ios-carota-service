@@ -9,17 +9,17 @@ import Foundation
 
 public class MPService: Service {
     
+    public typealias MPResult<T> = Result<T, ServiceError>
+    public typealias Handler<T> = (MPResult<T>) -> Void
+    
     let baseURL: String
     
     public init(baseURL: String) { self.baseURL = baseURL }
     
-    public func request<T: Decodable>(_ endpoint: String,
-                           method: HTTPMethod = .get,
-                           dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,
-                           keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) async throws -> T {
+    public func request<T: Decodable>(_ endpoint: String, method: HTTPMethod = .get) async throws -> T {
         
         guard let url = URL(string: baseURL+endpoint) else {
-            throw MPService.Error.invalidURL
+            throw ServiceError.invalidURL
         }
         
         do {
@@ -33,31 +33,23 @@ public class MPService: Service {
             let (data, response) = try await URLSession.shared.data(for: request)
             
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                throw MPService.Error.invalidResponseStatus
+                throw ServiceError.invalidResponseStatus
             }
             
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = dateDecodingStrategy
-            decoder.keyDecodingStrategy = keyDecodingStrategy
-            
             do {
-                let users = try decoder.decode(T.self, from: data)
+                let users = try JSONDecoder().decode(T.self, from: data)
                 return users
             } catch {
-                throw MPService.Error.decodinError(error.localizedDescription)
+                throw ServiceError.decodinError(error.localizedDescription)
             }
             
         } catch {
-            throw MPService.Error.dataTaskError(error.localizedDescription)
+            throw ServiceError.dataTaskError(error.localizedDescription)
         }
         
     }
     
-    public func request<T: Decodable>(_ endpoint: String,
-                           method: HTTPMethod = .get,
-                           dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,
-                           keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys,
-                           completion: @escaping (Result<T, MPService.Error>) -> Void) {
+    public func request<T: Decodable>(_ endpoint: String, method: HTTPMethod = .get, completion: @escaping Handler<T>) {
         
         guard let url = URL(string: baseURL+endpoint) else {
             completion(.failure(.invalidURL))
@@ -87,12 +79,8 @@ public class MPService: Service {
                 return
             }
             
-            let decoder = JSONDecoder()
-            decoder.dateDecodingStrategy = dateDecodingStrategy
-            decoder.keyDecodingStrategy = keyDecodingStrategy
-            
             do {
-                let users = try decoder.decode(T.self, from: data)
+                let users = try JSONDecoder().decode(T.self, from: data)
                 completion(.success(users))
             } catch {
                 completion(.failure(.decodinError(error.localizedDescription)))

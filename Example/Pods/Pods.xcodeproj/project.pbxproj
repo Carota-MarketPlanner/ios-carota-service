@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		498F324D5E90E3247FEE56029CB720A6 /* MPService+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3117EFB8B7202B58A896E513692E59 /* MPService+Error.swift */; };
+		498F324D5E90E3247FEE56029CB720A6 /* Service+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3117EFB8B7202B58A896E513692E59 /* Service+Error.swift */; };
 		4B18CB44591F92C5E023AE0D3C8F739E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536F29403FF1D28209DFA9630E06B9ED /* HTTPMethod.swift */; };
 		6B5DD1453356B4CECAED19A6C83A6A85 /* Pods-MPService_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EFEE6EBDCAD38C730CBD4B94ED2552FA /* Pods-MPService_Example-dummy.m */; };
 		8B13FDDD1DD794640BA0E0DF5F801AAA /* MPService-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ACC8D5CB8104C98F37DCB5C08DDE83B2 /* MPService-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -35,7 +35,7 @@
 		256FADCD51DC16BBA54F67B4B1B3D70C /* MPService-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MPService-dummy.m"; sourceTree = "<group>"; };
 		341D8F09B48E4B64C4480B5040DCFE66 /* Pods-MPService_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MPService_Example-umbrella.h"; sourceTree = "<group>"; };
 		39E33AB556D93A6E04F58EC193DD288D /* MPService */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MPService; path = MPService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F3117EFB8B7202B58A896E513692E59 /* MPService+Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "MPService+Error.swift"; path = "MPService/Classes/MPService+Error.swift"; sourceTree = "<group>"; };
+		3F3117EFB8B7202B58A896E513692E59 /* Service+Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Service+Error.swift"; path = "MPService/Classes/Service+Error.swift"; sourceTree = "<group>"; };
 		47FC2A8560E4051B5AF080F935BAA4C3 /* Pods-MPService_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MPService_Example.modulemap"; sourceTree = "<group>"; };
 		4D35A42C3BB0F171D5989C7D11A291EB /* MPService.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MPService.modulemap; sourceTree = "<group>"; };
 		4F8E1824C57D3DB99D326C1857994A0B /* MPService-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MPService-Info.plist"; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 				9180D1A842B10D8BA46046A77BF9F261 /* Protocols */,
 				DE0912C92970A2D700EAA9D8 /* HTTP */,
 				73ABC233A3970021C9D2455652E8DC29 /* MPService.swift */,
-				3F3117EFB8B7202B58A896E513692E59 /* MPService+Error.swift */,
+				3F3117EFB8B7202B58A896E513692E59 /* Service+Error.swift */,
 				B34C6BD93BB9616290C2771F4125B07A /* Pod */,
 				FF4DC37A35B47DA53A5999EAC505B1A4 /* Support Files */,
 			);
@@ -326,7 +326,7 @@
 				D50A614012F48FD0DE1269EC36F4DDC3 /* MPService.swift in Sources */,
 				A0297762DBF3E01780F562BBD51ADB40 /* MPService-dummy.m in Sources */,
 				DDDF5F616F1EBE6D0A2BCDE20CDD0291 /* Service.swift in Sources */,
-				498F324D5E90E3247FEE56029CB720A6 /* MPService+Error.swift in Sources */,
+				498F324D5E90E3247FEE56029CB720A6 /* Service+Error.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

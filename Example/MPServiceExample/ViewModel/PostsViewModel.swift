@@ -7,6 +7,7 @@
 
 import Foundation
 import MPService
+import UIKit
 
 class PostViewModel: ObservableObject {
     @Published var posts: [Post] = []
@@ -16,11 +17,13 @@ class PostViewModel: ObservableObject {
     
     var service = MPService(baseURL: "https://jsonplaceholder.typicode.com/")
     
+    typealias PostsResult = MPService.MPResult<[Post]>
+    
     @MainActor
-    func fetchPosts(for userId: Int?) async {
+    func fetchPosts(for userId: Int?) {
         if let userId = userId {
             isLoading.toggle()
-            service.request("users/\(userId)/posts") { (result: Result<[Post], MPService.Error>) in
+            service.request("users/\(userId)/posts") { (result: PostsResult) in
                 defer {
                     DispatchQueue.main.async {
                         self.isLoading.toggle()
