@@ -14,7 +14,7 @@ public class MPService: Service {
     public init(baseURL: String) { self.baseURL = baseURL }
     
     public func request<T: Decodable>(_ endpoint: String,
-                           method: HTTPMethod = .GET,
+                           method: HTTPMethod = .get,
                            dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,
                            keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys) async throws -> T {
         
@@ -54,7 +54,7 @@ public class MPService: Service {
     }
     
     public func request<T: Decodable>(_ endpoint: String,
-                           method: HTTPMethod = .GET,
+                           method: HTTPMethod = .get,
                            dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,
                            keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys,
                            completion: @escaping (Result<T, MPService.Error>) -> Void) {
