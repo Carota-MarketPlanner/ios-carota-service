@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		498F324D5E90E3247FEE56029CB720A6 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3117EFB8B7202B58A896E513692E59 /* ServiceError.swift */; };
+		498F324D5E90E3247FEE56029CB720A6 /* MPService+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3117EFB8B7202B58A896E513692E59 /* MPService+Error.swift */; };
 		4B18CB44591F92C5E023AE0D3C8F739E /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536F29403FF1D28209DFA9630E06B9ED /* HTTPMethod.swift */; };
 		6B5DD1453356B4CECAED19A6C83A6A85 /* Pods-MPService_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EFEE6EBDCAD38C730CBD4B94ED2552FA /* Pods-MPService_Example-dummy.m */; };
 		8B13FDDD1DD794640BA0E0DF5F801AAA /* MPService-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ACC8D5CB8104C98F37DCB5C08DDE83B2 /* MPService-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,11 +31,11 @@
 
 /* Begin PBXFileReference section */
 		023137B94ADC310068B8F80D3D826FE4 /* MPService-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MPService-prefix.pch"; sourceTree = "<group>"; };
-		1329188D641BA1E477C076BF67995501 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		1329188D641BA1E477C076BF67995501 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		256FADCD51DC16BBA54F67B4B1B3D70C /* MPService-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MPService-dummy.m"; sourceTree = "<group>"; };
 		341D8F09B48E4B64C4480B5040DCFE66 /* Pods-MPService_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MPService_Example-umbrella.h"; sourceTree = "<group>"; };
 		39E33AB556D93A6E04F58EC193DD288D /* MPService */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MPService; path = MPService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F3117EFB8B7202B58A896E513692E59 /* ServiceError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
+		3F3117EFB8B7202B58A896E513692E59 /* MPService+Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "MPService+Error.swift"; sourceTree = "<group>"; };
 		47FC2A8560E4051B5AF080F935BAA4C3 /* Pods-MPService_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MPService_Example.modulemap"; sourceTree = "<group>"; };
 		4D35A42C3BB0F171D5989C7D11A291EB /* MPService.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MPService.modulemap; sourceTree = "<group>"; };
 		4F8E1824C57D3DB99D326C1857994A0B /* MPService-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MPService-Info.plist"; sourceTree = "<group>"; };
@@ -44,17 +44,17 @@
 		6000CCEA81DFCA334EB318126104FAD7 /* Pods-MPService_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MPService_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		73ABC233A3970021C9D2455652E8DC29 /* MPService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MPService.swift; path = MPService/Classes/MPService.swift; sourceTree = "<group>"; };
-		78D530EA5F4CF06B8311FD202E9FD193 /* MPService.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MPService.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		78D530EA5F4CF06B8311FD202E9FD193 /* MPService.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = MPService.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8BE15A9794FCE0902C69D749A8548E26 /* Pods-MPService_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MPService_Example-frameworks.sh"; sourceTree = "<group>"; };
 		91D28D2BB31237A202A62BB7A6667DC3 /* Pods-MPService_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MPService_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		99CC6379728ED3553B39A40187175959 /* MPService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MPService.debug.xcconfig; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A52F071ADB7C479C61A784FC5A311DE2 /* Pods-MPService_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MPService_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		ACC8D5CB8104C98F37DCB5C08DDE83B2 /* MPService-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MPService-umbrella.h"; sourceTree = "<group>"; };
 		CBCC1F4D3D77CD9B2355030EB3228CF0 /* Pods-MPService_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MPService_Example-Info.plist"; sourceTree = "<group>"; };
 		D241DA1A4EB29A20674810350C006920 /* Service.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		D60CBEA87076B36D35386B0FF41D872A /* MPService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MPService.release.xcconfig; sourceTree = "<group>"; };
-		DAE5F4248FCCC8B9DFD073A3A6D22F3E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		DAE5F4248FCCC8B9DFD073A3A6D22F3E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EB86C1586DDC31EAA1BEFADE22C8235D /* Pods-MPService_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MPService_Example.release.xcconfig"; sourceTree = "<group>"; };
 		EFEE6EBDCAD38C730CBD4B94ED2552FA /* Pods-MPService_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MPService_Example-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -176,7 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				536F29403FF1D28209DFA9630E06B9ED /* HTTPMethod.swift */,
-				3F3117EFB8B7202B58A896E513692E59 /* ServiceError.swift */,
+				3F3117EFB8B7202B58A896E513692E59 /* MPService+Error.swift */,
 			);
 			name = Components;
 			path = MPService/Classes/Components;
@@ -326,7 +326,7 @@
 				D50A614012F48FD0DE1269EC36F4DDC3 /* MPService.swift in Sources */,
 				A0297762DBF3E01780F562BBD51ADB40 /* MPService-dummy.m in Sources */,
 				DDDF5F616F1EBE6D0A2BCDE20CDD0291 /* Service.swift in Sources */,
-				498F324D5E90E3247FEE56029CB720A6 /* ServiceError.swift in Sources */,
+				498F324D5E90E3247FEE56029CB720A6 /* MPService+Error.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -20,7 +20,7 @@ class PostViewModel: ObservableObject {
     func fetchPosts(for userId: Int?) async {
         if let userId = userId {
             isLoading.toggle()
-            service.request("users/\(userId)/posts") { (result: Result<[Post], ServiceError>) in
+            service.request("users/\(userId)/posts") { (result: Result<[Post], MPService.Error>) in
                 defer {
                     DispatchQueue.main.async {
                         self.isLoading.toggle()

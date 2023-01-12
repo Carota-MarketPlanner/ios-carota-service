@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum ServiceError: Error, LocalizedError {
+public enum ServiceError: LocalizedError {
     case invalidURL
     case invalidResponseStatus
     case dataTaskError(String?)
