@@ -17,7 +17,7 @@ class PostViewModel: ObservableObject {
     
     var service = MPService(baseURL: "https://jsonplaceholder.typicode.com/")
     
-    typealias PostsResult = MPService.MPResult<[Post]>
+    typealias PostsResult = MPService.Output<[Post]>
     
     @MainActor
     func fetchPosts(for userId: Int?) {

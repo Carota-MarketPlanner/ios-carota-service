@@ -10,7 +10,7 @@ import Foundation
 protocol Service {
     
     /// The base URL to the API.
-    var baseURL: String { get }
+    var baseURL: URLConvertible? { get }
     
     /// Get function using async and await.
     func request<T: Decodable>(_ endpoint: String, method: HTTPMethod) async throws -> T
