@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class MPService: Service {
+public class MPService {
     
     public typealias Output<T> = Result<T, MPError>
     public typealias Handler<T> = (Output<T>) -> Void
@@ -18,51 +18,63 @@ public class MPService: Service {
         self.baseURL = baseURL
     }
     
-    public func request<T: Decodable>(_ endpoint: String, method: HTTPMethod = .get) async throws -> T {
+    public func request<T: Decodable>(_ endpoint: String, method: HTTPMethod = .get, body: HTTPBody? = nil) async throws -> T {
         guard let url = baseURL?.asURL()?.appendingPathComponent(endpoint) else {
             throw MPError.invalidURL
         }
         
         do {
-            return try await result(request: getRequest(for: url, and: method))
+            let request = try getRequest(for: url, and: method, body: body)
+            return try await result(request: request)
         } catch {
-            throw MPError.dataTaskError(error.localizedDescription)
+            throw error
         }
     }
     
-    public func request<T: Decodable>(url convertible: URLConvertible, method: HTTPMethod = .get) async throws -> T {
+    public func request<T: Decodable>(url convertible: URLConvertible, method: HTTPMethod = .get, body: HTTPBody? = nil) async throws -> T {
         guard let url = convertible.asURL() else {
             throw MPError.invalidURL
         }
         
         do {
-            return try await result(request: getRequest(for: url, and: method))
+            let request = try getRequest(for: url, and: method, body: body)
+            return try await result(request: request)
         } catch {
-            throw MPError.dataTaskError(error.localizedDescription)
+            throw error
         }
     }
     
-    public func request<T: Decodable>(_ endpoint: String, method: HTTPMethod = .get, completion: @escaping Handler<T>) {
+    public func request<T: Decodable>(_ endpoint: String, method: HTTPMethod = .get, body: HTTPBody? = nil, completion: @escaping Handler<T>) {
         guard let url = baseURL?.asURL()?.appendingPathComponent(endpoint) else {
             completion(.failure(.invalidURL))
             return
         }
         
-        URLSession.shared.dataTask(with: getRequest(for: url, and: method)) {
-            completion(self.result(data: $0, response: $1, error: $2))
-        }.resume()
+        do {
+            let request = try getRequest(for: url, and: method, body: body)
+            URLSession.shared.dataTask(with: request) {
+                completion(self.result(data: $0, response: $1, error: $2))
+            }.resume()
+        } catch {
+            completion(.failure(MPError.dataTaskError(error.localizedDescription)))
+        }
     }
     
-    public func request<T: Decodable>(url convertible: URLConvertible, method: HTTPMethod = .get, completion: @escaping Handler<T>) {
-        guard let url = convertible.asURL() else {
-            completion(.failure(.invalidURL))
-            return
-        }
-        
-        URLSession.shared.dataTask(with: getRequest(for: url, and: method)) {
-            completion(self.result(data: $0, response: $1, error: $2))
-        }.resume()
-    }
+//    public func request<T: Decodable>(url convertible: URLConvertible, method: HTTPMethod = .get, completion: @escaping Handler<T>) {
+//        guard let url = convertible.asURL() else {
+//            completion(.failure(.invalidURL))
+//            return
+//        }
+//
+//        do {
+//           let request = try getRequest(for: url, and: method)
+//            URLSession.shared.dataTask(with: request) {
+//                completion(self.result(data: $0, response: $1, error: $2))
+//            }.resume()
+//        } catch {
+//            completion(.failure(MPError.dataTaskError(error.localizedDescription)))
+//        }
+//    }
     
     func result<T: Decodable>(request: URLRequest) async throws -> T {
         do {
@@ -75,7 +87,7 @@ public class MPService: Service {
             do {
                 return try JSONDecoder().decode(T.self, from: data)
             } catch {
-                throw MPError.decodinError(error.localizedDescription)
+                throw MPError.decodingError(error.localizedDescription)
             }
         } catch {
             throw MPError.dataTaskError(error.localizedDescription)
@@ -98,19 +110,23 @@ public class MPService: Service {
         do {
             return .success(try JSONDecoder().decode(T.self, from: data))
         } catch {
-            return .failure(.decodinError(error.localizedDescription))
+            return .failure(.decodingError(error.localizedDescription))
         }
     }
     
-  
     
-    func getRequest(for url: URL, and method: HTTPMethod) -> URLRequest {
+    func getRequest(for url: URL, and method: HTTPMethod, body: HTTPBody?) throws -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
-//        request.allHTTPHeaderFields = [
-//            "Content-Type": contentType,
-//            "Authorization": "Token \(token)"
-//        ]
+        
+        if let body = body {
+            guard let data = body.data else {
+                throw MPError.encodingError
+            }
+            
+            request.httpBody = data
+            request.addValue(body.contentType, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
+        }
         
         return request
     }

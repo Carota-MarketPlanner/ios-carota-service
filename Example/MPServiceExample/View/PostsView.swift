@@ -35,7 +35,7 @@ struct PostsView: View {
         .navigationTitle("Posts")
         .navigationBarTitleDisplayMode(.inline)
         .task {
-            await viewModel.fetchPosts(for: userId)
+            viewModel.fetchPosts(for: userId)
         }
     }
 }
