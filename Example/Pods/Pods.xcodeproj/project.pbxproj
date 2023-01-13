@@ -16,6 +16,9 @@
 		BCE13FC122C6ECCAC7C5A27BA500944E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		D50A614012F48FD0DE1269EC36F4DDC3 /* MPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ABC233A3970021C9D2455652E8DC29 /* MPService.swift */; };
 		DDDF5F616F1EBE6D0A2BCDE20CDD0291 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241DA1A4EB29A20674810350C006920 /* Service.swift */; };
+		DE0912CE2970E53A00EAA9D8 /* URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0912CD2970E53A00EAA9D8 /* URLConvertible.swift */; };
+		DE0912D12970E61400EAA9D8 /* String+URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0912D02970E61400EAA9D8 /* String+URLConvertible.swift */; };
+		DE0912D42970E65400EAA9D8 /* URL+URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0912D32970E65400EAA9D8 /* URL+URLConvertible.swift */; };
 		DE64039A51C0223B33EEC389281764F7 /* Pods-MPService_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 341D8F09B48E4B64C4480B5040DCFE66 /* Pods-MPService_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -35,7 +38,7 @@
 		256FADCD51DC16BBA54F67B4B1B3D70C /* MPService-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MPService-dummy.m"; sourceTree = "<group>"; };
 		341D8F09B48E4B64C4480B5040DCFE66 /* Pods-MPService_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MPService_Example-umbrella.h"; sourceTree = "<group>"; };
 		39E33AB556D93A6E04F58EC193DD288D /* MPService */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MPService; path = MPService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F3117EFB8B7202B58A896E513692E59 /* MPError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MPError.swift; path = MPService/Classes/MPError.swift; sourceTree = "<group>"; };
+		3F3117EFB8B7202B58A896E513692E59 /* MPError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MPError.swift; sourceTree = "<group>"; };
 		47FC2A8560E4051B5AF080F935BAA4C3 /* Pods-MPService_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MPService_Example.modulemap"; sourceTree = "<group>"; };
 		4D35A42C3BB0F171D5989C7D11A291EB /* MPService.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MPService.modulemap; sourceTree = "<group>"; };
 		4F8E1824C57D3DB99D326C1857994A0B /* MPService-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MPService-Info.plist"; sourceTree = "<group>"; };
@@ -43,7 +46,7 @@
 		5DDC485C63DBEBF6740DD4E1698EA835 /* Pods-MPService_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-MPService_Example"; path = Pods_MPService_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6000CCEA81DFCA334EB318126104FAD7 /* Pods-MPService_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MPService_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		73ABC233A3970021C9D2455652E8DC29 /* MPService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MPService.swift; path = MPService/Classes/MPService.swift; sourceTree = "<group>"; };
+		73ABC233A3970021C9D2455652E8DC29 /* MPService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MPService.swift; sourceTree = "<group>"; };
 		78D530EA5F4CF06B8311FD202E9FD193 /* MPService.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = MPService.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8BE15A9794FCE0902C69D749A8548E26 /* Pods-MPService_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MPService_Example-frameworks.sh"; sourceTree = "<group>"; };
 		91D28D2BB31237A202A62BB7A6667DC3 /* Pods-MPService_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MPService_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -55,6 +58,9 @@
 		D241DA1A4EB29A20674810350C006920 /* Service.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		D60CBEA87076B36D35386B0FF41D872A /* MPService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MPService.release.xcconfig; sourceTree = "<group>"; };
 		DAE5F4248FCCC8B9DFD073A3A6D22F3E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		DE0912CD2970E53A00EAA9D8 /* URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConvertible.swift; sourceTree = "<group>"; };
+		DE0912D02970E61400EAA9D8 /* String+URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URLConvertible.swift"; sourceTree = "<group>"; };
+		DE0912D32970E65400EAA9D8 /* URL+URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+URLConvertible.swift"; sourceTree = "<group>"; };
 		EB86C1586DDC31EAA1BEFADE22C8235D /* Pods-MPService_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MPService_Example.release.xcconfig"; sourceTree = "<group>"; };
 		EFEE6EBDCAD38C730CBD4B94ED2552FA /* Pods-MPService_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MPService_Example-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,10 +97,10 @@
 		192205457D180A563E98B1F8AF377BEE /* MPService */ = {
 			isa = PBXGroup;
 			children = (
+				DE0912CF2970E5CF00EAA9D8 /* Extension */,
+				DE0912CC2970E3A900EAA9D8 /* Core */,
 				9180D1A842B10D8BA46046A77BF9F261 /* Protocols */,
 				DE0912C92970A2D700EAA9D8 /* HTTP */,
-				73ABC233A3970021C9D2455652E8DC29 /* MPService.swift */,
-				3F3117EFB8B7202B58A896E513692E59 /* MPError.swift */,
 				B34C6BD93BB9616290C2771F4125B07A /* Pod */,
 				FF4DC37A35B47DA53A5999EAC505B1A4 /* Support Files */,
 			);
@@ -122,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				D241DA1A4EB29A20674810350C006920 /* Service.swift */,
+				DE0912CD2970E53A00EAA9D8 /* URLConvertible.swift */,
 			);
 			name = Protocols;
 			path = MPService/Classes/Protocols;
@@ -180,6 +187,26 @@
 			);
 			name = HTTP;
 			path = MPService/Classes/HTTP;
+			sourceTree = "<group>";
+		};
+		DE0912CC2970E3A900EAA9D8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				73ABC233A3970021C9D2455652E8DC29 /* MPService.swift */,
+				3F3117EFB8B7202B58A896E513692E59 /* MPError.swift */,
+			);
+			name = Core;
+			path = MPService/Classes/Core;
+			sourceTree = "<group>";
+		};
+		DE0912CF2970E5CF00EAA9D8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DE0912D02970E61400EAA9D8 /* String+URLConvertible.swift */,
+				DE0912D32970E65400EAA9D8 /* URL+URLConvertible.swift */,
+			);
+			name = Extension;
+			path = MPService/Classes/Extension;
 			sourceTree = "<group>";
 		};
 		F3B2F02793212C01B9636EBA1B805AFD /* Targets Support Files */ = {
@@ -323,6 +350,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B18CB44591F92C5E023AE0D3C8F739E /* HTTPMethod.swift in Sources */,
+				DE0912D42970E65400EAA9D8 /* URL+URLConvertible.swift in Sources */,
+				DE0912D12970E61400EAA9D8 /* String+URLConvertible.swift in Sources */,
+				DE0912CE2970E53A00EAA9D8 /* URLConvertible.swift in Sources */,
 				D50A614012F48FD0DE1269EC36F4DDC3 /* MPService.swift in Sources */,
 				A0297762DBF3E01780F562BBD51ADB40 /* MPService-dummy.m in Sources */,
 				DDDF5F616F1EBE6D0A2BCDE20CDD0291 /* Service.swift in Sources */,
