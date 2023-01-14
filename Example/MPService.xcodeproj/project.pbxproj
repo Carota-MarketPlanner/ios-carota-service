@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4C0224D605363227CB1D879F /* Pods_MPService_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFDA24E573DA5F5171EA01A2 /* Pods_MPService_Example.framework */; };
+		DE0912DA29724BAC00EAA9D8 /* AddPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0912D929724BAC00EAA9D8 /* AddPostView.swift */; };
+		DE0912DE2972618900EAA9D8 /* AddPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0912DD2972618900EAA9D8 /* AddPostViewModel.swift */; };
 		DEA9F2BA296F9C3D0085E6F1 /* MPServiceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F2B9296F9C3D0085E6F1 /* MPServiceApp.swift */; };
 		DEA9F2BE296F9C3F0085E6F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA9F2BD296F9C3F0085E6F1 /* Assets.xcassets */; };
 		DEA9F2C1296F9C3F0085E6F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA9F2C0296F9C3F0085E6F1 /* Preview Assets.xcassets */; };
@@ -24,6 +26,8 @@
 /* Begin PBXFileReference section */
 		4BF8105B07E2ADAE42054AAE /* Pods-MPService_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPService_Example.release.xcconfig"; path = "Target Support Files/Pods-MPService_Example/Pods-MPService_Example.release.xcconfig"; sourceTree = "<group>"; };
 		89BF41385ECDBFCA3D3C485C /* Pods-MPService_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPService_Example.debug.xcconfig"; path = "Target Support Files/Pods-MPService_Example/Pods-MPService_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		DE0912D929724BAC00EAA9D8 /* AddPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostView.swift; sourceTree = "<group>"; };
+		DE0912DD2972618900EAA9D8 /* AddPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewModel.swift; sourceTree = "<group>"; };
 		DEA9F2B6296F9C3D0085E6F1 /* MPService_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MPService_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA9F2B9296F9C3D0085E6F1 /* MPServiceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPServiceApp.swift; sourceTree = "<group>"; };
 		DEA9F2BD296F9C3F0085E6F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 			children = (
 				DEA9F2D0296FA1BE0085E6F1 /* UsersViewModel.swift */,
 				DEA9F2D3296FA2020085E6F1 /* PostsViewModel.swift */,
+				DE0912DD2972618900EAA9D8 /* AddPostViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 			children = (
 				DEA9F2D6296FA26B0085E6F1 /* UsersView.swift */,
 				DEA9F2D8296FA2AA0085E6F1 /* PostsView.swift */,
+				DE0912D929724BAC00EAA9D8 /* AddPostView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -270,6 +276,8 @@
 				DEA9F2BA296F9C3D0085E6F1 /* MPServiceApp.swift in Sources */,
 				DEA9F2CB296FA1520085E6F1 /* Address.swift in Sources */,
 				DEA9F2D4296FA2030085E6F1 /* PostsViewModel.swift in Sources */,
+				DE0912DA29724BAC00EAA9D8 /* AddPostView.swift in Sources */,
+				DE0912DE2972618900EAA9D8 /* AddPostViewModel.swift in Sources */,
 				DEA9F2D7296FA26B0085E6F1 /* UsersView.swift in Sources */,
 				DEA9F2CF296FA1840085E6F1 /* Post.swift in Sources */,
 				DEA9F2CD296FA1670085E6F1 /* Company.swift in Sources */,

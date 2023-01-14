@@ -60,21 +60,21 @@ public class MPService {
         }
     }
     
-//    public func request<T: Decodable>(url convertible: URLConvertible, method: HTTPMethod = .get, completion: @escaping Handler<T>) {
-//        guard let url = convertible.asURL() else {
-//            completion(.failure(.invalidURL))
-//            return
-//        }
-//
-//        do {
-//           let request = try getRequest(for: url, and: method)
-//            URLSession.shared.dataTask(with: request) {
-//                completion(self.result(data: $0, response: $1, error: $2))
-//            }.resume()
-//        } catch {
-//            completion(.failure(MPError.dataTaskError(error.localizedDescription)))
-//        }
-//    }
+    public func request<T: Decodable>(url convertible: URLConvertible, method: HTTPMethod = .get,  body: HTTPBody? = nil, completion: @escaping Handler<T>) {
+        guard let url = convertible.asURL() else {
+            completion(.failure(.invalidURL))
+            return
+        }
+
+        do {
+           let request = try getRequest(for: url, and: method, body: body)
+            URLSession.shared.dataTask(with: request) {
+                completion(self.result(data: $0, response: $1, error: $2))
+            }.resume()
+        } catch {
+            completion(.failure(MPError.dataTaskError(error.localizedDescription)))
+        }
+    }
     
     func result<T: Decodable>(request: URLRequest) async throws -> T {
         do {
@@ -95,7 +95,8 @@ public class MPService {
     }
     
     func result<T: Decodable>(data: Data?, response: URLResponse?, error: Swift.Error?) -> Output<T> {
-        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+        guard let httpResponse = response as? HTTPURLResponse,
+              httpResponse.statusCode == 200 || httpResponse.statusCode == 201 else {
             return .failure(.invalidResponseStatus)
         }
         
