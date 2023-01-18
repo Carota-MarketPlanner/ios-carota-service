@@ -28,7 +28,7 @@
 		89BF41385ECDBFCA3D3C485C /* Pods-MPService_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPService_Example.debug.xcconfig"; path = "Target Support Files/Pods-MPService_Example/Pods-MPService_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DE0912D929724BAC00EAA9D8 /* AddPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostView.swift; sourceTree = "<group>"; };
 		DE0912DD2972618900EAA9D8 /* AddPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewModel.swift; sourceTree = "<group>"; };
-		DEA9F2B6296F9C3D0085E6F1 /* MPService_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MPService_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEA9F2B6296F9C3D0085E6F1 /* CarotaService_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarotaService_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA9F2B9296F9C3D0085E6F1 /* MPServiceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPServiceApp.swift; sourceTree = "<group>"; };
 		DEA9F2BD296F9C3F0085E6F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEA9F2C0296F9C3F0085E6F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 		DEA9F2AD296F9C3D0085E6F1 = {
 			isa = PBXGroup;
 			children = (
-				DEA9F2B8296F9C3D0085E6F1 /* MPServiceExample */,
+				DEA9F2B8296F9C3D0085E6F1 /* CarotaServiceExample */,
 				DEA9F2B7296F9C3D0085E6F1 /* Products */,
 				4B05CB5B6D13AB9201B5C9CD /* Pods */,
 				4E0E6B7F5507EBC12B4F9FFD /* Frameworks */,
@@ -85,12 +85,12 @@
 		DEA9F2B7296F9C3D0085E6F1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DEA9F2B6296F9C3D0085E6F1 /* MPService_Example.app */,
+				DEA9F2B6296F9C3D0085E6F1 /* CarotaService_Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DEA9F2B8296F9C3D0085E6F1 /* MPServiceExample */ = {
+		DEA9F2B8296F9C3D0085E6F1 /* CarotaServiceExample */ = {
 			isa = PBXGroup;
 			children = (
 				DEA9F2DA296FA3430085E6F1 /* App */,
@@ -100,7 +100,7 @@
 				DEA9F2D2296FA1D10085E6F1 /* ViewModel */,
 				DEA9F2BF296F9C3F0085E6F1 /* Preview Content */,
 			);
-			path = MPServiceExample;
+			path = CarotaServiceExample;
 			sourceTree = "<group>";
 		};
 		DEA9F2BF296F9C3F0085E6F1 /* Preview Content */ = {
@@ -161,9 +161,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DEA9F2B5296F9C3D0085E6F1 /* MPService_Example */ = {
+		DEA9F2B5296F9C3D0085E6F1 /* CarotaService_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DEA9F2C4296F9C3F0085E6F1 /* Build configuration list for PBXNativeTarget "MPService_Example" */;
+			buildConfigurationList = DEA9F2C4296F9C3F0085E6F1 /* Build configuration list for PBXNativeTarget "CarotaService_Example" */;
 			buildPhases = (
 				69060BA3380B83AA73788022 /* [CP] Check Pods Manifest.lock */,
 				DEA9F2B2296F9C3D0085E6F1 /* Sources */,
@@ -175,9 +175,9 @@
 			);
 			dependencies = (
 			);
-			name = MPService_Example;
+			name = CarotaService_Example;
 			productName = MPService;
-			productReference = DEA9F2B6296F9C3D0085E6F1 /* MPService_Example.app */;
+			productReference = DEA9F2B6296F9C3D0085E6F1 /* CarotaService_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -195,7 +195,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DEA9F2B1296F9C3D0085E6F1 /* Build configuration list for PBXProject "MPService" */;
+			buildConfigurationList = DEA9F2B1296F9C3D0085E6F1 /* Build configuration list for PBXProject "CarotaService" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -208,7 +208,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DEA9F2B5296F9C3D0085E6F1 /* MPService_Example */,
+				DEA9F2B5296F9C3D0085E6F1 /* CarotaService_Example */,
 			);
 		};
 /* End PBXProject section */
@@ -411,7 +411,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MPServiceExample/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CarotaServiceExample/Preview Content\"";
 				DEVELOPMENT_TEAM = VV557L4WY2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -441,7 +441,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"MPServiceExample/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"CarotaServiceExample/Preview Content\"";
 				DEVELOPMENT_TEAM = VV557L4WY2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -466,7 +466,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DEA9F2B1296F9C3D0085E6F1 /* Build configuration list for PBXProject "MPService" */ = {
+		DEA9F2B1296F9C3D0085E6F1 /* Build configuration list for PBXProject "CarotaService" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DEA9F2C2296F9C3F0085E6F1 /* Debug */,
@@ -475,7 +475,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DEA9F2C4296F9C3F0085E6F1 /* Build configuration list for PBXNativeTarget "MPService_Example" */ = {
+		DEA9F2C4296F9C3F0085E6F1 /* Build configuration list for PBXNativeTarget "CarotaService_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DEA9F2C5296F9C3F0085E6F1 /* Debug */,

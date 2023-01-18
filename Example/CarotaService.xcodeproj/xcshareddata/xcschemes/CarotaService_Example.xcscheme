@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DEA9F2B5296F9C3D0085E6F1"
-               BuildableName = "MPService_Example.app"
-               BlueprintName = "MPService_Example"
-               ReferencedContainer = "container:MPService.xcodeproj">
+               BuildableName = "CarotaService_Example.app"
+               BlueprintName = "CarotaService_Example"
+               ReferencedContainer = "container:CarotaService.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DEA9F2B5296F9C3D0085E6F1"
-            BuildableName = "MPService_Example.app"
-            BlueprintName = "MPService_Example"
-            ReferencedContainer = "container:MPService.xcodeproj">
+            BuildableName = "CarotaService_Example.app"
+            BlueprintName = "CarotaService_Example"
+            ReferencedContainer = "container:CarotaService.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DEA9F2B5296F9C3D0085E6F1"
-            BuildableName = "MPService_Example.app"
-            BlueprintName = "MPService_Example"
-            ReferencedContainer = "container:MPService.xcodeproj">
+            BuildableName = "CarotaService_Example.app"
+            BlueprintName = "CarotaService_Example"
+            ReferencedContainer = "container:CarotaService.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
