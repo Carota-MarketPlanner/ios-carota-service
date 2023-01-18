@@ -1,0 +1,490 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B0CAAF15A363A6E41C561B7 /* Pods_CarotaService_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C401671BA6D1CC62599DBA /* Pods_CarotaService_Example.framework */; };
+		DE0912DA29724BAC00EAA9D8 /* AddPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0912D929724BAC00EAA9D8 /* AddPostView.swift */; };
+		DE0912DE2972618900EAA9D8 /* AddPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0912DD2972618900EAA9D8 /* AddPostViewModel.swift */; };
+		DEA9F2BA296F9C3D0085E6F1 /* CarotaServiceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F2B9296F9C3D0085E6F1 /* CarotaServiceApp.swift */; };
+		DEA9F2BE296F9C3F0085E6F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA9F2BD296F9C3F0085E6F1 /* Assets.xcassets */; };
+		DEA9F2C1296F9C3F0085E6F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA9F2C0296F9C3F0085E6F1 /* Preview Assets.xcassets */; };
+		DEA9F2C9296FA13B0085E6F1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F2C8296FA13B0085E6F1 /* User.swift */; };
+		DEA9F2CB296FA1520085E6F1 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F2CA296FA1520085E6F1 /* Address.swift */; };
+		DEA9F2CD296FA1670085E6F1 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F2CC296FA1670085E6F1 /* Company.swift */; };
+		DEA9F2CF296FA1840085E6F1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F2CE296FA1840085E6F1 /* Post.swift */; };
+		DEA9F2D1296FA1BE0085E6F1 /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F2D0296FA1BE0085E6F1 /* UsersViewModel.swift */; };
+		DEA9F2D4296FA2030085E6F1 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F2D3296FA2020085E6F1 /* PostsViewModel.swift */; };
+		DEA9F2D7296FA26B0085E6F1 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F2D6296FA26B0085E6F1 /* UsersView.swift */; };
+		DEA9F2D9296FA2AA0085E6F1 /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F2D8296FA2AA0085E6F1 /* PostsView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		82C401671BA6D1CC62599DBA /* Pods_CarotaService_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarotaService_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B21D1D6456951D859062A35A /* Pods-CarotaService_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarotaService_Example.release.xcconfig"; path = "Target Support Files/Pods-CarotaService_Example/Pods-CarotaService_Example.release.xcconfig"; sourceTree = "<group>"; };
+		C2CCD7AC02D6853561776D06 /* Pods-CarotaService_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarotaService_Example.debug.xcconfig"; path = "Target Support Files/Pods-CarotaService_Example/Pods-CarotaService_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		DE0912D929724BAC00EAA9D8 /* AddPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostView.swift; sourceTree = "<group>"; };
+		DE0912DD2972618900EAA9D8 /* AddPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewModel.swift; sourceTree = "<group>"; };
+		DEA9F2B6296F9C3D0085E6F1 /* CarotaService_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarotaService_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEA9F2B9296F9C3D0085E6F1 /* CarotaServiceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarotaServiceApp.swift; sourceTree = "<group>"; };
+		DEA9F2BD296F9C3F0085E6F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DEA9F2C0296F9C3F0085E6F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DEA9F2C8296FA13B0085E6F1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DEA9F2CA296FA1520085E6F1 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		DEA9F2CC296FA1670085E6F1 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		DEA9F2CE296FA1840085E6F1 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		DEA9F2D0296FA1BE0085E6F1 /* UsersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		DEA9F2D3296FA2020085E6F1 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
+		DEA9F2D6296FA26B0085E6F1 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
+		DEA9F2D8296FA2AA0085E6F1 /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DEA9F2B3296F9C3D0085E6F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B0CAAF15A363A6E41C561B7 /* Pods_CarotaService_Example.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4B05CB5B6D13AB9201B5C9CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C2CCD7AC02D6853561776D06 /* Pods-CarotaService_Example.debug.xcconfig */,
+				B21D1D6456951D859062A35A /* Pods-CarotaService_Example.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4E0E6B7F5507EBC12B4F9FFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82C401671BA6D1CC62599DBA /* Pods_CarotaService_Example.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEA9F2AD296F9C3D0085E6F1 = {
+			isa = PBXGroup;
+			children = (
+				DEA9F2B8296F9C3D0085E6F1 /* CarotaServiceExample */,
+				DEA9F2B7296F9C3D0085E6F1 /* Products */,
+				4B05CB5B6D13AB9201B5C9CD /* Pods */,
+				4E0E6B7F5507EBC12B4F9FFD /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DEA9F2B7296F9C3D0085E6F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DEA9F2B6296F9C3D0085E6F1 /* CarotaService_Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DEA9F2B8296F9C3D0085E6F1 /* CarotaServiceExample */ = {
+			isa = PBXGroup;
+			children = (
+				DEA9F2DA296FA3430085E6F1 /* App */,
+				DEA9F2DB296FA67F0085E6F1 /* Resources */,
+				DEA9F2C7296FA1270085E6F1 /* Model */,
+				DEA9F2D5296FA22E0085E6F1 /* View */,
+				DEA9F2D2296FA1D10085E6F1 /* ViewModel */,
+				DEA9F2BF296F9C3F0085E6F1 /* Preview Content */,
+			);
+			path = CarotaServiceExample;
+			sourceTree = "<group>";
+		};
+		DEA9F2BF296F9C3F0085E6F1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DEA9F2C0296F9C3F0085E6F1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DEA9F2C7296FA1270085E6F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DEA9F2C8296FA13B0085E6F1 /* User.swift */,
+				DEA9F2CA296FA1520085E6F1 /* Address.swift */,
+				DEA9F2CC296FA1670085E6F1 /* Company.swift */,
+				DEA9F2CE296FA1840085E6F1 /* Post.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DEA9F2D2296FA1D10085E6F1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DEA9F2D0296FA1BE0085E6F1 /* UsersViewModel.swift */,
+				DEA9F2D3296FA2020085E6F1 /* PostsViewModel.swift */,
+				DE0912DD2972618900EAA9D8 /* AddPostViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DEA9F2D5296FA22E0085E6F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DEA9F2D6296FA26B0085E6F1 /* UsersView.swift */,
+				DEA9F2D8296FA2AA0085E6F1 /* PostsView.swift */,
+				DE0912D929724BAC00EAA9D8 /* AddPostView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DEA9F2DA296FA3430085E6F1 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DEA9F2B9296F9C3D0085E6F1 /* CarotaServiceApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DEA9F2DB296FA67F0085E6F1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DEA9F2BD296F9C3F0085E6F1 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DEA9F2B5296F9C3D0085E6F1 /* CarotaService_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEA9F2C4296F9C3F0085E6F1 /* Build configuration list for PBXNativeTarget "CarotaService_Example" */;
+			buildPhases = (
+				69060BA3380B83AA73788022 /* [CP] Check Pods Manifest.lock */,
+				DEA9F2B2296F9C3D0085E6F1 /* Sources */,
+				DEA9F2B3296F9C3D0085E6F1 /* Frameworks */,
+				DEA9F2B4296F9C3D0085E6F1 /* Resources */,
+				B4B72C619771370F4B9FEDAF /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CarotaService_Example;
+			productName = MPService;
+			productReference = DEA9F2B6296F9C3D0085E6F1 /* CarotaService_Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DEA9F2AE296F9C3D0085E6F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					DEA9F2B5296F9C3D0085E6F1 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = DEA9F2B1296F9C3D0085E6F1 /* Build configuration list for PBXProject "CarotaService" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DEA9F2AD296F9C3D0085E6F1;
+			productRefGroup = DEA9F2B7296F9C3D0085E6F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DEA9F2B5296F9C3D0085E6F1 /* CarotaService_Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DEA9F2B4296F9C3D0085E6F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEA9F2C1296F9C3F0085E6F1 /* Preview Assets.xcassets in Resources */,
+				DEA9F2BE296F9C3F0085E6F1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		69060BA3380B83AA73788022 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CarotaService_Example-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4B72C619771370F4B9FEDAF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CarotaService_Example/Pods-CarotaService_Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CarotaService_Example/Pods-CarotaService_Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CarotaService_Example/Pods-CarotaService_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DEA9F2B2296F9C3D0085E6F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEA9F2D1296FA1BE0085E6F1 /* UsersViewModel.swift in Sources */,
+				DEA9F2BA296F9C3D0085E6F1 /* CarotaServiceApp.swift in Sources */,
+				DEA9F2CB296FA1520085E6F1 /* Address.swift in Sources */,
+				DEA9F2D4296FA2030085E6F1 /* PostsViewModel.swift in Sources */,
+				DE0912DA29724BAC00EAA9D8 /* AddPostView.swift in Sources */,
+				DE0912DE2972618900EAA9D8 /* AddPostViewModel.swift in Sources */,
+				DEA9F2D7296FA26B0085E6F1 /* UsersView.swift in Sources */,
+				DEA9F2CF296FA1840085E6F1 /* Post.swift in Sources */,
+				DEA9F2CD296FA1670085E6F1 /* Company.swift in Sources */,
+				DEA9F2D9296FA2AA0085E6F1 /* PostsView.swift in Sources */,
+				DEA9F2C9296FA13B0085E6F1 /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		DEA9F2C2296F9C3F0085E6F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DEA9F2C3296F9C3F0085E6F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DEA9F2C5296F9C3F0085E6F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2CCD7AC02D6853561776D06 /* Pods-CarotaService_Example.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CarotaServiceExample/Preview Content\"";
+				DEVELOPMENT_TEAM = VV557L4WY2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = elias.com.MPService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DEA9F2C6296F9C3F0085E6F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B21D1D6456951D859062A35A /* Pods-CarotaService_Example.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CarotaServiceExample/Preview Content\"";
+				DEVELOPMENT_TEAM = VV557L4WY2;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = elias.com.MPService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DEA9F2B1296F9C3D0085E6F1 /* Build configuration list for PBXProject "CarotaService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEA9F2C2296F9C3F0085E6F1 /* Debug */,
+				DEA9F2C3296F9C3F0085E6F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEA9F2C4296F9C3F0085E6F1 /* Build configuration list for PBXNativeTarget "CarotaService_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEA9F2C5296F9C3F0085E6F1 /* Debug */,
+				DEA9F2C6296F9C3F0085E6F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DEA9F2AE296F9C3D0085E6F1 /* Project object */;
+}
