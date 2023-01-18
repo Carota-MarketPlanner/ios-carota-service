@@ -34,12 +34,3 @@ extension CSError: LocalizedError {
         }
     }
 }
-
-/*
-
-MARK: Guiding Resources
-
-https://nshipster.com/swift-foundation-error-protocols/
-https://www.vadimbulavin.com/the-power-of-namespacing-in-swift/
- 
-*/
