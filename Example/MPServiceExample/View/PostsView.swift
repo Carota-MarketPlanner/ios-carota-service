@@ -8,16 +8,18 @@
 import SwiftUI
 
 struct PostsView: View {
-    @StateObject var viewModel = PostViewModel()
-    var userId: Int?
+    @StateObject var viewModel: PostViewModel
+    @State var showAddPost = false
+    
+    init(userId: Int) {
+        _viewModel = StateObject(wrappedValue: PostViewModel(userId: userId))
+    }
     
     var body: some View {
-        List {
-            ForEach(viewModel.posts) { post in
-                VStack(alignment: .leading) {
-                    Text(post.title).font(.headline)
-                    Text(post.body).font(.callout).foregroundColor(.secondary)
-                }
+        List(viewModel.posts) { post in
+            VStack(alignment: .leading) {
+                Text(post.title).font(.headline)
+                Text(post.body).font(.callout).foregroundColor(.secondary)
             }
         }
         .overlay(content: {
@@ -33,9 +35,19 @@ struct PostsView: View {
             }
         })
         .navigationTitle("Posts")
+        .toolbar {
+            Button {
+                showAddPost.toggle()
+            } label: {
+                Image(systemName: "plus")
+            }
+            .sheet(isPresented: $showAddPost) {
+                AddPostView(userId: viewModel.userId)
+            }
+        }
         .navigationBarTitleDisplayMode(.inline)
         .task {
-            await viewModel.fetchPosts(for: userId)
+            viewModel.fetchPosts()
         }
     }
 }

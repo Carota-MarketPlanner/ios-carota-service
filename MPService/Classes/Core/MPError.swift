@@ -12,7 +12,8 @@ public enum MPError {
     case invalidResponseStatus
     case dataTaskError(String?)
     case corruptData
-    case decodinError(String)
+    case decodingError(String)
+    case encodingError
 }
 
 extension MPError: LocalizedError {
@@ -26,8 +27,10 @@ extension MPError: LocalizedError {
             return localizedDescription
         case .corruptData:
             return NSLocalizedString("The data provaided apears to be corrupted", comment: "")
-        case .decodinError(let localizedDescription):
+        case .decodingError(let localizedDescription):
             return localizedDescription
+        case .encodingError:
+            return NSLocalizedString("The encoder coud not encode object", comment: "")
         }
     }
 }

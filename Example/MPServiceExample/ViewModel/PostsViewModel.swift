@@ -7,7 +7,6 @@
 
 import Foundation
 import MPService
-import UIKit
 
 class PostViewModel: ObservableObject {
     @Published var posts: [Post] = []
@@ -15,31 +14,51 @@ class PostViewModel: ObservableObject {
     @Published var showAlert = false
     @Published var errorMessage: String?
     
-    var service = MPService(baseURL: "https://jsonplaceholder.typicode.com/")
+    var userId: Int
+    
+    var service = MPService(baseURL: "https://jsonplaceholder.typicode.com")
     
     typealias PostsResult = MPService.Output<[Post]>
     
+    init(userId: Int) {
+        self.userId = userId
+    }
+    
     @MainActor
-    func fetchPosts(for userId: Int?) {
-        if let userId = userId {
-            isLoading.toggle()
-            service.request("users/\(userId)/posts") { (result: PostsResult) in
-                defer {
-                    DispatchQueue.main.async {
-                        self.isLoading.toggle()
-                    }
+    func fetchPosts() {
+        isLoading.toggle()
+        service.request("/users/\(userId)/posts") { (result: PostsResult) in
+            defer {
+                DispatchQueue.main.async {
+                    self.isLoading.toggle()
                 }
-                
-                switch result {
-                case .success(let posts):
-                    DispatchQueue.main.async {
-                        self.posts = posts
-                    }
-                case .failure(let error):
-                    DispatchQueue.main.async {
-                        self.showAlert = true
-                        self.errorMessage = error.errorDescription
-                    }
+            }
+            
+            switch result {
+            case .success(let posts):
+                DispatchQueue.main.async {
+                    self.posts = posts
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.showAlert = true
+                    self.errorMessage = error.errorDescription
+                }
+            }
+        }
+    }
+    
+    func createPost(user: User) {
+        service.request("/posts", method: .post, body: .json(object: user)) { (result: MPService.Output<User>) in
+            switch result {
+            case .success(let postcreated):
+                DispatchQueue.main.async {
+                    print(postcreated)
+                }
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.showAlert = true
+                    self.errorMessage = error.errorDescription
                 }
             }
         }

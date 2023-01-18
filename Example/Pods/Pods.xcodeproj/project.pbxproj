@@ -15,10 +15,11 @@
 		A0F6390DC7A64E8A854AB7BEDD6F8215 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		BCE13FC122C6ECCAC7C5A27BA500944E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		D50A614012F48FD0DE1269EC36F4DDC3 /* MPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73ABC233A3970021C9D2455652E8DC29 /* MPService.swift */; };
-		DDDF5F616F1EBE6D0A2BCDE20CDD0291 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = D241DA1A4EB29A20674810350C006920 /* Service.swift */; };
 		DE0912CE2970E53A00EAA9D8 /* URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0912CD2970E53A00EAA9D8 /* URLConvertible.swift */; };
 		DE0912D12970E61400EAA9D8 /* String+URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0912D02970E61400EAA9D8 /* String+URLConvertible.swift */; };
 		DE0912D42970E65400EAA9D8 /* URL+URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0912D32970E65400EAA9D8 /* URL+URLConvertible.swift */; };
+		DE0912D62971F0B000EAA9D8 /* HTTPBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0912D52971F0B000EAA9D8 /* HTTPBody.swift */; };
+		DE0912D82971F5D900EAA9D8 /* HTTPHeaderFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0912D72971F5D900EAA9D8 /* HTTPHeaderFields.swift */; };
 		DE64039A51C0223B33EEC389281764F7 /* Pods-MPService_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 341D8F09B48E4B64C4480B5040DCFE66 /* Pods-MPService_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -55,12 +56,13 @@
 		A52F071ADB7C479C61A784FC5A311DE2 /* Pods-MPService_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MPService_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		ACC8D5CB8104C98F37DCB5C08DDE83B2 /* MPService-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MPService-umbrella.h"; sourceTree = "<group>"; };
 		CBCC1F4D3D77CD9B2355030EB3228CF0 /* Pods-MPService_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MPService_Example-Info.plist"; sourceTree = "<group>"; };
-		D241DA1A4EB29A20674810350C006920 /* Service.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		D60CBEA87076B36D35386B0FF41D872A /* MPService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MPService.release.xcconfig; sourceTree = "<group>"; };
 		DAE5F4248FCCC8B9DFD073A3A6D22F3E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DE0912CD2970E53A00EAA9D8 /* URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConvertible.swift; sourceTree = "<group>"; };
 		DE0912D02970E61400EAA9D8 /* String+URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URLConvertible.swift"; sourceTree = "<group>"; };
 		DE0912D32970E65400EAA9D8 /* URL+URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+URLConvertible.swift"; sourceTree = "<group>"; };
+		DE0912D52971F0B000EAA9D8 /* HTTPBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPBody.swift; sourceTree = "<group>"; };
+		DE0912D72971F5D900EAA9D8 /* HTTPHeaderFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeaderFields.swift; sourceTree = "<group>"; };
 		EB86C1586DDC31EAA1BEFADE22C8235D /* Pods-MPService_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MPService_Example.release.xcconfig"; sourceTree = "<group>"; };
 		EFEE6EBDCAD38C730CBD4B94ED2552FA /* Pods-MPService_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MPService_Example-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -127,7 +129,6 @@
 		9180D1A842B10D8BA46046A77BF9F261 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				D241DA1A4EB29A20674810350C006920 /* Service.swift */,
 				DE0912CD2970E53A00EAA9D8 /* URLConvertible.swift */,
 			);
 			name = Protocols;
@@ -184,6 +185,8 @@
 			isa = PBXGroup;
 			children = (
 				536F29403FF1D28209DFA9630E06B9ED /* HTTPMethod.swift */,
+				DE0912D52971F0B000EAA9D8 /* HTTPBody.swift */,
+				DE0912D72971F5D900EAA9D8 /* HTTPHeaderFields.swift */,
 			);
 			name = HTTP;
 			path = MPService/Classes/HTTP;
@@ -298,7 +301,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1420;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -350,12 +353,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				4B18CB44591F92C5E023AE0D3C8F739E /* HTTPMethod.swift in Sources */,
+				DE0912D82971F5D900EAA9D8 /* HTTPHeaderFields.swift in Sources */,
 				DE0912D42970E65400EAA9D8 /* URL+URLConvertible.swift in Sources */,
 				DE0912D12970E61400EAA9D8 /* String+URLConvertible.swift in Sources */,
 				DE0912CE2970E53A00EAA9D8 /* URLConvertible.swift in Sources */,
 				D50A614012F48FD0DE1269EC36F4DDC3 /* MPService.swift in Sources */,
 				A0297762DBF3E01780F562BBD51ADB40 /* MPService-dummy.m in Sources */,
-				DDDF5F616F1EBE6D0A2BCDE20CDD0291 /* Service.swift in Sources */,
+				DE0912D62971F0B000EAA9D8 /* HTTPBody.swift in Sources */,
 				498F324D5E90E3247FEE56029CB720A6 /* MPError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,6 +485,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -547,6 +552,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
