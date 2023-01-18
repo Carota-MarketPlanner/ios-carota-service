@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct MPServiceApp: App {
+struct CarotaServiceApp: App {
     var body: some Scene {
         WindowGroup {
             UsersView()

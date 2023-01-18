@@ -10,7 +10,7 @@
 		0B0CAAF15A363A6E41C561B7 /* Pods_CarotaService_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C401671BA6D1CC62599DBA /* Pods_CarotaService_Example.framework */; };
 		DE0912DA29724BAC00EAA9D8 /* AddPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0912D929724BAC00EAA9D8 /* AddPostView.swift */; };
 		DE0912DE2972618900EAA9D8 /* AddPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0912DD2972618900EAA9D8 /* AddPostViewModel.swift */; };
-		DEA9F2BA296F9C3D0085E6F1 /* MPServiceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F2B9296F9C3D0085E6F1 /* MPServiceApp.swift */; };
+		DEA9F2BA296F9C3D0085E6F1 /* CarotaServiceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F2B9296F9C3D0085E6F1 /* CarotaServiceApp.swift */; };
 		DEA9F2BE296F9C3F0085E6F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA9F2BD296F9C3F0085E6F1 /* Assets.xcassets */; };
 		DEA9F2C1296F9C3F0085E6F1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEA9F2C0296F9C3F0085E6F1 /* Preview Assets.xcassets */; };
 		DEA9F2C9296FA13B0085E6F1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F2C8296FA13B0085E6F1 /* User.swift */; };
@@ -30,7 +30,7 @@
 		DE0912D929724BAC00EAA9D8 /* AddPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostView.swift; sourceTree = "<group>"; };
 		DE0912DD2972618900EAA9D8 /* AddPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewModel.swift; sourceTree = "<group>"; };
 		DEA9F2B6296F9C3D0085E6F1 /* CarotaService_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarotaService_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DEA9F2B9296F9C3D0085E6F1 /* MPServiceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPServiceApp.swift; sourceTree = "<group>"; };
+		DEA9F2B9296F9C3D0085E6F1 /* CarotaServiceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarotaServiceApp.swift; sourceTree = "<group>"; };
 		DEA9F2BD296F9C3F0085E6F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEA9F2C0296F9C3F0085E6F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DEA9F2C8296FA13B0085E6F1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -145,7 +145,7 @@
 		DEA9F2DA296FA3430085E6F1 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				DEA9F2B9296F9C3D0085E6F1 /* MPServiceApp.swift */,
+				DEA9F2B9296F9C3D0085E6F1 /* CarotaServiceApp.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -273,7 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEA9F2D1296FA1BE0085E6F1 /* UsersViewModel.swift in Sources */,
-				DEA9F2BA296F9C3D0085E6F1 /* MPServiceApp.swift in Sources */,
+				DEA9F2BA296F9C3D0085E6F1 /* CarotaServiceApp.swift in Sources */,
 				DEA9F2CB296FA1520085E6F1 /* Address.swift in Sources */,
 				DEA9F2D4296FA2030085E6F1 /* PostsViewModel.swift in Sources */,
 				DE0912DA29724BAC00EAA9D8 /* AddPostView.swift in Sources */,

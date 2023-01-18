@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		088DD9CF4BEC87BE0A3BFEB1056D4A9E /* CarotaService-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7AEA8088212E3FDFD5189EBCDE8B9F37 /* CarotaService-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		17743DB3B698AC45D257396189642DB6 /* MPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD505C39485B303751D6465C04ECF18 /* MPError.swift */; };
+		17743DB3B698AC45D257396189642DB6 /* CSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD505C39485B303751D6465C04ECF18 /* CSError.swift */; };
 		36D88A491DFA50D86F83BB58E14F7CDE /* HTTPHeaderFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CE4A8D5FEEFFF8B9F9B2E48671B881B /* HTTPHeaderFields.swift */; };
 		78AD3E3476C76FB021717874CAD834E7 /* String+URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D9C41D329BDECB467030BCACB8FA8A0 /* String+URLConvertible.swift */; };
 		84660D259B9ADA8AE012332E4E06F90D /* URL+URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2810DBFC306707A1F0D80CC7466CCD /* URL+URLConvertible.swift */; };
-		8A274F7579E979580695D255B0C00BB8 /* MPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50743B54FCBED1F805CF70B60D940282 /* MPService.swift */; };
+		8A274F7579E979580695D255B0C00BB8 /* CarotaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50743B54FCBED1F805CF70B60D940282 /* CarotaService.swift */; };
 		90A0DDBA670BB315731694ED00546938 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		B44E09619456AD31467B952CD21BF3B9 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5D190C91A030D9A385BD145E963B30 /* HTTPMethod.swift */; };
 		B6BF551C5B44762FE629596005564E79 /* HTTPBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BEE1C5EC34D1D294E58E5983FD365A /* HTTPBody.swift */; };
@@ -39,12 +39,12 @@
 		0CF8D8EE7411BC1A9CEA5A23F4ACBD06 /* CarotaService.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CarotaService.modulemap; sourceTree = "<group>"; };
 		1585968A11BFEBD1B2DA0975922D05DD /* Pods-CarotaService_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CarotaService_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		29FDB39667D4E1A3F73D75DE6671E7F5 /* Pods-CarotaService_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CarotaService_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2AD505C39485B303751D6465C04ECF18 /* MPError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MPError.swift; sourceTree = "<group>"; };
+		2AD505C39485B303751D6465C04ECF18 /* CSError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CSError.swift; sourceTree = "<group>"; };
 		375D15BD59F0B7FEB714BB876D67BD9E /* CarotaService-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CarotaService-prefix.pch"; sourceTree = "<group>"; };
 		43BEE1C5EC34D1D294E58E5983FD365A /* HTTPBody.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPBody.swift; sourceTree = "<group>"; };
 		4E5AE88607282951987B0AE9C229A1A0 /* Pods-CarotaService_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CarotaService_Example-dummy.m"; sourceTree = "<group>"; };
 		4F2810DBFC306707A1F0D80CC7466CCD /* URL+URLConvertible.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "URL+URLConvertible.swift"; sourceTree = "<group>"; };
-		50743B54FCBED1F805CF70B60D940282 /* MPService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MPService.swift; sourceTree = "<group>"; };
+		50743B54FCBED1F805CF70B60D940282 /* CarotaService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CarotaService.swift; sourceTree = "<group>"; };
 		5773E9CA33D5779F140E243B9664E8B6 /* Pods-CarotaService_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CarotaService_Example.modulemap"; sourceTree = "<group>"; };
 		667047E30D49F39F59EEC31582409B62 /* CarotaService.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CarotaService.debug.xcconfig; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -53,14 +53,14 @@
 		83D492650A36888F11D58A4DE5F56D53 /* CarotaService.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CarotaService.release.xcconfig; sourceTree = "<group>"; };
 		8CE4A8D5FEEFFF8B9F9B2E48671B881B /* HTTPHeaderFields.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPHeaderFields.swift; sourceTree = "<group>"; };
 		8D96B32CA1C5089D728ED2D7D27C2C57 /* Pods-CarotaService_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CarotaService_Example.release.xcconfig"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DC4A703329BE42F7C2B235DD8C6FD3C /* Pods-CarotaService_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-CarotaService_Example-frameworks.sh"; sourceTree = "<group>"; };
-		9EAEBE472DBF3E0EA25FCA329039EA2D /* CarotaService.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = CarotaService.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9EAEBE472DBF3E0EA25FCA329039EA2D /* CarotaService.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = CarotaService.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F5D190C91A030D9A385BD145E963B30 /* HTTPMethod.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		A48708A2AF1569417129E278EDBB546A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		A48708A2AF1569417129E278EDBB546A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		B2F30A692DECA8C54790544344728784 /* CarotaService */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CarotaService; path = CarotaService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5205BFAAF81D3174FFF9DCC6CBE92A7 /* Pods-CarotaService_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CarotaService_Example-Info.plist"; sourceTree = "<group>"; };
-		CBA629AA021CBC0BEB5E8FEA5A67E96D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		CBA629AA021CBC0BEB5E8FEA5A67E96D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D22519EEA6F5D2AE89C6BA2AD313E359 /* Pods-CarotaService_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CarotaService_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		D622525DFA433034866F32526B42EFE7 /* Pods-CarotaService_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CarotaService_Example"; path = Pods_CarotaService_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7B24626661C0631C0A6954E86B5B2AF /* CarotaService-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CarotaService-Info.plist"; sourceTree = "<group>"; };
@@ -106,8 +106,8 @@
 		2FD85ABD7A5FF109BD566CFCE8F880AF /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				2AD505C39485B303751D6465C04ECF18 /* MPError.swift */,
-				50743B54FCBED1F805CF70B60D940282 /* MPService.swift */,
+				2AD505C39485B303751D6465C04ECF18 /* CSError.swift */,
+				50743B54FCBED1F805CF70B60D940282 /* CarotaService.swift */,
 			);
 			name = Core;
 			path = CarotaService/Classes/Core;
@@ -127,8 +127,8 @@
 				2FD85ABD7A5FF109BD566CFCE8F880AF /* Core */,
 				BD480DCA29F21B3D19E1AFDE61E5305F /* Extension */,
 				8BC176662CC1771F6F095574708EA6D5 /* HTTP */,
-				FB6191D98DF75DBD245C7EAAA69FB4E7 /* Pod */,
 				943D87CD0F07CCD7B954DDDD0C17B466 /* Protocols */,
+				FB6191D98DF75DBD245C7EAAA69FB4E7 /* Pod */,
 				C0940BFB5896E52E5854D1B427A619B7 /* Support Files */,
 			);
 			name = CarotaService;
@@ -356,8 +356,8 @@
 				B6BF551C5B44762FE629596005564E79 /* HTTPBody.swift in Sources */,
 				36D88A491DFA50D86F83BB58E14F7CDE /* HTTPHeaderFields.swift in Sources */,
 				B44E09619456AD31467B952CD21BF3B9 /* HTTPMethod.swift in Sources */,
-				17743DB3B698AC45D257396189642DB6 /* MPError.swift in Sources */,
-				8A274F7579E979580695D255B0C00BB8 /* MPService.swift in Sources */,
+				17743DB3B698AC45D257396189642DB6 /* CSError.swift in Sources */,
+				8A274F7579E979580695D255B0C00BB8 /* CarotaService.swift in Sources */,
 				78AD3E3476C76FB021717874CAD834E7 /* String+URLConvertible.swift in Sources */,
 				84660D259B9ADA8AE012332E4E06F90D /* URL+URLConvertible.swift in Sources */,
 				D013C02397019E819EBF421AE8D26B23 /* URLConvertible.swift in Sources */,

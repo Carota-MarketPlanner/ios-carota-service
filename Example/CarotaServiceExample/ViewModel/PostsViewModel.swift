@@ -16,9 +16,9 @@ class PostViewModel: ObservableObject {
     
     var userId: Int
     
-    var service = MPService(baseURL: "https://jsonplaceholder.typicode.com")
+    var service = CarotaService(baseURL: "https://jsonplaceholder.typicode.com")
     
-    typealias PostsResult = MPService.Output<[Post]>
+    typealias PostsResult = CarotaService.Output<[Post]>
     
     init(userId: Int) {
         self.userId = userId
@@ -49,7 +49,7 @@ class PostViewModel: ObservableObject {
     }
     
     func createPost(user: User) {
-        service.request("/posts", method: .post, body: .json(object: user)) { (result: MPService.Output<User>) in
+        service.request("/posts", method: .post, body: .json(object: user)) { (result: CarotaService.Output<User>) in
             switch result {
             case .success(let postcreated):
                 DispatchQueue.main.async {

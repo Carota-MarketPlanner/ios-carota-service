@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum MPError {
+public enum CSError {
     case invalidURL
     case invalidResponseStatus
     case dataTaskError(String?)
@@ -16,7 +16,7 @@ public enum MPError {
     case encodingError
 }
 
-extension MPError: LocalizedError {
+extension CSError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .invalidURL:

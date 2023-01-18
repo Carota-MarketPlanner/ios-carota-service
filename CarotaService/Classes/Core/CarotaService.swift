@@ -7,9 +7,9 @@
 
 import Foundation
 
-public class MPService {
+public class CarotaService {
     
-    public typealias Output<T> = Result<T, MPError>
+    public typealias Output<T> = Result<T, CSError>
     public typealias Handler<T> = (Output<T>) -> Void
     
     let baseURL: URLConvertible?
@@ -20,7 +20,7 @@ public class MPService {
     
     public func request<T: Decodable>(_ endpoint: String, method: HTTPMethod = .get, body: HTTPBody? = nil) async throws -> T {
         guard let url = baseURL?.asURL()?.appendingPathComponent(endpoint) else {
-            throw MPError.invalidURL
+            throw CSError.invalidURL
         }
         
         do {
@@ -33,7 +33,7 @@ public class MPService {
     
     public func request<T: Decodable>(url convertible: URLConvertible, method: HTTPMethod = .get, body: HTTPBody? = nil) async throws -> T {
         guard let url = convertible.asURL() else {
-            throw MPError.invalidURL
+            throw CSError.invalidURL
         }
         
         do {
@@ -56,7 +56,7 @@ public class MPService {
                 completion(self.result(data: $0, response: $1, error: $2))
             }.resume()
         } catch {
-            completion(.failure(MPError.dataTaskError(error.localizedDescription)))
+            completion(.failure(CSError.dataTaskError(error.localizedDescription)))
         }
     }
     
@@ -72,7 +72,7 @@ public class MPService {
                 completion(self.result(data: $0, response: $1, error: $2))
             }.resume()
         } catch {
-            completion(.failure(MPError.dataTaskError(error.localizedDescription)))
+            completion(.failure(CSError.dataTaskError(error.localizedDescription)))
         }
     }
     
@@ -81,16 +81,16 @@ public class MPService {
             let (data, response) = try await URLSession.shared.data(for: request)
         
             guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                throw MPError.invalidResponseStatus
+                throw CSError.invalidResponseStatus
             }
             
             do {
                 return try JSONDecoder().decode(T.self, from: data)
             } catch {
-                throw MPError.decodingError(error.localizedDescription)
+                throw CSError.decodingError(error.localizedDescription)
             }
         } catch {
-            throw MPError.dataTaskError(error.localizedDescription)
+            throw CSError.dataTaskError(error.localizedDescription)
         }
     }
     
@@ -122,7 +122,7 @@ public class MPService {
         
         if let body = body {
             guard let data = body.data else {
-                throw MPError.encodingError
+                throw CSError.encodingError
             }
             
             request.httpBody = data
