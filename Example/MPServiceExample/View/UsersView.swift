@@ -13,15 +13,11 @@ struct UsersView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(viewModel.users) { user in
-                    NavigationLink {
-                        PostsView(userId: user.id)
-                    } label: {
-                        VStack(alignment: .leading) {
-                            Text(user.name).font(.title3)
-                            Text(user.email)
-                        }
+            List(viewModel.users) { user in
+                NavigationLink(destination: PostsView(userId: user.id)) {
+                    VStack(alignment: .leading) {
+                        Text(user.name).font(.title3)
+                        Text(user.email)
                     }
                 }
             }

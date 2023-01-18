@@ -7,6 +7,19 @@
 
 import SwiftUI
 
+struct MyStyle: TextFieldStyle {
+  
+  func _body(configuration: TextField<_Label>) -> some View {
+      configuration
+          .textFieldStyle(PlainTextFieldStyle())
+          .padding(13)
+          .background(
+            RoundedRectangle(cornerRadius: 8)
+                .strokeBorder(.gray, lineWidth: 1)
+          )
+  }
+}
+
 struct AddPostView: View {
     @Environment(\.dismiss) var dismiss
     
@@ -22,18 +35,17 @@ struct AddPostView: View {
                 Spacer()
                 
                 TextField("Título: ", text: $viewModel.title)
-                    .textFieldStyle(.roundedBorder)
+                    .textFieldStyle(MyStyle())
                 
                 TextField("Corpo: ", text: $viewModel.body)
-                    .textFieldStyle(.roundedBorder)
+                    .textFieldStyle(MyStyle())
                 
                 Spacer()
                 
-                Button{
+                Button {
                     savePost()
                 } label: {
-                    Label("Salvar",
-                          systemImage: "square.and.arrow.down")
+                    Label("Salvar", systemImage: "square.and.arrow.down")
                         .font(.title3)
                         .frame(maxWidth: .infinity)
                 }

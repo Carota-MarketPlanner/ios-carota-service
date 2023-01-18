@@ -16,12 +16,10 @@ struct PostsView: View {
     }
     
     var body: some View {
-        List {
-            ForEach(viewModel.posts) { post in
-                VStack(alignment: .leading) {
-                    Text(post.title).font(.headline)
-                    Text(post.body).font(.callout).foregroundColor(.secondary)
-                }
+        List(viewModel.posts) { post in
+            VStack(alignment: .leading) {
+                Text(post.title).font(.headline)
+                Text(post.body).font(.callout).foregroundColor(.secondary)
             }
         }
         .overlay(content: {
@@ -41,7 +39,7 @@ struct PostsView: View {
             Button {
                 showAddPost.toggle()
             } label: {
-                Label("", systemImage: "plus")
+                Image(systemName: "plus")
             }
             .sheet(isPresented: $showAddPost) {
                 AddPostView(userId: viewModel.userId)
