@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double MPServiceVersionNumber;
-FOUNDATION_EXPORT const unsigned char MPServiceVersionString[];
+FOUNDATION_EXPORT double CarotaServiceVersionNumber;
+FOUNDATION_EXPORT const unsigned char CarotaServiceVersionString[];
 

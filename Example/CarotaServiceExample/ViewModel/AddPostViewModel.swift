@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import MPService
+import CarotaService
 
 class AddPostViewModel: ObservableObject {
     var service = MPService(baseURL: "https://jsonplaceholder.typicode.com")

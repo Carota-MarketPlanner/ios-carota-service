@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import MPService
+import CarotaService
 
 class PostViewModel: ObservableObject {
     @Published var posts: [Post] = []

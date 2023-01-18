@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import MPService
+import CarotaService
 
 class UsersViewModel: ObservableObject {
     @Published var users: [User] = []

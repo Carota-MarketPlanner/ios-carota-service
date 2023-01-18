@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_MPService_ExampleVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_MPService_ExampleVersionString[];
+FOUNDATION_EXPORT double Pods_CarotaService_ExampleVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_CarotaService_ExampleVersionString[];
 

@@ -1,7 +1,7 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
-## MPService
+## CarotaService
 
 Copyright (c) 2023 Elias Ferreira <eliasferreira.pro@gmail.com>
 

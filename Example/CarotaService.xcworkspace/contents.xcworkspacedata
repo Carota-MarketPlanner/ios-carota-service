@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/eliasferreira/Developer/carota/ios-carota-service/Example/CarotaService.xcodeproj">
+      location = "group:CarotaService.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
