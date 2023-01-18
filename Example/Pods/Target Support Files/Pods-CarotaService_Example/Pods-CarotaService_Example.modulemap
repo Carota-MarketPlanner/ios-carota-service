@@ -1,0 +1,6 @@
+framework module Pods_CarotaService_Example {
+  umbrella header "Pods-CarotaService_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
