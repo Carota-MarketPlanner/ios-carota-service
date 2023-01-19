@@ -18,6 +18,8 @@
 		B6BF551C5B44762FE629596005564E79 /* HTTPBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BEE1C5EC34D1D294E58E5983FD365A /* HTTPBody.swift */; };
 		D013C02397019E819EBF421AE8D26B23 /* URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0D45D99FDEA2BC498553F58A81F6E /* URLConvertible.swift */; };
 		D2255BE23CFBCAD981B87D9F68FD67AD /* CarotaService-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CD69C00E1E4C8A7D10AA49567F3148 /* CarotaService-dummy.m */; };
+		DE69F42829789D5C00A64696 /* CarotaServiceSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69F42729789D5C00A64696 /* CarotaServiceSingleton.swift */; };
+		DE69F42A2978A3A200A64696 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69F4292978A3A200A64696 /* Service.swift */; };
 		DEFDB1F28C5A3D607A019061BE43ABFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		DFEB59A1F7CA2A548436F47C944F7ED2 /* Pods-CarotaService_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AA027A63AB6311E2E5C3E059431BDE3 /* Pods-CarotaService_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA3DF2C66D67AC1E8BE5918F3AED88B5 /* Pods-CarotaService_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5AE88607282951987B0AE9C229A1A0 /* Pods-CarotaService_Example-dummy.m */; };
@@ -64,6 +66,8 @@
 		D22519EEA6F5D2AE89C6BA2AD313E359 /* Pods-CarotaService_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CarotaService_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		D622525DFA433034866F32526B42EFE7 /* Pods-CarotaService_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CarotaService_Example"; path = Pods_CarotaService_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7B24626661C0631C0A6954E86B5B2AF /* CarotaService-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CarotaService-Info.plist"; sourceTree = "<group>"; };
+		DE69F42729789D5C00A64696 /* CarotaServiceSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarotaServiceSingleton.swift; sourceTree = "<group>"; };
+		DE69F4292978A3A200A64696 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		E9CD69C00E1E4C8A7D10AA49567F3148 /* CarotaService-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CarotaService-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +163,8 @@
 			isa = PBXGroup;
 			children = (
 				04D0D45D99FDEA2BC498553F58A81F6E /* URLConvertible.swift */,
+				DE69F42729789D5C00A64696 /* CarotaServiceSingleton.swift */,
+				DE69F4292978A3A200A64696 /* Service.swift */,
 			);
 			name = Protocols;
 			path = CarotaService/Classes/Protocols;
@@ -359,6 +365,8 @@
 				17743DB3B698AC45D257396189642DB6 /* CSError.swift in Sources */,
 				8A274F7579E979580695D255B0C00BB8 /* CarotaService.swift in Sources */,
 				78AD3E3476C76FB021717874CAD834E7 /* String+URLConvertible.swift in Sources */,
+				DE69F42829789D5C00A64696 /* CarotaServiceSingleton.swift in Sources */,
+				DE69F42A2978A3A200A64696 /* Service.swift in Sources */,
 				84660D259B9ADA8AE012332E4E06F90D /* URL+URLConvertible.swift in Sources */,
 				D013C02397019E819EBF421AE8D26B23 /* URLConvertible.swift in Sources */,
 			);

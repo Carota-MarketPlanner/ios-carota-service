@@ -15,8 +15,7 @@ class PostViewModel: ObservableObject {
     @Published var errorMessage: String?
     
     var userId: Int
-    
-    var service = CarotaService(baseURL: "https://jsonplaceholder.typicode.com")
+    var service = CarotaService.getInstance(for: "https://jsonplaceholder.typicode.com")
     
     typealias PostsResult = CarotaService.Output<[Post]>
     
