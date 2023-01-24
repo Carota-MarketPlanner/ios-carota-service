@@ -24,13 +24,13 @@ public class CarotaService {
         return CarotaService(baseURL: baseURL) as Service
     }
     
-    private func getRequest(for url: URL, and method: HTTPMethod, body: HTTPBody?) throws -> URLRequest {
+    private func getRequest(for url: URL, and method: HTTPMethod, body: HTTPBody?) -> URLRequest? {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         
         if let body = body {
             guard let data = body.data else {
-                throw CSError.encodingError
+                return nil
             }
             
             request.httpBody = data
@@ -93,14 +93,14 @@ extension CarotaService: Service {
             return
         }
         
-        do {
-            let request = try getRequest(for: url, and: method, body: body)
-            URLSession.shared.dataTask(with: request) {
-                completion(self.result(data: $0, response: $1, error: $2))
-            }.resume()
-        } catch {
-            completion(.failure(CSError.dataTaskError(error.localizedDescription)))
+        guard let request = getRequest(for: url, and: method, body: body) else {
+            completion(.failure(.encodingError))
+            return
         }
+        
+        URLSession.shared.dataTask(with: request) {
+            completion(self.result(data: $0, response: $1, error: $2))
+        }.resume()
     }
     
     // MARK:  Using Concurrency
@@ -110,8 +110,11 @@ extension CarotaService: Service {
             throw CSError.invalidURL
         }
         
+        guard let request = getRequest(for: url, and: method, body: body) else {
+            throw CSError.encodingError
+        }
+        
         do {
-            let request = try getRequest(for: url, and: method, body: body)
             return try await result(request: request)
         } catch {
             throw error
@@ -130,14 +133,14 @@ extension CarotaService: ServiceSingleton {
             return
         }
 
-        do {
-           let request = try getRequest(for: url, and: method, body: body)
-            URLSession.shared.dataTask(with: request) {
-                completion(self.result(data: $0, response: $1, error: $2))
-            }.resume()
-        } catch {
-            completion(.failure(CSError.dataTaskError(error.localizedDescription)))
+        guard let request = getRequest(for: url, and: method, body: body) else {
+            completion(.failure(.encodingError))
+            return
         }
+        
+        URLSession.shared.dataTask(with: request) {
+            completion(self.result(data: $0, response: $1, error: $2))
+        }.resume()
     }
     
     // MARK:  Using Concurrency
@@ -147,8 +150,11 @@ extension CarotaService: ServiceSingleton {
             throw CSError.invalidURL
         }
         
+        guard let request = getRequest(for: url, and: method, body: body) else {
+            throw CSError.encodingError
+        }
+        
         do {
-            let request = try getRequest(for: url, and: method, body: body)
             return try await result(request: request)
         } catch {
             throw error

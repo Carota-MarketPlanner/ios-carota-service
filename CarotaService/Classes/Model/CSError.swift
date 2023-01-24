@@ -20,7 +20,9 @@ extension CSError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .invalidURL:
-            return NSLocalizedString("The endpoint url is invalid", comment: "")
+            return NSLocalizedString("The url is invalid", comment: "")
+        case .encodingError:
+            return NSLocalizedString("The encoder could not encode object", comment: "")
         case .invalidResponseStatus:
             return NSLocalizedString("The API faild to issue a valid response", comment: "")
         case .dataTaskError(let localizedDescription):
@@ -29,8 +31,6 @@ extension CSError: LocalizedError {
             return NSLocalizedString("The data provaided apears to be corrupted", comment: "")
         case .decodingError(let localizedDescription):
             return localizedDescription
-        case .encodingError:
-            return NSLocalizedString("The encoder coud not encode object", comment: "")
         }
     }
 }
