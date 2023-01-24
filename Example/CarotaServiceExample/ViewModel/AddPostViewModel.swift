@@ -9,7 +9,7 @@ import Foundation
 import CarotaService
 
 class AddPostViewModel: ObservableObject {
-    var service = CarotaService(baseURL: "https://jsonplaceholder.typicode.com")
+    var service = CarotaService.getInstance(for: "https://jsonplaceholder.typicode.com")
     
     @Published var title: String = ""
     @Published var body: String = ""

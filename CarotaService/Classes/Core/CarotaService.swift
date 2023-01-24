@@ -12,96 +12,26 @@ public class CarotaService {
     public typealias Output<T> = Result<T, CSError>
     public typealias Handler<T> = (Output<T>) -> Void
     
-    let baseURL: URLConvertible?
+    var baseURL: URLConvertible?
+    var authorization: HTTPAuthentication?
     
-    public init(baseURL: URLConvertible? = nil) {
+    public static let shared = CarotaService() as (ServiceSingleton & Auth)
+    
+    private init(baseURL: URLConvertible? = nil) {
         self.baseURL = baseURL
     }
     
-    public func request<T: Decodable>(_ endpoint: String, method: HTTPMethod = .get, body: HTTPBody? = nil) async throws -> T {
-        guard let url = baseURL?.asURL()?.appendingPathComponent(endpoint) else {
-            throw CSError.invalidURL
+    public static func getInstance(for baseURL: URLConvertible) -> (Service & Auth) {
+        return CarotaService(baseURL: baseURL) as (Service & Auth)
+    }
+        
+    private func result<T: Decodable>(data: Data?, response: URLResponse?, error: Swift.Error?) -> Output<T> {
+        if let statusCodeError = getStatusCodeError(response) {
+            return .failure(statusCodeError)
         }
         
-        do {
-            let request = try getRequest(for: url, and: method, body: body)
-            return try await result(request: request)
-        } catch {
-            throw error
-        }
-    }
-    
-    public func request<T: Decodable>(url convertible: URLConvertible, method: HTTPMethod = .get, body: HTTPBody? = nil) async throws -> T {
-        guard let url = convertible.asURL() else {
-            throw CSError.invalidURL
-        }
-        
-        do {
-            let request = try getRequest(for: url, and: method, body: body)
-            return try await result(request: request)
-        } catch {
-            throw error
-        }
-    }
-    
-    public func request<T: Decodable>(_ endpoint: String, method: HTTPMethod = .get, body: HTTPBody? = nil, completion: @escaping Handler<T>) {
-        guard let url = baseURL?.asURL()?.appendingPathComponent(endpoint) else {
-            completion(.failure(.invalidURL))
-            return
-        }
-        
-        do {
-            let request = try getRequest(for: url, and: method, body: body)
-            URLSession.shared.dataTask(with: request) {
-                completion(self.result(data: $0, response: $1, error: $2))
-            }.resume()
-        } catch {
-            completion(.failure(CSError.dataTaskError(error.localizedDescription)))
-        }
-    }
-    
-    public func request<T: Decodable>(url convertible: URLConvertible, method: HTTPMethod = .get,  body: HTTPBody? = nil, completion: @escaping Handler<T>) {
-        guard let url = convertible.asURL() else {
-            completion(.failure(.invalidURL))
-            return
-        }
-
-        do {
-           let request = try getRequest(for: url, and: method, body: body)
-            URLSession.shared.dataTask(with: request) {
-                completion(self.result(data: $0, response: $1, error: $2))
-            }.resume()
-        } catch {
-            completion(.failure(CSError.dataTaskError(error.localizedDescription)))
-        }
-    }
-    
-    func result<T: Decodable>(request: URLRequest) async throws -> T {
-        do {
-            let (data, response) = try await URLSession.shared.data(for: request)
-        
-            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                throw CSError.invalidResponseStatus
-            }
-            
-            do {
-                return try JSONDecoder().decode(T.self, from: data)
-            } catch {
-                throw CSError.decodingError(error.localizedDescription)
-            }
-        } catch {
-            throw CSError.dataTaskError(error.localizedDescription)
-        }
-    }
-    
-    func result<T: Decodable>(data: Data?, response: URLResponse?, error: Swift.Error?) -> Output<T> {
-        guard let httpResponse = response as? HTTPURLResponse,
-              httpResponse.statusCode == 200 || httpResponse.statusCode == 201 else {
-            return .failure(.invalidResponseStatus)
-        }
-        
-        guard error == nil else {
-            return .failure(.dataTaskError(error?.localizedDescription))
+        if let err = error {
+            return .failure(.dataTaskError(err.localizedDescription))
         }
         
         guard let data = data else {
@@ -115,21 +45,158 @@ public class CarotaService {
         }
     }
     
+    // MARK:  Using Concurrency
     
-    func getRequest(for url: URL, and method: HTTPMethod, body: HTTPBody?) throws -> URLRequest {
+    private func result<T: Decodable>(request: URLRequest) async throws -> T {
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+        
+            if let statusCodeError = getStatusCodeError(response) {
+                throw statusCodeError
+            }
+            
+            do {
+                return try JSONDecoder().decode(T.self, from: data)
+            } catch {
+                throw CSError.decodingError(error.localizedDescription)
+            }
+        } catch {
+            throw CSError.dataTaskError(error.localizedDescription)
+        }
+    }
+    
+    private func getRequest(for url: URL, and method: HTTPMethod, body: HTTPBody?) -> URLRequest? {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         
         if let body = body {
             guard let data = body.data else {
-                throw CSError.encodingError
+                return nil
             }
             
             request.httpBody = data
             request.addValue(body.contentType, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
         }
         
+        if let auth = self.authorization {
+            request.addValue(auth.value, forHTTPHeaderField: HTTPHeaderField.authorization.rawValue)
+        }
+        
         return request
     }
+    
+    private func getStatusCodeError(_ response: URLResponse?) -> CSError? {
+        guard let httpResponse = response as? HTTPURLResponse else {
+            return .invalidResponseStatus
+        }
+        
+        switch httpResponse.statusCode {
+        case 401:
+            return .unauthorized
+        case 404:
+            return .notFound
+        case 500:
+            return .serverError
+        case 400:
+            return .requestError
+        case 200, 201:
+            return nil
+        default:
+            return .unknown
+        }
+    }
+    
+}
+
+// MARK: - Auth functions
+
+extension CarotaService: Auth {
+    public func setAuthorization(_ auth: HTTPAuthentication) {
+        self.authorization = auth
+    }
+    
+    public func clearAuthorization() {
+        self.authorization = nil
+    }
+}
+
+// MARK: - Service For Instances
+
+extension CarotaService: Service {
+    
+    public func request<T: Decodable>(_ endpoint: String, method: HTTPMethod = .get, body: HTTPBody? = nil, completion: @escaping Handler<T>) {
+        guard let url = baseURL?.asURL()?.appendingPathComponent(endpoint) else {
+            completion(.failure(.invalidURL))
+            return
+        }
+        
+        guard let request = getRequest(for: url, and: method, body: body) else {
+            completion(.failure(.encodingError))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            completion(self.result(data: data, response: response, error: error))
+        }.resume()
+    }
+    
+    // MARK:  Using Concurrency
+    
+    public func request<T: Decodable>(_ endpoint: String, method: HTTPMethod = .get, body: HTTPBody? = nil) async throws -> T {
+        guard let url = baseURL?.asURL()?.appendingPathComponent(endpoint) else {
+            throw CSError.invalidURL
+        }
+        
+        guard let request = getRequest(for: url, and: method, body: body) else {
+            throw CSError.encodingError
+        }
+        
+        do {
+            return try await result(request: request)
+        } catch {
+            throw error
+        }
+    }
+    
+}
+
+// MARK: - For Singleton
+
+extension CarotaService: ServiceSingleton {
+    
+    public func request<T: Decodable>(url convertible: URLConvertible, method: HTTPMethod = .get,  body: HTTPBody? = nil, completion: @escaping Handler<T>) {
+        guard let url = convertible.asURL() else {
+            completion(.failure(.invalidURL))
+            return
+        }
+
+        guard let request = getRequest(for: url, and: method, body: body) else {
+            completion(.failure(.encodingError))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            completion(self.result(data: data, response: response, error: error))
+        }.resume()
+    }
+    
+    // MARK:  Using Concurrency
+    
+    public func request<T: Decodable>(url convertible: URLConvertible, method: HTTPMethod = .get, body: HTTPBody? = nil) async throws -> T {
+        guard let url = convertible.asURL() else {
+            throw CSError.invalidURL
+        }
+        
+        guard let request = getRequest(for: url, and: method, body: body) else {
+            throw CSError.encodingError
+        }
+        
+        do {
+            return try await result(request: request)
+        } catch {
+            throw error
+        }
+    }
+    
 }
 

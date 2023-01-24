@@ -1,9 +1,9 @@
-# MPService
+# CarotaService
 
-[![CI Status](https://img.shields.io/travis/Elias Ferreira/MPService.svg?style=flat)](https://travis-ci.org/Elias Ferreira/MPService)
-[![Version](https://img.shields.io/cocoapods/v/MPService.svg?style=flat)](https://cocoapods.org/pods/MPService)
-[![License](https://img.shields.io/cocoapods/l/MPService.svg?style=flat)](https://cocoapods.org/pods/MPService)
-[![Platform](https://img.shields.io/cocoapods/p/MPService.svg?style=flat)](https://cocoapods.org/pods/MPService)
+[![CI Status](https://img.shields.io/travis/Elias Ferreira/CarotaService.svg?style=flat)](https://travis-ci.org/Elias Ferreira/CarotaService)
+[![Version](https://img.shields.io/cocoapods/v/CarotaService.svg?style=flat)](https://cocoapods.org/pods/MPService)
+[![License](https://img.shields.io/cocoapods/l/CarotaService.svg?style=flat)](https://cocoapods.org/pods/MPService)
+[![Platform](https://img.shields.io/cocoapods/p/CarotaService.svg?style=flat)](https://cocoapods.org/pods/MPService)
 
 ## Example
 

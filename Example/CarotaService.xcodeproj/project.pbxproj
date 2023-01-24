@@ -21,6 +21,8 @@
 		DEA9F2D4296FA2030085E6F1 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F2D3296FA2020085E6F1 /* PostsViewModel.swift */; };
 		DEA9F2D7296FA26B0085E6F1 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F2D6296FA26B0085E6F1 /* UsersView.swift */; };
 		DEA9F2D9296FA2AA0085E6F1 /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F2D8296FA2AA0085E6F1 /* PostsView.swift */; };
+		DEF70EB82980751000698770 /* TesteLogadoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF70EB72980751000698770 /* TesteLogadoViewModel.swift */; };
+		DEF70EBA2980754200698770 /* UserLogado.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF70EB92980754200698770 /* UserLogado.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		DEA9F2D3296FA2020085E6F1 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		DEA9F2D6296FA26B0085E6F1 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		DEA9F2D8296FA2AA0085E6F1 /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
+		DEF70EB72980751000698770 /* TesteLogadoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesteLogadoViewModel.swift; sourceTree = "<group>"; };
+		DEF70EB92980754200698770 /* UserLogado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogado.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,7 @@
 				DEA9F2CA296FA1520085E6F1 /* Address.swift */,
 				DEA9F2CC296FA1670085E6F1 /* Company.swift */,
 				DEA9F2CE296FA1840085E6F1 /* Post.swift */,
+				DEF70EB92980754200698770 /* UserLogado.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 		DEA9F2D2296FA1D10085E6F1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				DEF70EB72980751000698770 /* TesteLogadoViewModel.swift */,
 				DEA9F2D0296FA1BE0085E6F1 /* UsersViewModel.swift */,
 				DEA9F2D3296FA2020085E6F1 /* PostsViewModel.swift */,
 				DE0912DD2972618900EAA9D8 /* AddPostViewModel.swift */,
@@ -280,8 +286,10 @@
 				DE0912DE2972618900EAA9D8 /* AddPostViewModel.swift in Sources */,
 				DEA9F2D7296FA26B0085E6F1 /* UsersView.swift in Sources */,
 				DEA9F2CF296FA1840085E6F1 /* Post.swift in Sources */,
+				DEF70EB82980751000698770 /* TesteLogadoViewModel.swift in Sources */,
 				DEA9F2CD296FA1670085E6F1 /* Company.swift in Sources */,
 				DEA9F2D9296FA2AA0085E6F1 /* PostsView.swift in Sources */,
+				DEF70EBA2980754200698770 /* UserLogado.swift in Sources */,
 				DEA9F2C9296FA13B0085E6F1 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

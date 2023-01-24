@@ -14,7 +14,7 @@ class UsersViewModel: ObservableObject {
     @Published var showAlert = false
     @Published var errorMessage: String?
     
-    let service = CarotaService(baseURL: "https://jsonplaceholder.typicode.com")
+    var service = CarotaService.getInstance(for: "https://jsonplaceholder.typicode.com")
     
     @MainActor
     func fetchUsers() async {

@@ -18,6 +18,11 @@
 		B6BF551C5B44762FE629596005564E79 /* HTTPBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BEE1C5EC34D1D294E58E5983FD365A /* HTTPBody.swift */; };
 		D013C02397019E819EBF421AE8D26B23 /* URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D0D45D99FDEA2BC498553F58A81F6E /* URLConvertible.swift */; };
 		D2255BE23CFBCAD981B87D9F68FD67AD /* CarotaService-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E9CD69C00E1E4C8A7D10AA49567F3148 /* CarotaService-dummy.m */; };
+		DE300856297B2EE50095BF9F /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE300855297B2EE50095BF9F /* Empty.swift */; };
+		DE69F42829789D5C00A64696 /* ServiceSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69F42729789D5C00A64696 /* ServiceSingleton.swift */; };
+		DE69F42A2978A3A200A64696 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE69F4292978A3A200A64696 /* Service.swift */; };
+		DEF70EB62980702400698770 /* HTTPAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF70EB52980702400698770 /* HTTPAuthentication.swift */; };
+		DEF70EBC2980814500698770 /* CarotaAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF70EBB2980814500698770 /* CarotaAuth.swift */; };
 		DEFDB1F28C5A3D607A019061BE43ABFC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		DFEB59A1F7CA2A548436F47C944F7ED2 /* Pods-CarotaService_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AA027A63AB6311E2E5C3E059431BDE3 /* Pods-CarotaService_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA3DF2C66D67AC1E8BE5918F3AED88B5 /* Pods-CarotaService_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5AE88607282951987B0AE9C229A1A0 /* Pods-CarotaService_Example-dummy.m */; };
@@ -64,6 +69,11 @@
 		D22519EEA6F5D2AE89C6BA2AD313E359 /* Pods-CarotaService_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CarotaService_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		D622525DFA433034866F32526B42EFE7 /* Pods-CarotaService_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-CarotaService_Example"; path = Pods_CarotaService_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7B24626661C0631C0A6954E86B5B2AF /* CarotaService-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CarotaService-Info.plist"; sourceTree = "<group>"; };
+		DE300855297B2EE50095BF9F /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
+		DE69F42729789D5C00A64696 /* ServiceSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceSingleton.swift; sourceTree = "<group>"; };
+		DE69F4292978A3A200A64696 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		DEF70EB52980702400698770 /* HTTPAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPAuthentication.swift; sourceTree = "<group>"; };
+		DEF70EBB2980814500698770 /* CarotaAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarotaAuth.swift; sourceTree = "<group>"; };
 		E9CD69C00E1E4C8A7D10AA49567F3148 /* CarotaService-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CarotaService-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,7 +116,6 @@
 		2FD85ABD7A5FF109BD566CFCE8F880AF /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				2AD505C39485B303751D6465C04ECF18 /* CSError.swift */,
 				50743B54FCBED1F805CF70B60D940282 /* CarotaService.swift */,
 			);
 			name = Core;
@@ -124,6 +133,7 @@
 		7FF951B5D4EEA06C201FCA0D9312C239 /* CarotaService */ = {
 			isa = PBXGroup;
 			children = (
+				DE300854297B2DE30095BF9F /* Model */,
 				2FD85ABD7A5FF109BD566CFCE8F880AF /* Core */,
 				BD480DCA29F21B3D19E1AFDE61E5305F /* Extension */,
 				8BC176662CC1771F6F095574708EA6D5 /* HTTP */,
@@ -150,6 +160,7 @@
 				43BEE1C5EC34D1D294E58E5983FD365A /* HTTPBody.swift */,
 				8CE4A8D5FEEFFF8B9F9B2E48671B881B /* HTTPHeaderFields.swift */,
 				9F5D190C91A030D9A385BD145E963B30 /* HTTPMethod.swift */,
+				DEF70EB52980702400698770 /* HTTPAuthentication.swift */,
 			);
 			name = HTTP;
 			path = CarotaService/Classes/HTTP;
@@ -159,6 +170,9 @@
 			isa = PBXGroup;
 			children = (
 				04D0D45D99FDEA2BC498553F58A81F6E /* URLConvertible.swift */,
+				DE69F42729789D5C00A64696 /* ServiceSingleton.swift */,
+				DE69F4292978A3A200A64696 /* Service.swift */,
+				DEF70EBB2980814500698770 /* CarotaAuth.swift */,
 			);
 			name = Protocols;
 			path = CarotaService/Classes/Protocols;
@@ -223,6 +237,16 @@
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE300854297B2DE30095BF9F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2AD505C39485B303751D6465C04ECF18 /* CSError.swift */,
+				DE300855297B2EE50095BF9F /* Empty.swift */,
+			);
+			name = Model;
+			path = CarotaService/Classes/Model;
 			sourceTree = "<group>";
 		};
 		FB6191D98DF75DBD245C7EAAA69FB4E7 /* Pod */ = {
@@ -353,12 +377,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2255BE23CFBCAD981B87D9F68FD67AD /* CarotaService-dummy.m in Sources */,
+				DEF70EBC2980814500698770 /* CarotaAuth.swift in Sources */,
 				B6BF551C5B44762FE629596005564E79 /* HTTPBody.swift in Sources */,
 				36D88A491DFA50D86F83BB58E14F7CDE /* HTTPHeaderFields.swift in Sources */,
 				B44E09619456AD31467B952CD21BF3B9 /* HTTPMethod.swift in Sources */,
 				17743DB3B698AC45D257396189642DB6 /* CSError.swift in Sources */,
+				DE300856297B2EE50095BF9F /* Empty.swift in Sources */,
 				8A274F7579E979580695D255B0C00BB8 /* CarotaService.swift in Sources */,
 				78AD3E3476C76FB021717874CAD834E7 /* String+URLConvertible.swift in Sources */,
+				DE69F42829789D5C00A64696 /* ServiceSingleton.swift in Sources */,
+				DEF70EB62980702400698770 /* HTTPAuthentication.swift in Sources */,
+				DE69F42A2978A3A200A64696 /* Service.swift in Sources */,
 				84660D259B9ADA8AE012332E4E06F90D /* URL+URLConvertible.swift in Sources */,
 				D013C02397019E819EBF421AE8D26B23 /* URLConvertible.swift in Sources */,
 			);
