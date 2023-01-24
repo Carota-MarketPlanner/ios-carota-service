@@ -10,6 +10,8 @@ import SwiftUI
 struct UsersView: View {
     
     @StateObject var viewModel = UsersViewModel()
+    @State private var showingAlert = false
+    @State var token: String = ""
     
     var body: some View {
         NavigationView {
@@ -37,7 +39,20 @@ struct UsersView: View {
             .task {
                 await viewModel.fetchUsers()
             }
+            .toolbar {
+                Button("Teste Logado") {
+                    showingAlert.toggle()
+                }
+                .alert("Token?", isPresented: $showingAlert) {
+                    TextField("Digite o token:", text: $token)
+                    Button("OK", action: submit)
+                }
+            }
         }
+    }
+    
+    func submit() {
+        TesteLogadoViewModel.testConection(token: token)
     }
 }
 

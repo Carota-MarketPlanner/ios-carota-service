@@ -12,6 +12,8 @@ public protocol ServiceSingleton {
     
     func request<T: Decodable>(url convertible: URLConvertible, method: HTTPMethod,  body: HTTPBody?, completion: @escaping CSResult<T>)
     func request<T: Decodable>(url convertible: URLConvertible, method: HTTPMethod, body: HTTPBody?) async throws -> T
+//    func setAuthorization(_ auth: HTTPAuthentication)
+//    func clearAuthorization()
 }
 
 extension ServiceSingleton {

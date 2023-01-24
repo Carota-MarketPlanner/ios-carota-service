@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum CSError {
+public enum CSError: Error {
     case invalidURL
     case invalidResponseStatus
     case dataTaskError(String?)

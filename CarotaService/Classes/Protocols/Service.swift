@@ -12,6 +12,8 @@ public protocol Service {
     
     func request<T: Decodable>(_ endpoint: String, method: HTTPMethod, body: HTTPBody?, completion: @escaping CSResult<T>)
     func request<T: Decodable>(_ endpoint: String, method: HTTPMethod, body: HTTPBody?) async throws -> T
+//    func setAuthorization(_ auth: HTTPAuthentication)
+//    func clearAuthorization()
 }
 
 extension Service {

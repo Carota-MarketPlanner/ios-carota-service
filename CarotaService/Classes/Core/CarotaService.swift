@@ -13,52 +13,16 @@ public class CarotaService {
     public typealias Handler<T> = (Output<T>) -> Void
     
     var baseURL: URLConvertible?
+    var authorization: HTTPAuthentication?
     
-    public static let shared = CarotaService() as ServiceSingleton
+    public static let shared = CarotaService() as (ServiceSingleton & Auth)
     
     private init(baseURL: URLConvertible? = nil) {
         self.baseURL = baseURL
     }
     
-    public static func getInstance(for baseURL: URLConvertible) -> Service {
-        return CarotaService(baseURL: baseURL) as Service
-    }
-    
-    private func getRequest(for url: URL, and method: HTTPMethod, body: HTTPBody?) -> URLRequest? {
-        var request = URLRequest(url: url)
-        request.httpMethod = method.rawValue
-        
-        if let body = body {
-            guard let data = body.data else {
-                return nil
-            }
-            
-            request.httpBody = data
-            request.addValue(body.contentType, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
-        }
-        
-        return request
-    }
-    
-    private func getStatusCodeError(_ response: URLResponse?) -> CSError? {
-        guard let httpResponse = response as? HTTPURLResponse else {
-            return .invalidResponseStatus
-        }
-        
-        switch httpResponse.statusCode {
-        case 401:
-            return .unauthorized
-        case 404:
-            return .notFound
-        case 500:
-            return .serverError
-        case 400:
-            return .requestError
-        case 200, 201:
-            return nil
-        default:
-            return .unknown
-        }
+    public static func getInstance(for baseURL: URLConvertible) -> (Service & Auth) {
+        return CarotaService(baseURL: baseURL) as (Service & Auth)
     }
         
     private func result<T: Decodable>(data: Data?, response: URLResponse?, error: Swift.Error?) -> Output<T> {
@@ -101,6 +65,59 @@ public class CarotaService {
         }
     }
     
+    private func getRequest(for url: URL, and method: HTTPMethod, body: HTTPBody?) -> URLRequest? {
+        var request = URLRequest(url: url)
+        request.httpMethod = method.rawValue
+        
+        if let body = body {
+            guard let data = body.data else {
+                return nil
+            }
+            
+            request.httpBody = data
+            request.addValue(body.contentType, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
+        }
+        
+        if let auth = self.authorization {
+            request.addValue(auth.value, forHTTPHeaderField: HTTPHeaderField.authorization.rawValue)
+        }
+        
+        return request
+    }
+    
+    private func getStatusCodeError(_ response: URLResponse?) -> CSError? {
+        guard let httpResponse = response as? HTTPURLResponse else {
+            return .invalidResponseStatus
+        }
+        
+        switch httpResponse.statusCode {
+        case 401:
+            return .unauthorized
+        case 404:
+            return .notFound
+        case 500:
+            return .serverError
+        case 400:
+            return .requestError
+        case 200, 201:
+            return nil
+        default:
+            return .unknown
+        }
+    }
+    
+}
+
+// MARK: - Auth functions
+
+extension CarotaService: Auth {
+    public func setAuthorization(_ auth: HTTPAuthentication) {
+        self.authorization = auth
+    }
+    
+    public func clearAuthorization() {
+        self.authorization = nil
+    }
 }
 
 // MARK: - Service For Instances
