@@ -118,8 +118,8 @@ extension CarotaService: Service {
             return
         }
         
-        URLSession.shared.dataTask(with: request) {
-            completion(self.result(data: $0, response: $1, error: $2))
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            completion(self.result(data: data, response: response, error: error))
         }.resume()
     }
     
@@ -158,8 +158,8 @@ extension CarotaService: ServiceSingleton {
             return
         }
         
-        URLSession.shared.dataTask(with: request) {
-            completion(self.result(data: $0, response: $1, error: $2))
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            completion(self.result(data: data, response: response, error: error))
         }.resume()
     }
     
