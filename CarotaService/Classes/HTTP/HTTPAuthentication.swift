@@ -7,12 +7,12 @@
 
 import Foundation
 
-enum HTTPAuthentication {
+public enum HTTPAuthentication {
     
     case basic(username: String, password: String)
     case bearer(token: String)
     
-    var value: String {
+    public var value: String {
         switch self {
         case .basic(let username, let password):
             let credentials = "\(username):\(password)".data(using: .utf8)!.base64EncodedString()

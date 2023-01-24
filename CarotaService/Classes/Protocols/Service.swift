@@ -10,6 +10,8 @@ import Foundation
 public protocol Service {
     typealias CSResult<T: Decodable> = (Result<T, CSError>) -> Void
     
+    var authorization: HTTPAuthentication? { get set }
+    
     func request<T: Decodable>(_ endpoint: String, method: HTTPMethod, body: HTTPBody?, completion: @escaping CSResult<T>)
     func request<T: Decodable>(_ endpoint: String, method: HTTPMethod, body: HTTPBody?) async throws -> T
 }

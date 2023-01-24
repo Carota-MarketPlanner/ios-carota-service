@@ -13,7 +13,7 @@ public class CarotaService {
     public typealias Handler<T> = (Output<T>) -> Void
     
     var baseURL: URLConvertible?
-    var authorization: HTTPAuthentication?
+    public var authorization: HTTPAuthentication?
     
     public static let shared = CarotaService() as ServiceSingleton
     
