@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CarotaService'
-  s.version          = '0.1.0'
+  s.version          = '1.0.1'
   s.summary          = 'A Network Service provider to supply MarketPlanner App.'
 
   s.description      = <<-DESC
@@ -17,5 +17,4 @@ Pod::Spec.new do |s|
 
   s.source_files = 'CarotaService/Classes/**/*'
   
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
