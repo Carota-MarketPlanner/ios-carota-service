@@ -14,6 +14,11 @@ public enum CSError {
     case corruptData
     case decodingError(String)
     case encodingError
+    case unauthorized
+    case notFound
+    case serverError
+    case requestError
+    case unknown
 }
 
 extension CSError: LocalizedError {
@@ -31,6 +36,16 @@ extension CSError: LocalizedError {
             return NSLocalizedString("The data provaided apears to be corrupted", comment: "")
         case .decodingError(let localizedDescription):
             return localizedDescription
+        case .unauthorized:
+            return NSLocalizedString("Unauthorized", comment: "")
+        case .notFound:
+            return NSLocalizedString("End point not found", comment: "")
+        case .serverError:
+            return NSLocalizedString("Server Error", comment: "")
+        case .requestError:
+            return NSLocalizedString("Request Error", comment: "")
+        case .unknown:
+            return NSLocalizedString("Unknown Error", comment: "")
         }
     }
 }

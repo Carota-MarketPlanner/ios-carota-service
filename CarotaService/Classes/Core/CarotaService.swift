@@ -40,14 +40,34 @@ public class CarotaService {
         return request
     }
     
-    private func result<T: Decodable>(data: Data?, response: URLResponse?, error: Swift.Error?) -> Output<T> {
-        guard let httpResponse = response as? HTTPURLResponse,
-              httpResponse.statusCode == 200 || httpResponse.statusCode == 201 else {
-            return .failure(.invalidResponseStatus)
+    private func getStatusCodeError(_ response: URLResponse?) -> CSError? {
+        guard let httpResponse = response as? HTTPURLResponse else {
+            return .invalidResponseStatus
         }
         
-        guard error == nil else {
-            return .failure(.dataTaskError(error?.localizedDescription))
+        switch httpResponse.statusCode {
+        case 401:
+            return .unauthorized
+        case 404:
+            return .notFound
+        case 500:
+            return .serverError
+        case 400:
+            return .requestError
+        case 200, 201:
+            return nil
+        default:
+            return .unknown
+        }
+    }
+        
+    private func result<T: Decodable>(data: Data?, response: URLResponse?, error: Swift.Error?) -> Output<T> {
+        if let statusCodeError = getStatusCodeError(response) {
+            return .failure(statusCodeError)
+        }
+        
+        if let err = error {
+            return .failure(.dataTaskError(err.localizedDescription))
         }
         
         guard let data = data else {
@@ -67,8 +87,8 @@ public class CarotaService {
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
         
-            guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
-                throw CSError.invalidResponseStatus
+            if let statusCodeError = getStatusCodeError(response) {
+                throw statusCodeError
             }
             
             do {
