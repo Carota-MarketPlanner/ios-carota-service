@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.default_subspecs = "Binary"
 
   s.subspec 'Binary' do |binary|
-    binary.vendored_frameworks = 'CarotaService.xcframework'
+    binary.vendored_frameworks = 'CarotaService.framework'
   end
 
   # s.subspec 'Source' do |source|
