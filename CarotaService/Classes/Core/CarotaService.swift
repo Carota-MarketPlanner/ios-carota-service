@@ -13,16 +13,16 @@ public class CarotaService {
     public typealias Handler<T> = (Output<T>) -> Void
     
     var baseURL: URLConvertible?
-    public var authorization: HTTPAuthentication?
+    var authorization: HTTPAuthentication?
     
-    public static let shared = CarotaService() as ServiceSingleton
+    public static let shared = CarotaService() as (ServiceSingleton & Auth)
     
     private init(baseURL: URLConvertible? = nil) {
         self.baseURL = baseURL
     }
     
-    public static func getInstance(for baseURL: URLConvertible) -> Service {
-        return CarotaService(baseURL: baseURL) as Service
+    public static func getInstance(for baseURL: URLConvertible) -> (Service & Auth) {
+        return CarotaService(baseURL: baseURL) as (Service & Auth)
     }
         
     private func result<T: Decodable>(data: Data?, response: URLResponse?, error: Swift.Error?) -> Output<T> {
@@ -106,6 +106,18 @@ public class CarotaService {
         }
     }
     
+}
+
+// MARK: - Auth functions
+
+extension CarotaService: Auth {
+    public func setAuthorization(_ auth: HTTPAuthentication) {
+        self.authorization = auth
+    }
+    
+    public func clearAuthorization() {
+        self.authorization = nil
+    }
 }
 
 // MARK: - Service For Instances

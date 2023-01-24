@@ -10,10 +10,10 @@ import Foundation
 public protocol ServiceSingleton {
     typealias CSResult<T: Decodable> = (Result<T, CSError>) -> Void
     
-    var authorization: HTTPAuthentication? { get set }
-    
     func request<T: Decodable>(url convertible: URLConvertible, method: HTTPMethod,  body: HTTPBody?, completion: @escaping CSResult<T>)
     func request<T: Decodable>(url convertible: URLConvertible, method: HTTPMethod, body: HTTPBody?) async throws -> T
+//    func setAuthorization(_ auth: HTTPAuthentication)
+//    func clearAuthorization()
 }
 
 extension ServiceSingleton {
