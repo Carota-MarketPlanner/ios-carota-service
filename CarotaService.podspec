@@ -15,6 +15,14 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '15.0'
 
-  s.source_files = 'CarotaService/Classes/**/*'
+  s.default_subspecs = "Binary"
+
+  s.subspec 'Binary' do |release|
+    release.vendored_frameworks = 'CarotaService.framework'
+  end
+
+  s.subspec 'Source' do |debug|
+    debug.source_files = 'CarotaService/Classes/**/*'
+  end
   
 end
