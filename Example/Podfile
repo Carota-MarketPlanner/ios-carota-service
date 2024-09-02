@@ -3,6 +3,6 @@ use_frameworks!
 platform :ios, '15.0'
 
 target 'CarotaService_Example' do
-  pod 'CarotaService', :path => '../'
+  pod 'CarotaService/Source', :path => '../'
  
 end
