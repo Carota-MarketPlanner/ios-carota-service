@@ -26,12 +26,12 @@ find "$SEARCH_DIR" -name '*.podspec' | while read -r PODSPEC_FILE; do
         exit 1
     fi
 
-    # if [ -n "$VERSION" ]; then
-    #     echo "Version: $VERSION"
-    # else
-    #     echo "Version not found."
-    #     exit 1
-    # fi
+    if [ -n "$VERSION" ]; then
+        echo "Version: $VERSION"
+    else
+        echo "Version not found."
+        exit 1
+    fi
 
     iphoneosArchiveDirectoryPath="/$moduleName-iphoneos.xcarchive"
     iphoneosArchiveDirectory="$( pwd; )$iphoneosArchiveDirectoryPath"
@@ -72,11 +72,8 @@ find "$SEARCH_DIR" -name '*.podspec' | while read -r PODSPEC_FILE; do
     rm -rf $iphoneosSimulatorDirectory
 
     #Publish Release
-    git add .
-    git commit -m "Version $version"
-
     git tag $version
-    git push --tags origin develop
+    git push --tags origin
     pod repo push carota $moduleName.podspec --allow-warnings
 
 done
