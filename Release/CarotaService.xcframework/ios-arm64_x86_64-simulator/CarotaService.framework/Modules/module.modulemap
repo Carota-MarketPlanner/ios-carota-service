@@ -1,0 +1,11 @@
+framework module CarotaService {
+  umbrella header "CarotaService-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module CarotaService.Swift {
+  header "CarotaService-Swift.h"
+  requires objc
+}

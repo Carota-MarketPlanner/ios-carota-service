@@ -1,0 +1,119 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target arm64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name CarotaService
+@_exported import CarotaService
+import Foundation
+import Swift
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public protocol Auth {
+  func setAuthorization(_ auth: CarotaService.HTTPAuthentication)
+  func clearAuthorization()
+}
+@_hasMissingDesignatedInitializers public class CarotaService {
+  public typealias Output<T> = Swift.Result<T, CarotaService.CSError>
+  public typealias Handler<T> = (CarotaService.CarotaService.Output<T>) -> Swift.Void
+  public static let shared: (any CarotaService.Auth & CarotaService.ServiceSingleton)
+  public static func getInstance(for baseURL: any CarotaService.URLConvertible) -> (any CarotaService.Auth & CarotaService.Service)
+  @objc deinit
+}
+extension CarotaService.CarotaService : CarotaService.Auth {
+  public func setAuthorization(_ auth: CarotaService.HTTPAuthentication)
+  public func clearAuthorization()
+}
+extension CarotaService.CarotaService : CarotaService.Service {
+  public func request<T>(_ endpoint: Swift.String, method: CarotaService.HTTPMethod = .get, body: CarotaService.HTTPBody? = nil, completion: @escaping CarotaService.CarotaService.Handler<T>) where T : Swift.Decodable
+  #if compiler(>=5.3) && $AsyncAwait
+  public func request<T>(_ endpoint: Swift.String, method: CarotaService.HTTPMethod = .get, body: CarotaService.HTTPBody? = nil) async throws -> T where T : Swift.Decodable
+  #endif
+}
+extension CarotaService.CarotaService : CarotaService.ServiceSingleton {
+  public func request<T>(url convertible: any CarotaService.URLConvertible, method: CarotaService.HTTPMethod = .get, body: CarotaService.HTTPBody? = nil, completion: @escaping CarotaService.CarotaService.Handler<T>) where T : Swift.Decodable
+  #if compiler(>=5.3) && $AsyncAwait
+  public func request<T>(url convertible: any CarotaService.URLConvertible, method: CarotaService.HTTPMethod = .get, body: CarotaService.HTTPBody? = nil) async throws -> T where T : Swift.Decodable
+  #endif
+}
+public enum CSError : Swift.Error {
+  case invalidURL
+  case invalidResponseStatus
+  case dataTaskError(Swift.String?)
+  case corruptData
+  case decodingError(Swift.String)
+  case encodingError
+  case unauthorized
+  case notFound
+  case serverError
+  case requestError
+  case unknown
+}
+extension CarotaService.CSError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+public struct Empty : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum HTTPAuthentication {
+  case basic(username: Swift.String, password: Swift.String)
+  case bearer(token: Swift.String)
+  public var value: Swift.String {
+    get
+  }
+}
+public enum HTTPBody {
+  case json(object: any Swift.Encodable)
+  case formData
+}
+public enum HTTPMethod : Swift.String {
+  case get
+  case post
+  case put
+  case patch
+  case delete
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol Service {
+  typealias CSResult<T> = (Swift.Result<T, CarotaService.CSError>) -> Swift.Void where T : Swift.Decodable
+  func request<T>(_ endpoint: Swift.String, method: CarotaService.HTTPMethod, body: CarotaService.HTTPBody?, completion: @escaping Self.CSResult<T>) where T : Swift.Decodable
+  #if compiler(>=5.3) && $AsyncAwait
+  func request<T>(_ endpoint: Swift.String, method: CarotaService.HTTPMethod, body: CarotaService.HTTPBody?) async throws -> T where T : Swift.Decodable
+  #endif
+}
+extension CarotaService.Service {
+  public func request<T>(_ endpoint: Swift.String, method: CarotaService.HTTPMethod = .get, body: CarotaService.HTTPBody? = nil, completion: @escaping Self.CSResult<T>) where T : Swift.Decodable
+  #if compiler(>=5.3) && $AsyncAwait
+  public func request<T>(_ endpoint: Swift.String, method: CarotaService.HTTPMethod = .get, body: CarotaService.HTTPBody? = nil) async throws -> T where T : Swift.Decodable
+  #endif
+}
+public protocol ServiceSingleton {
+  typealias CSResult<T> = (Swift.Result<T, CarotaService.CSError>) -> Swift.Void where T : Swift.Decodable
+  func request<T>(url convertible: any CarotaService.URLConvertible, method: CarotaService.HTTPMethod, body: CarotaService.HTTPBody?, completion: @escaping Self.CSResult<T>) where T : Swift.Decodable
+  #if compiler(>=5.3) && $AsyncAwait
+  func request<T>(url convertible: any CarotaService.URLConvertible, method: CarotaService.HTTPMethod, body: CarotaService.HTTPBody?) async throws -> T where T : Swift.Decodable
+  #endif
+}
+extension CarotaService.ServiceSingleton {
+  public func request<T>(url convertible: any CarotaService.URLConvertible, method: CarotaService.HTTPMethod = .get, body: CarotaService.HTTPBody? = nil, completion: @escaping Self.CSResult<T>) where T : Swift.Decodable
+  #if compiler(>=5.3) && $AsyncAwait
+  public func request<T>(url convertible: any CarotaService.URLConvertible, method: CarotaService.HTTPMethod = .get, body: CarotaService.HTTPBody? = nil) async throws -> T where T : Swift.Decodable
+  #endif
+}
+extension Swift.String : CarotaService.URLConvertible {
+  public func asURL() -> Foundation.URL?
+}
+extension Foundation.URL : CarotaService.URLConvertible {
+  public func asURL() -> Foundation.URL?
+}
+public protocol URLConvertible {
+  func asURL() -> Foundation.URL?
+}
+extension CarotaService.HTTPMethod : Swift.Equatable {}
+extension CarotaService.HTTPMethod : Swift.Hashable {}
+extension CarotaService.HTTPMethod : Swift.RawRepresentable {}
