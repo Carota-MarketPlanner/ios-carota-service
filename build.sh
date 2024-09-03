@@ -49,4 +49,16 @@ rm -rf $iphoneosArchiveDirectory
 rm -rf $iphoneosSimulatorDirectory
 
 #Publish Release
+while getopts v: flag
+do
+    case "${flag}" in
+        v) version=${OPTARG};;
+    esac
+done
+
+git add .
+git commit -m "Version $version"
+
+git tag $version
+git push --tags origin develop
 pod repo push carota $moduleName.podspec --allow-warnings
