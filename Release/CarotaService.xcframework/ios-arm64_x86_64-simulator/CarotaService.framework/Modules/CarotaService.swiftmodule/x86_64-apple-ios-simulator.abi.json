@@ -1,0 +1,3284 @@
+{
+  "ABIRoot": {
+    "kind": "Root",
+    "name": "TopLevel",
+    "printedName": "TopLevel",
+    "children": [
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Auth",
+        "printedName": "Auth",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "setAuthorization",
+            "printedName": "setAuthorization(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPAuthentication",
+                "printedName": "CarotaService.HTTPAuthentication",
+                "usr": "s:13CarotaService18HTTPAuthenticationO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13CarotaService4AuthP16setAuthorizationyyAA18HTTPAuthenticationOF",
+            "mangledName": "$s13CarotaService4AuthP16setAuthorizationyyAA18HTTPAuthenticationOF",
+            "moduleName": "CarotaService",
+            "genericSig": "<τ_0_0 where τ_0_0 : CarotaService.Auth>",
+            "sugared_genericSig": "<Self where Self : CarotaService.Auth>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "clearAuthorization",
+            "printedName": "clearAuthorization()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13CarotaService4AuthP18clearAuthorizationyyF",
+            "mangledName": "$s13CarotaService4AuthP18clearAuthorizationyyF",
+            "moduleName": "CarotaService",
+            "genericSig": "<τ_0_0 where τ_0_0 : CarotaService.Auth>",
+            "sugared_genericSig": "<Self where Self : CarotaService.Auth>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:13CarotaService4AuthP",
+        "mangledName": "$s13CarotaService4AuthP",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CarotaService",
+        "printedName": "CarotaService",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "any CarotaService.Auth & CarotaService.ServiceSingleton"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13CarotaServiceAAC6sharedAA4Auth_AA0B9SingletonpvpZ",
+            "mangledName": "$s13CarotaServiceAAC6sharedAA4Auth_AA0B9SingletonpvpZ",
+            "moduleName": "CarotaService",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "any CarotaService.Auth & CarotaService.ServiceSingleton"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13CarotaServiceAAC6sharedAA4Auth_AA0B9SingletonpvgZ",
+                "mangledName": "$s13CarotaServiceAAC6sharedAA4Auth_AA0B9SingletonpvgZ",
+                "moduleName": "CarotaService",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "getInstance",
+            "printedName": "getInstance(for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ProtocolComposition",
+                "printedName": "any CarotaService.Auth & CarotaService.Service"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLConvertible",
+                "printedName": "any CarotaService.URLConvertible",
+                "usr": "s:13CarotaService14URLConvertibleP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13CarotaServiceAAC11getInstance3forAA4Auth_AA0B0pAA14URLConvertible_p_tFZ",
+            "mangledName": "$s13CarotaServiceAAC11getInstance3forAA4Auth_AA0B0pAA14URLConvertible_p_tFZ",
+            "moduleName": "CarotaService",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setAuthorization",
+            "printedName": "setAuthorization(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPAuthentication",
+                "printedName": "CarotaService.HTTPAuthentication",
+                "usr": "s:13CarotaService18HTTPAuthenticationO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13CarotaServiceAAC16setAuthorizationyyAA18HTTPAuthenticationOF",
+            "mangledName": "$s13CarotaServiceAAC16setAuthorizationyyAA18HTTPAuthenticationOF",
+            "moduleName": "CarotaService",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "clearAuthorization",
+            "printedName": "clearAuthorization()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13CarotaServiceAAC18clearAuthorizationyyF",
+            "mangledName": "$s13CarotaServiceAAC18clearAuthorizationyyF",
+            "moduleName": "CarotaService",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "request",
+            "printedName": "request(_:method:body:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPMethod",
+                "printedName": "CarotaService.HTTPMethod",
+                "hasDefaultArg": true,
+                "usr": "s:13CarotaService10HTTPMethodO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CarotaService.HTTPBody?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPBody",
+                    "printedName": "CarotaService.HTTPBody",
+                    "usr": "s:13CarotaService8HTTPBodyO"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<τ_0_0, CarotaService.CSError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<τ_0_0, CarotaService.CSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_0_0"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CSError",
+                        "printedName": "CarotaService.CSError",
+                        "usr": "s:13CarotaService7CSErrorO"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13CarotaServiceAAC7request_6method4body10completionySS_AA10HTTPMethodOAA8HTTPBodyOSgys6ResultOyxAA7CSErrorOGctSeRzlF",
+            "mangledName": "$s13CarotaServiceAAC7request_6method4body10completionySS_AA10HTTPMethodOAA8HTTPBodyOSgys6ResultOyxAA7CSErrorOGctSeRzlF",
+            "moduleName": "CarotaService",
+            "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable>",
+            "sugared_genericSig": "<T where T : Swift.Decodable>",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "request",
+            "printedName": "request(_:method:body:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPMethod",
+                "printedName": "CarotaService.HTTPMethod",
+                "hasDefaultArg": true,
+                "usr": "s:13CarotaService10HTTPMethodO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CarotaService.HTTPBody?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPBody",
+                    "printedName": "CarotaService.HTTPBody",
+                    "usr": "s:13CarotaService8HTTPBodyO"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13CarotaServiceAAC7request_6method4bodyxSS_AA10HTTPMethodOAA8HTTPBodyOSgtYaKSeRzlF",
+            "mangledName": "$s13CarotaServiceAAC7request_6method4bodyxSS_AA10HTTPMethodOAA8HTTPBodyOSgtYaKSeRzlF",
+            "moduleName": "CarotaService",
+            "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable>",
+            "sugared_genericSig": "<T where T : Swift.Decodable>",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "request",
+            "printedName": "request(url:method:body:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLConvertible",
+                "printedName": "any CarotaService.URLConvertible",
+                "usr": "s:13CarotaService14URLConvertibleP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPMethod",
+                "printedName": "CarotaService.HTTPMethod",
+                "hasDefaultArg": true,
+                "usr": "s:13CarotaService10HTTPMethodO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CarotaService.HTTPBody?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPBody",
+                    "printedName": "CarotaService.HTTPBody",
+                    "usr": "s:13CarotaService8HTTPBodyO"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<τ_0_0, CarotaService.CSError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<τ_0_0, CarotaService.CSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_0_0"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CSError",
+                        "printedName": "CarotaService.CSError",
+                        "usr": "s:13CarotaService7CSErrorO"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13CarotaServiceAAC7request3url6method4body10completionyAA14URLConvertible_p_AA10HTTPMethodOAA8HTTPBodyOSgys6ResultOyxAA7CSErrorOGctSeRzlF",
+            "mangledName": "$s13CarotaServiceAAC7request3url6method4body10completionyAA14URLConvertible_p_AA10HTTPMethodOAA8HTTPBodyOSgys6ResultOyxAA7CSErrorOGctSeRzlF",
+            "moduleName": "CarotaService",
+            "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable>",
+            "sugared_genericSig": "<T where T : Swift.Decodable>",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "request",
+            "printedName": "request(url:method:body:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_0_0"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLConvertible",
+                "printedName": "any CarotaService.URLConvertible",
+                "usr": "s:13CarotaService14URLConvertibleP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPMethod",
+                "printedName": "CarotaService.HTTPMethod",
+                "hasDefaultArg": true,
+                "usr": "s:13CarotaService10HTTPMethodO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CarotaService.HTTPBody?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPBody",
+                    "printedName": "CarotaService.HTTPBody",
+                    "usr": "s:13CarotaService8HTTPBodyO"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13CarotaServiceAAC7request3url6method4bodyxAA14URLConvertible_p_AA10HTTPMethodOAA8HTTPBodyOSgtYaKSeRzlF",
+            "mangledName": "$s13CarotaServiceAAC7request3url6method4bodyxAA14URLConvertible_p_AA10HTTPMethodOAA8HTTPBodyOSgtYaKSeRzlF",
+            "moduleName": "CarotaService",
+            "genericSig": "<τ_0_0 where τ_0_0 : Swift.Decodable>",
+            "sugared_genericSig": "<T where T : Swift.Decodable>",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:13CarotaServiceAAC",
+        "mangledName": "$s13CarotaServiceAAC",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Auth",
+            "printedName": "Auth",
+            "usr": "s:13CarotaService4AuthP",
+            "mangledName": "$s13CarotaService4AuthP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Service",
+            "printedName": "Service",
+            "usr": "s:13CarotaService0B0P",
+            "mangledName": "$s13CarotaService0B0P"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ServiceSingleton",
+            "printedName": "ServiceSingleton",
+            "usr": "s:13CarotaService0B9SingletonP",
+            "mangledName": "$s13CarotaService0B9SingletonP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "CSError",
+        "printedName": "CSError",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "invalidURL",
+            "printedName": "invalidURL",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CarotaService.CSError.Type) -> CarotaService.CSError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CSError",
+                    "printedName": "CarotaService.CSError",
+                    "usr": "s:13CarotaService7CSErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CarotaService.CSError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CSError",
+                        "printedName": "CarotaService.CSError",
+                        "usr": "s:13CarotaService7CSErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13CarotaService7CSErrorO10invalidURLyA2CmF",
+            "mangledName": "$s13CarotaService7CSErrorO10invalidURLyA2CmF",
+            "moduleName": "CarotaService"
+          },
+          {
+            "kind": "Var",
+            "name": "invalidResponseStatus",
+            "printedName": "invalidResponseStatus",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CarotaService.CSError.Type) -> CarotaService.CSError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CSError",
+                    "printedName": "CarotaService.CSError",
+                    "usr": "s:13CarotaService7CSErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CarotaService.CSError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CSError",
+                        "printedName": "CarotaService.CSError",
+                        "usr": "s:13CarotaService7CSErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13CarotaService7CSErrorO21invalidResponseStatusyA2CmF",
+            "mangledName": "$s13CarotaService7CSErrorO21invalidResponseStatusyA2CmF",
+            "moduleName": "CarotaService"
+          },
+          {
+            "kind": "Var",
+            "name": "dataTaskError",
+            "printedName": "dataTaskError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CarotaService.CSError.Type) -> (Swift.String?) -> CarotaService.CSError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String?) -> CarotaService.CSError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CSError",
+                        "printedName": "CarotaService.CSError",
+                        "usr": "s:13CarotaService7CSErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.String?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CarotaService.CSError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CSError",
+                        "printedName": "CarotaService.CSError",
+                        "usr": "s:13CarotaService7CSErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13CarotaService7CSErrorO13dataTaskErroryACSSSgcACmF",
+            "mangledName": "$s13CarotaService7CSErrorO13dataTaskErroryACSSSgcACmF",
+            "moduleName": "CarotaService"
+          },
+          {
+            "kind": "Var",
+            "name": "corruptData",
+            "printedName": "corruptData",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CarotaService.CSError.Type) -> CarotaService.CSError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CSError",
+                    "printedName": "CarotaService.CSError",
+                    "usr": "s:13CarotaService7CSErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CarotaService.CSError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CSError",
+                        "printedName": "CarotaService.CSError",
+                        "usr": "s:13CarotaService7CSErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13CarotaService7CSErrorO11corruptDatayA2CmF",
+            "mangledName": "$s13CarotaService7CSErrorO11corruptDatayA2CmF",
+            "moduleName": "CarotaService"
+          },
+          {
+            "kind": "Var",
+            "name": "decodingError",
+            "printedName": "decodingError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CarotaService.CSError.Type) -> (Swift.String) -> CarotaService.CSError",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String) -> CarotaService.CSError",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CSError",
+                        "printedName": "CarotaService.CSError",
+                        "usr": "s:13CarotaService7CSErrorO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CarotaService.CSError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CSError",
+                        "printedName": "CarotaService.CSError",
+                        "usr": "s:13CarotaService7CSErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13CarotaService7CSErrorO13decodingErroryACSScACmF",
+            "mangledName": "$s13CarotaService7CSErrorO13decodingErroryACSScACmF",
+            "moduleName": "CarotaService"
+          },
+          {
+            "kind": "Var",
+            "name": "encodingError",
+            "printedName": "encodingError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CarotaService.CSError.Type) -> CarotaService.CSError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CSError",
+                    "printedName": "CarotaService.CSError",
+                    "usr": "s:13CarotaService7CSErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CarotaService.CSError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CSError",
+                        "printedName": "CarotaService.CSError",
+                        "usr": "s:13CarotaService7CSErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13CarotaService7CSErrorO13encodingErroryA2CmF",
+            "mangledName": "$s13CarotaService7CSErrorO13encodingErroryA2CmF",
+            "moduleName": "CarotaService"
+          },
+          {
+            "kind": "Var",
+            "name": "unauthorized",
+            "printedName": "unauthorized",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CarotaService.CSError.Type) -> CarotaService.CSError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CSError",
+                    "printedName": "CarotaService.CSError",
+                    "usr": "s:13CarotaService7CSErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CarotaService.CSError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CSError",
+                        "printedName": "CarotaService.CSError",
+                        "usr": "s:13CarotaService7CSErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13CarotaService7CSErrorO12unauthorizedyA2CmF",
+            "mangledName": "$s13CarotaService7CSErrorO12unauthorizedyA2CmF",
+            "moduleName": "CarotaService"
+          },
+          {
+            "kind": "Var",
+            "name": "notFound",
+            "printedName": "notFound",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CarotaService.CSError.Type) -> CarotaService.CSError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CSError",
+                    "printedName": "CarotaService.CSError",
+                    "usr": "s:13CarotaService7CSErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CarotaService.CSError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CSError",
+                        "printedName": "CarotaService.CSError",
+                        "usr": "s:13CarotaService7CSErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13CarotaService7CSErrorO8notFoundyA2CmF",
+            "mangledName": "$s13CarotaService7CSErrorO8notFoundyA2CmF",
+            "moduleName": "CarotaService"
+          },
+          {
+            "kind": "Var",
+            "name": "serverError",
+            "printedName": "serverError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CarotaService.CSError.Type) -> CarotaService.CSError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CSError",
+                    "printedName": "CarotaService.CSError",
+                    "usr": "s:13CarotaService7CSErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CarotaService.CSError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CSError",
+                        "printedName": "CarotaService.CSError",
+                        "usr": "s:13CarotaService7CSErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13CarotaService7CSErrorO11serverErroryA2CmF",
+            "mangledName": "$s13CarotaService7CSErrorO11serverErroryA2CmF",
+            "moduleName": "CarotaService"
+          },
+          {
+            "kind": "Var",
+            "name": "requestError",
+            "printedName": "requestError",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CarotaService.CSError.Type) -> CarotaService.CSError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CSError",
+                    "printedName": "CarotaService.CSError",
+                    "usr": "s:13CarotaService7CSErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CarotaService.CSError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CSError",
+                        "printedName": "CarotaService.CSError",
+                        "usr": "s:13CarotaService7CSErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13CarotaService7CSErrorO12requestErroryA2CmF",
+            "mangledName": "$s13CarotaService7CSErrorO12requestErroryA2CmF",
+            "moduleName": "CarotaService"
+          },
+          {
+            "kind": "Var",
+            "name": "unknown",
+            "printedName": "unknown",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CarotaService.CSError.Type) -> CarotaService.CSError",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CSError",
+                    "printedName": "CarotaService.CSError",
+                    "usr": "s:13CarotaService7CSErrorO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CarotaService.CSError.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CSError",
+                        "printedName": "CarotaService.CSError",
+                        "usr": "s:13CarotaService7CSErrorO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13CarotaService7CSErrorO7unknownyA2CmF",
+            "mangledName": "$s13CarotaService7CSErrorO7unknownyA2CmF",
+            "moduleName": "CarotaService"
+          },
+          {
+            "kind": "Var",
+            "name": "errorDescription",
+            "printedName": "errorDescription",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13CarotaService7CSErrorO16errorDescriptionSSSgvp",
+            "mangledName": "$s13CarotaService7CSErrorO16errorDescriptionSSSgvp",
+            "moduleName": "CarotaService",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13CarotaService7CSErrorO16errorDescriptionSSSgvg",
+                "mangledName": "$s13CarotaService7CSErrorO16errorDescriptionSSSgvg",
+                "moduleName": "CarotaService",
+                "isFromExtension": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:13CarotaService7CSErrorO",
+        "mangledName": "$s13CarotaService7CSErrorO",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Error",
+            "printedName": "Error",
+            "usr": "s:s5ErrorP",
+            "mangledName": "$ss5ErrorP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LocalizedError",
+            "printedName": "LocalizedError",
+            "usr": "s:10Foundation14LocalizedErrorP",
+            "mangledName": "$s10Foundation14LocalizedErrorP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Empty",
+        "printedName": "Empty",
+        "children": [
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Empty",
+                "printedName": "CarotaService.Empty",
+                "usr": "s:13CarotaService5EmptyV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:13CarotaService5EmptyV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s13CarotaService5EmptyV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "CarotaService",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13CarotaService5EmptyV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s13CarotaService5EmptyV6encode2toys7Encoder_p_tKF",
+            "moduleName": "CarotaService",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:13CarotaService5EmptyV",
+        "mangledName": "$s13CarotaService5EmptyV",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "HTTPAuthentication",
+        "printedName": "HTTPAuthentication",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "basic",
+            "printedName": "basic",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CarotaService.HTTPAuthentication.Type) -> (Swift.String, Swift.String) -> CarotaService.HTTPAuthentication",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String, Swift.String) -> CarotaService.HTTPAuthentication",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPAuthentication",
+                        "printedName": "CarotaService.HTTPAuthentication",
+                        "usr": "s:13CarotaService18HTTPAuthenticationO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(username: Swift.String, password: Swift.String)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CarotaService.HTTPAuthentication.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPAuthentication",
+                        "printedName": "CarotaService.HTTPAuthentication",
+                        "usr": "s:13CarotaService18HTTPAuthenticationO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13CarotaService18HTTPAuthenticationO5basicyACSS_SStcACmF",
+            "mangledName": "$s13CarotaService18HTTPAuthenticationO5basicyACSS_SStcACmF",
+            "moduleName": "CarotaService"
+          },
+          {
+            "kind": "Var",
+            "name": "bearer",
+            "printedName": "bearer",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CarotaService.HTTPAuthentication.Type) -> (Swift.String) -> CarotaService.HTTPAuthentication",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String) -> CarotaService.HTTPAuthentication",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPAuthentication",
+                        "printedName": "CarotaService.HTTPAuthentication",
+                        "usr": "s:13CarotaService18HTTPAuthenticationO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(token: Swift.String)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CarotaService.HTTPAuthentication.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPAuthentication",
+                        "printedName": "CarotaService.HTTPAuthentication",
+                        "usr": "s:13CarotaService18HTTPAuthenticationO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13CarotaService18HTTPAuthenticationO6beareryACSS_tcACmF",
+            "mangledName": "$s13CarotaService18HTTPAuthenticationO6beareryACSS_tcACmF",
+            "moduleName": "CarotaService"
+          },
+          {
+            "kind": "Var",
+            "name": "value",
+            "printedName": "value",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13CarotaService18HTTPAuthenticationO5valueSSvp",
+            "mangledName": "$s13CarotaService18HTTPAuthenticationO5valueSSvp",
+            "moduleName": "CarotaService",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13CarotaService18HTTPAuthenticationO5valueSSvg",
+                "mangledName": "$s13CarotaService18HTTPAuthenticationO5valueSSvg",
+                "moduleName": "CarotaService",
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:13CarotaService18HTTPAuthenticationO",
+        "mangledName": "$s13CarotaService18HTTPAuthenticationO",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "HTTPBody",
+        "printedName": "HTTPBody",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "json",
+            "printedName": "json",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CarotaService.HTTPBody.Type) -> (any Swift.Encodable) -> CarotaService.HTTPBody",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(any Swift.Encodable) -> CarotaService.HTTPBody",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPBody",
+                        "printedName": "CarotaService.HTTPBody",
+                        "usr": "s:13CarotaService8HTTPBodyO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Tuple",
+                        "printedName": "(object: any Swift.Encodable)",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Encodable",
+                            "printedName": "any Swift.Encodable",
+                            "usr": "s:SE"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CarotaService.HTTPBody.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPBody",
+                        "printedName": "CarotaService.HTTPBody",
+                        "usr": "s:13CarotaService8HTTPBodyO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13CarotaService8HTTPBodyO4jsonyACSE_p_tcACmF",
+            "mangledName": "$s13CarotaService8HTTPBodyO4jsonyACSE_p_tcACmF",
+            "moduleName": "CarotaService"
+          },
+          {
+            "kind": "Var",
+            "name": "formData",
+            "printedName": "formData",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CarotaService.HTTPBody.Type) -> CarotaService.HTTPBody",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPBody",
+                    "printedName": "CarotaService.HTTPBody",
+                    "usr": "s:13CarotaService8HTTPBodyO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CarotaService.HTTPBody.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPBody",
+                        "printedName": "CarotaService.HTTPBody",
+                        "usr": "s:13CarotaService8HTTPBodyO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13CarotaService8HTTPBodyO8formDatayA2CmF",
+            "mangledName": "$s13CarotaService8HTTPBodyO8formDatayA2CmF",
+            "moduleName": "CarotaService"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:13CarotaService8HTTPBodyO",
+        "mangledName": "$s13CarotaService8HTTPBodyO",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "HTTPMethod",
+        "printedName": "HTTPMethod",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "get",
+            "printedName": "get",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CarotaService.HTTPMethod.Type) -> CarotaService.HTTPMethod",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPMethod",
+                    "printedName": "CarotaService.HTTPMethod",
+                    "usr": "s:13CarotaService10HTTPMethodO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CarotaService.HTTPMethod.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPMethod",
+                        "printedName": "CarotaService.HTTPMethod",
+                        "usr": "s:13CarotaService10HTTPMethodO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13CarotaService10HTTPMethodO3getyA2CmF",
+            "mangledName": "$s13CarotaService10HTTPMethodO3getyA2CmF",
+            "moduleName": "CarotaService"
+          },
+          {
+            "kind": "Var",
+            "name": "post",
+            "printedName": "post",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CarotaService.HTTPMethod.Type) -> CarotaService.HTTPMethod",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPMethod",
+                    "printedName": "CarotaService.HTTPMethod",
+                    "usr": "s:13CarotaService10HTTPMethodO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CarotaService.HTTPMethod.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPMethod",
+                        "printedName": "CarotaService.HTTPMethod",
+                        "usr": "s:13CarotaService10HTTPMethodO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13CarotaService10HTTPMethodO4postyA2CmF",
+            "mangledName": "$s13CarotaService10HTTPMethodO4postyA2CmF",
+            "moduleName": "CarotaService"
+          },
+          {
+            "kind": "Var",
+            "name": "put",
+            "printedName": "put",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CarotaService.HTTPMethod.Type) -> CarotaService.HTTPMethod",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPMethod",
+                    "printedName": "CarotaService.HTTPMethod",
+                    "usr": "s:13CarotaService10HTTPMethodO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CarotaService.HTTPMethod.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPMethod",
+                        "printedName": "CarotaService.HTTPMethod",
+                        "usr": "s:13CarotaService10HTTPMethodO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13CarotaService10HTTPMethodO3putyA2CmF",
+            "mangledName": "$s13CarotaService10HTTPMethodO3putyA2CmF",
+            "moduleName": "CarotaService"
+          },
+          {
+            "kind": "Var",
+            "name": "patch",
+            "printedName": "patch",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CarotaService.HTTPMethod.Type) -> CarotaService.HTTPMethod",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPMethod",
+                    "printedName": "CarotaService.HTTPMethod",
+                    "usr": "s:13CarotaService10HTTPMethodO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CarotaService.HTTPMethod.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPMethod",
+                        "printedName": "CarotaService.HTTPMethod",
+                        "usr": "s:13CarotaService10HTTPMethodO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13CarotaService10HTTPMethodO5patchyA2CmF",
+            "mangledName": "$s13CarotaService10HTTPMethodO5patchyA2CmF",
+            "moduleName": "CarotaService"
+          },
+          {
+            "kind": "Var",
+            "name": "delete",
+            "printedName": "delete",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(CarotaService.HTTPMethod.Type) -> CarotaService.HTTPMethod",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPMethod",
+                    "printedName": "CarotaService.HTTPMethod",
+                    "usr": "s:13CarotaService10HTTPMethodO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "CarotaService.HTTPMethod.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HTTPMethod",
+                        "printedName": "CarotaService.HTTPMethod",
+                        "usr": "s:13CarotaService10HTTPMethodO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13CarotaService10HTTPMethodO6deleteyA2CmF",
+            "mangledName": "$s13CarotaService10HTTPMethodO6deleteyA2CmF",
+            "moduleName": "CarotaService"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(rawValue:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CarotaService.HTTPMethod?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPMethod",
+                    "printedName": "CarotaService.HTTPMethod",
+                    "usr": "s:13CarotaService10HTTPMethodO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:13CarotaService10HTTPMethodO8rawValueACSgSS_tcfc",
+            "mangledName": "$s13CarotaService10HTTPMethodO8rawValueACSgSS_tcfc",
+            "moduleName": "CarotaService",
+            "implicit": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Var",
+            "name": "rawValue",
+            "printedName": "rawValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13CarotaService10HTTPMethodO8rawValueSSvp",
+            "mangledName": "$s13CarotaService10HTTPMethodO8rawValueSSvp",
+            "moduleName": "CarotaService",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13CarotaService10HTTPMethodO8rawValueSSvg",
+                "mangledName": "$s13CarotaService10HTTPMethodO8rawValueSSvg",
+                "moduleName": "CarotaService",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:13CarotaService10HTTPMethodO",
+        "mangledName": "$s13CarotaService10HTTPMethodO",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "enumRawTypeName": "String",
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawRepresentable",
+            "printedName": "RawRepresentable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "RawValue",
+                "printedName": "RawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SY",
+            "mangledName": "$sSY"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "Service",
+        "printedName": "Service",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "request",
+            "printedName": "request(_:method:body:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPMethod",
+                "printedName": "CarotaService.HTTPMethod",
+                "usr": "s:13CarotaService10HTTPMethodO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CarotaService.HTTPBody?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPBody",
+                    "printedName": "CarotaService.HTTPBody",
+                    "usr": "s:13CarotaService8HTTPBodyO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<τ_1_0, CarotaService.CSError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<τ_1_0, CarotaService.CSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_1_0"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CSError",
+                        "printedName": "CarotaService.CSError",
+                        "usr": "s:13CarotaService7CSErrorO"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13CarotaService0B0P7request_6method4body10completionySS_AA10HTTPMethodOAA8HTTPBodyOSgys6ResultOyqd__AA7CSErrorOGctSeRd__lF",
+            "mangledName": "$s13CarotaService0B0P7request_6method4body10completionySS_AA10HTTPMethodOAA8HTTPBodyOSgys6ResultOyqd__AA7CSErrorOGctSeRd__lF",
+            "moduleName": "CarotaService",
+            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : CarotaService.Service, τ_1_0 : Swift.Decodable>",
+            "sugared_genericSig": "<Self, T where Self : CarotaService.Service, T : Swift.Decodable>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "request",
+            "printedName": "request(_:method:body:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_1_0"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPMethod",
+                "printedName": "CarotaService.HTTPMethod",
+                "usr": "s:13CarotaService10HTTPMethodO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CarotaService.HTTPBody?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPBody",
+                    "printedName": "CarotaService.HTTPBody",
+                    "usr": "s:13CarotaService8HTTPBodyO"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13CarotaService0B0P7request_6method4bodyqd__SS_AA10HTTPMethodOAA8HTTPBodyOSgtYaKSeRd__lF",
+            "mangledName": "$s13CarotaService0B0P7request_6method4bodyqd__SS_AA10HTTPMethodOAA8HTTPBodyOSgtYaKSeRd__lF",
+            "moduleName": "CarotaService",
+            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : CarotaService.Service, τ_1_0 : Swift.Decodable>",
+            "sugared_genericSig": "<Self, T where Self : CarotaService.Service, T : Swift.Decodable>",
+            "protocolReq": true,
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "request",
+            "printedName": "request(_:method:body:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPMethod",
+                "printedName": "CarotaService.HTTPMethod",
+                "hasDefaultArg": true,
+                "usr": "s:13CarotaService10HTTPMethodO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CarotaService.HTTPBody?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPBody",
+                    "printedName": "CarotaService.HTTPBody",
+                    "usr": "s:13CarotaService8HTTPBodyO"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<τ_1_0, CarotaService.CSError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<τ_1_0, CarotaService.CSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_1_0"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CSError",
+                        "printedName": "CarotaService.CSError",
+                        "usr": "s:13CarotaService7CSErrorO"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13CarotaService0B0PAAE7request_6method4body10completionySS_AA10HTTPMethodOAA8HTTPBodyOSgys6ResultOyqd__AA7CSErrorOGctSeRd__lF",
+            "mangledName": "$s13CarotaService0B0PAAE7request_6method4body10completionySS_AA10HTTPMethodOAA8HTTPBodyOSgys6ResultOyqd__AA7CSErrorOGctSeRd__lF",
+            "moduleName": "CarotaService",
+            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : CarotaService.Service, τ_1_0 : Swift.Decodable>",
+            "sugared_genericSig": "<Self, T where Self : CarotaService.Service, T : Swift.Decodable>",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "request",
+            "printedName": "request(_:method:body:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_1_0"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPMethod",
+                "printedName": "CarotaService.HTTPMethod",
+                "hasDefaultArg": true,
+                "usr": "s:13CarotaService10HTTPMethodO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CarotaService.HTTPBody?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPBody",
+                    "printedName": "CarotaService.HTTPBody",
+                    "usr": "s:13CarotaService8HTTPBodyO"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13CarotaService0B0PAAE7request_6method4bodyqd__SS_AA10HTTPMethodOAA8HTTPBodyOSgtYaKSeRd__lF",
+            "mangledName": "$s13CarotaService0B0PAAE7request_6method4bodyqd__SS_AA10HTTPMethodOAA8HTTPBodyOSgtYaKSeRd__lF",
+            "moduleName": "CarotaService",
+            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : CarotaService.Service, τ_1_0 : Swift.Decodable>",
+            "sugared_genericSig": "<Self, T where Self : CarotaService.Service, T : Swift.Decodable>",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:13CarotaService0B0P",
+        "mangledName": "$s13CarotaService0B0P",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ServiceSingleton",
+        "printedName": "ServiceSingleton",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "request",
+            "printedName": "request(url:method:body:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLConvertible",
+                "printedName": "any CarotaService.URLConvertible",
+                "usr": "s:13CarotaService14URLConvertibleP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPMethod",
+                "printedName": "CarotaService.HTTPMethod",
+                "usr": "s:13CarotaService10HTTPMethodO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CarotaService.HTTPBody?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPBody",
+                    "printedName": "CarotaService.HTTPBody",
+                    "usr": "s:13CarotaService8HTTPBodyO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<τ_1_0, CarotaService.CSError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<τ_1_0, CarotaService.CSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_1_0"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CSError",
+                        "printedName": "CarotaService.CSError",
+                        "usr": "s:13CarotaService7CSErrorO"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13CarotaService0B9SingletonP7request3url6method4body10completionyAA14URLConvertible_p_AA10HTTPMethodOAA8HTTPBodyOSgys6ResultOyqd__AA7CSErrorOGctSeRd__lF",
+            "mangledName": "$s13CarotaService0B9SingletonP7request3url6method4body10completionyAA14URLConvertible_p_AA10HTTPMethodOAA8HTTPBodyOSgys6ResultOyqd__AA7CSErrorOGctSeRd__lF",
+            "moduleName": "CarotaService",
+            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : CarotaService.ServiceSingleton, τ_1_0 : Swift.Decodable>",
+            "sugared_genericSig": "<Self, T where Self : CarotaService.ServiceSingleton, T : Swift.Decodable>",
+            "protocolReq": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "request",
+            "printedName": "request(url:method:body:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_1_0"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLConvertible",
+                "printedName": "any CarotaService.URLConvertible",
+                "usr": "s:13CarotaService14URLConvertibleP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPMethod",
+                "printedName": "CarotaService.HTTPMethod",
+                "usr": "s:13CarotaService10HTTPMethodO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CarotaService.HTTPBody?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPBody",
+                    "printedName": "CarotaService.HTTPBody",
+                    "usr": "s:13CarotaService8HTTPBodyO"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13CarotaService0B9SingletonP7request3url6method4bodyqd__AA14URLConvertible_p_AA10HTTPMethodOAA8HTTPBodyOSgtYaKSeRd__lF",
+            "mangledName": "$s13CarotaService0B9SingletonP7request3url6method4bodyqd__AA14URLConvertible_p_AA10HTTPMethodOAA8HTTPBodyOSgtYaKSeRd__lF",
+            "moduleName": "CarotaService",
+            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : CarotaService.ServiceSingleton, τ_1_0 : Swift.Decodable>",
+            "sugared_genericSig": "<Self, T where Self : CarotaService.ServiceSingleton, T : Swift.Decodable>",
+            "protocolReq": true,
+            "throwing": true,
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "request",
+            "printedName": "request(url:method:body:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLConvertible",
+                "printedName": "any CarotaService.URLConvertible",
+                "usr": "s:13CarotaService14URLConvertibleP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPMethod",
+                "printedName": "CarotaService.HTTPMethod",
+                "hasDefaultArg": true,
+                "usr": "s:13CarotaService10HTTPMethodO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CarotaService.HTTPBody?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPBody",
+                    "printedName": "CarotaService.HTTPBody",
+                    "usr": "s:13CarotaService8HTTPBodyO"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Swift.Result<τ_1_0, CarotaService.CSError>) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Result",
+                    "printedName": "Swift.Result<τ_1_0, CarotaService.CSError>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "GenericTypeParam",
+                        "printedName": "τ_1_0"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CSError",
+                        "printedName": "CarotaService.CSError",
+                        "usr": "s:13CarotaService7CSErrorO"
+                      }
+                    ],
+                    "usr": "s:s6ResultO"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13CarotaService0B9SingletonPAAE7request3url6method4body10completionyAA14URLConvertible_p_AA10HTTPMethodOAA8HTTPBodyOSgys6ResultOyqd__AA7CSErrorOGctSeRd__lF",
+            "mangledName": "$s13CarotaService0B9SingletonPAAE7request3url6method4body10completionyAA14URLConvertible_p_AA10HTTPMethodOAA8HTTPBodyOSgys6ResultOyqd__AA7CSErrorOGctSeRd__lF",
+            "moduleName": "CarotaService",
+            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : CarotaService.ServiceSingleton, τ_1_0 : Swift.Decodable>",
+            "sugared_genericSig": "<Self, T where Self : CarotaService.ServiceSingleton, T : Swift.Decodable>",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "request",
+            "printedName": "request(url:method:body:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GenericTypeParam",
+                "printedName": "τ_1_0"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLConvertible",
+                "printedName": "any CarotaService.URLConvertible",
+                "usr": "s:13CarotaService14URLConvertibleP"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HTTPMethod",
+                "printedName": "CarotaService.HTTPMethod",
+                "hasDefaultArg": true,
+                "usr": "s:13CarotaService10HTTPMethodO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "CarotaService.HTTPBody?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HTTPBody",
+                    "printedName": "CarotaService.HTTPBody",
+                    "usr": "s:13CarotaService8HTTPBodyO"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13CarotaService0B9SingletonPAAE7request3url6method4bodyqd__AA14URLConvertible_p_AA10HTTPMethodOAA8HTTPBodyOSgtYaKSeRd__lF",
+            "mangledName": "$s13CarotaService0B9SingletonPAAE7request3url6method4bodyqd__AA14URLConvertible_p_AA10HTTPMethodOAA8HTTPBodyOSgtYaKSeRd__lF",
+            "moduleName": "CarotaService",
+            "genericSig": "<τ_0_0, τ_1_0 where τ_0_0 : CarotaService.ServiceSingleton, τ_1_0 : Swift.Decodable>",
+            "sugared_genericSig": "<Self, T where Self : CarotaService.ServiceSingleton, T : Swift.Decodable>",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:13CarotaService0B9SingletonP",
+        "mangledName": "$s13CarotaService0B9SingletonP",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "AccessControl"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "URLConvertible",
+        "printedName": "URLConvertible",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "asURL",
+            "printedName": "asURL()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.URL?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13CarotaService14URLConvertibleP5asURL10Foundation0E0VSgyF",
+            "mangledName": "$s13CarotaService14URLConvertibleP5asURL10Foundation0E0VSgyF",
+            "moduleName": "CarotaService",
+            "genericSig": "<τ_0_0 where τ_0_0 : CarotaService.URLConvertible>",
+            "sugared_genericSig": "<Self where Self : CarotaService.URLConvertible>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:13CarotaService14URLConvertibleP",
+        "mangledName": "$s13CarotaService14URLConvertibleP",
+        "moduleName": "CarotaService",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "String",
+        "printedName": "String",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "asURL",
+            "printedName": "asURL()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.URL?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:SS13CarotaServiceE5asURL10Foundation0D0VSgyF",
+            "mangledName": "$sSS13CarotaServiceE5asURL10Foundation0D0VSgyF",
+            "moduleName": "CarotaService",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:SS",
+        "mangledName": "$sSS",
+        "moduleName": "Swift",
+        "declAttributes": [
+          "EagerMove",
+          "Frozen"
+        ],
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "URLConvertible",
+            "printedName": "URLConvertible",
+            "usr": "s:13CarotaService14URLConvertibleP",
+            "mangledName": "$s13CarotaService14URLConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CodingKeyRepresentable",
+            "printedName": "CodingKeyRepresentable",
+            "usr": "s:s22CodingKeyRepresentableP",
+            "mangledName": "$ss22CodingKeyRepresentableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_HasContiguousBytes",
+            "printedName": "_HasContiguousBytes",
+            "usr": "s:s19_HasContiguousBytesP",
+            "mangledName": "$ss19_HasContiguousBytesP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomReflectable",
+            "printedName": "CustomReflectable",
+            "usr": "s:s17CustomReflectableP",
+            "mangledName": "$ss17CustomReflectableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_CustomPlaygroundQuickLookable",
+            "printedName": "_CustomPlaygroundQuickLookable",
+            "usr": "s:s30_CustomPlaygroundQuickLookableP",
+            "mangledName": "$ss30_CustomPlaygroundQuickLookableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "TextOutputStream",
+            "printedName": "TextOutputStream",
+            "usr": "s:s16TextOutputStreamP",
+            "mangledName": "$ss16TextOutputStreamP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "TextOutputStreamable",
+            "printedName": "TextOutputStreamable",
+            "usr": "s:s20TextOutputStreamableP",
+            "mangledName": "$ss20TextOutputStreamableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ExpressibleByBuiltinUnicodeScalarLiteral",
+            "printedName": "_ExpressibleByBuiltinUnicodeScalarLiteral",
+            "usr": "s:s41_ExpressibleByBuiltinUnicodeScalarLiteralP",
+            "mangledName": "$ss41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ExpressibleByBuiltinExtendedGraphemeClusterLiteral",
+            "printedName": "_ExpressibleByBuiltinExtendedGraphemeClusterLiteral",
+            "usr": "s:s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP",
+            "mangledName": "$ss51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ExpressibleByBuiltinStringLiteral",
+            "printedName": "_ExpressibleByBuiltinStringLiteral",
+            "usr": "s:s34_ExpressibleByBuiltinStringLiteralP",
+            "mangledName": "$ss34_ExpressibleByBuiltinStringLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByStringLiteral",
+            "printedName": "ExpressibleByStringLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "StringLiteralType",
+                "printedName": "StringLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s26ExpressibleByStringLiteralP",
+            "mangledName": "$ss26ExpressibleByStringLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByExtendedGraphemeClusterLiteral",
+            "printedName": "ExpressibleByExtendedGraphemeClusterLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "ExtendedGraphemeClusterLiteralType",
+                "printedName": "ExtendedGraphemeClusterLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s43ExpressibleByExtendedGraphemeClusterLiteralP",
+            "mangledName": "$ss43ExpressibleByExtendedGraphemeClusterLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByUnicodeScalarLiteral",
+            "printedName": "ExpressibleByUnicodeScalarLiteral",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "UnicodeScalarLiteralType",
+                "printedName": "UnicodeScalarLiteralType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s33ExpressibleByUnicodeScalarLiteralP",
+            "mangledName": "$ss33ExpressibleByUnicodeScalarLiteralP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "BidirectionalCollection",
+            "printedName": "BidirectionalCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Character",
+                    "printedName": "Swift.Character",
+                    "usr": "s:SJ"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Index",
+                    "printedName": "Swift.String.Index",
+                    "usr": "s:SS5IndexV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Substring",
+                    "printedName": "Swift.Substring",
+                    "usr": "s:Ss"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Indices",
+                "printedName": "Indices",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DefaultIndices",
+                    "printedName": "Swift.DefaultIndices<Swift.String>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SI"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:SK",
+            "mangledName": "$sSK"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Collection",
+            "printedName": "Collection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Character",
+                    "printedName": "Swift.Character",
+                    "usr": "s:SJ"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Index",
+                "printedName": "Index",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Index",
+                    "printedName": "Swift.String.Index",
+                    "usr": "s:SS5IndexV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Iterator",
+                    "printedName": "Swift.String.Iterator",
+                    "usr": "s:SS8IteratorV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Substring",
+                    "printedName": "Swift.Substring",
+                    "usr": "s:Ss"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Indices",
+                "printedName": "Indices",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DefaultIndices",
+                    "printedName": "Swift.DefaultIndices<Swift.String>",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:SI"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sl",
+            "mangledName": "$sSl"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sequence",
+            "printedName": "Sequence",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "Element",
+                "printedName": "Element",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Character",
+                    "printedName": "Swift.Character",
+                    "usr": "s:SJ"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "Iterator",
+                "printedName": "Iterator",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Iterator",
+                    "printedName": "Swift.String.Iterator",
+                    "usr": "s:SS8IteratorV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:ST",
+            "mangledName": "$sST"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Comparable",
+            "printedName": "Comparable",
+            "usr": "s:SL",
+            "mangledName": "$sSL"
+          },
+          {
+            "kind": "Conformance",
+            "name": "StringProtocol",
+            "printedName": "StringProtocol",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "UTF8View",
+                "printedName": "UTF8View",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UTF8View",
+                    "printedName": "Swift.String.UTF8View",
+                    "usr": "s:SS8UTF8ViewV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "UTF16View",
+                "printedName": "UTF16View",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UTF16View",
+                    "printedName": "Swift.String.UTF16View",
+                    "usr": "s:SS9UTF16ViewV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "UnicodeScalarView",
+                "printedName": "UnicodeScalarView",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UnicodeScalarView",
+                    "printedName": "Swift.String.UnicodeScalarView",
+                    "usr": "s:SS17UnicodeScalarViewV"
+                  }
+                ]
+              },
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Substring",
+                    "printedName": "Swift.Substring",
+                    "usr": "s:Ss"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sy",
+            "mangledName": "$sSy"
+          },
+          {
+            "kind": "Conformance",
+            "name": "ExpressibleByStringInterpolation",
+            "printedName": "ExpressibleByStringInterpolation",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "StringInterpolation",
+                "printedName": "StringInterpolation",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DefaultStringInterpolation",
+                    "printedName": "Swift.DefaultStringInterpolation",
+                    "usr": "s:s26DefaultStringInterpolationV"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s32ExpressibleByStringInterpolationP",
+            "mangledName": "$ss32ExpressibleByStringInterpolationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "LosslessStringConvertible",
+            "printedName": "LosslessStringConvertible",
+            "usr": "s:s25LosslessStringConvertibleP",
+            "mangledName": "$ss25LosslessStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RangeReplaceableCollection",
+            "printedName": "RangeReplaceableCollection",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "SubSequence",
+                "printedName": "SubSequence",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Substring",
+                    "printedName": "Swift.Substring",
+                    "usr": "s:Ss"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:Sm",
+            "mangledName": "$sSm"
+          },
+          {
+            "kind": "Conformance",
+            "name": "MirrorPath",
+            "printedName": "MirrorPath",
+            "usr": "s:s10MirrorPathP",
+            "mangledName": "$ss10MirrorPathP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ObjectiveCBridgeable",
+            "printedName": "_ObjectiveCBridgeable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_ObjectiveCType",
+                "printedName": "_ObjectiveCType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSString",
+                    "printedName": "Foundation.NSString",
+                    "usr": "c:objc(cs)NSString"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s21_ObjectiveCBridgeableP",
+            "mangledName": "$ss21_ObjectiveCBridgeableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CVarArg",
+            "printedName": "CVarArg",
+            "usr": "s:s7CVarArgP",
+            "mangledName": "$ss7CVarArgP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "URL",
+        "printedName": "URL",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "asURL",
+            "printedName": "asURL()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.URL?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "URL",
+                    "printedName": "Foundation.URL",
+                    "usr": "s:10Foundation3URLV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10Foundation3URLV13CarotaServiceE02asB0ACSgyF",
+            "mangledName": "$s10Foundation3URLV13CarotaServiceE02asB0ACSgyF",
+            "moduleName": "CarotaService",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:10Foundation3URLV",
+        "mangledName": "$s10Foundation3URLV",
+        "moduleName": "Foundation",
+        "intro_Macosx": "10.10",
+        "intro_iOS": "8.0",
+        "intro_tvOS": "9.0",
+        "intro_watchOS": "2.0",
+        "declAttributes": [
+          "Available",
+          "Available",
+          "Available",
+          "Available"
+        ],
+        "isExternal": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "ReferenceConvertible",
+            "printedName": "ReferenceConvertible",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "ReferenceType",
+                "printedName": "ReferenceType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSURL",
+                    "printedName": "Foundation.NSURL",
+                    "usr": "c:objc(cs)NSURL"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:10Foundation20ReferenceConvertibleP",
+            "mangledName": "$s10Foundation20ReferenceConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "URLConvertible",
+            "printedName": "URLConvertible",
+            "usr": "s:13CarotaService14URLConvertibleP",
+            "mangledName": "$s13CarotaService14URLConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ObjectiveCBridgeable",
+            "printedName": "_ObjectiveCBridgeable",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "_ObjectiveCType",
+                "printedName": "_ObjectiveCType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSURL",
+                    "printedName": "Foundation.NSURL",
+                    "usr": "c:objc(cs)NSURL"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:s21_ObjectiveCBridgeableP",
+            "mangledName": "$ss21_ObjectiveCBridgeableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_CustomPlaygroundQuickLookable",
+            "printedName": "_CustomPlaygroundQuickLookable",
+            "usr": "s:s30_CustomPlaygroundQuickLookableP",
+            "mangledName": "$ss30_CustomPlaygroundQuickLookableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          },
+          {
+            "kind": "Conformance",
+            "name": "_ExpressibleByFileReferenceLiteral",
+            "printedName": "_ExpressibleByFileReferenceLiteral",
+            "usr": "s:s34_ExpressibleByFileReferenceLiteralP",
+            "mangledName": "$ss34_ExpressibleByFileReferenceLiteralP"
+          }
+        ]
+      }
+    ],
+    "json_format_version": 8
+  },
+  "ConstValues": [
+    {
+      "filePath": "\/Users\/eliasferreira\/Developer\/carota\/ios\/ios-carota-service\/CarotaService\/Classes\/HTTP\/HTTPHeaderFields.swift",
+      "kind": "StringLiteral",
+      "offset": 167,
+      "length": 14,
+      "value": "\"Content-Type\""
+    },
+    {
+      "filePath": "\/Users\/eliasferreira\/Developer\/carota\/ios\/ios-carota-service\/CarotaService\/Classes\/HTTP\/HTTPHeaderFields.swift",
+      "kind": "StringLiteral",
+      "offset": 207,
+      "length": 15,
+      "value": "\"Authorization\""
+    },
+    {
+      "filePath": "\/Users\/eliasferreira\/Developer\/carota\/ios\/ios-carota-service\/CarotaService\/Classes\/HTTP\/HTTPHeaderFields.swift",
+      "kind": "StringLiteral",
+      "offset": 167,
+      "length": 14,
+      "value": "\"Content-Type\""
+    },
+    {
+      "filePath": "\/Users\/eliasferreira\/Developer\/carota\/ios\/ios-carota-service\/CarotaService\/Classes\/HTTP\/HTTPHeaderFields.swift",
+      "kind": "StringLiteral",
+      "offset": 207,
+      "length": 15,
+      "value": "\"Authorization\""
+    },
+    {
+      "filePath": "\/Users\/eliasferreira\/Developer\/carota\/ios\/ios-carota-service\/CarotaService\/Classes\/HTTP\/HTTPMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 161,
+      "length": 5,
+      "value": "\"GET\""
+    },
+    {
+      "filePath": "\/Users\/eliasferreira\/Developer\/carota\/ios\/ios-carota-service\/CarotaService\/Classes\/HTTP\/HTTPMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 183,
+      "length": 6,
+      "value": "\"POST\""
+    },
+    {
+      "filePath": "\/Users\/eliasferreira\/Developer\/carota\/ios\/ios-carota-service\/CarotaService\/Classes\/HTTP\/HTTPMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 205,
+      "length": 5,
+      "value": "\"PUT\""
+    },
+    {
+      "filePath": "\/Users\/eliasferreira\/Developer\/carota\/ios\/ios-carota-service\/CarotaService\/Classes\/HTTP\/HTTPMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 228,
+      "length": 7,
+      "value": "\"PATCH\""
+    },
+    {
+      "filePath": "\/Users\/eliasferreira\/Developer\/carota\/ios\/ios-carota-service\/CarotaService\/Classes\/HTTP\/HTTPMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 254,
+      "length": 8,
+      "value": "\"DELETE\""
+    },
+    {
+      "filePath": "\/Users\/eliasferreira\/Developer\/carota\/ios\/ios-carota-service\/CarotaService\/Classes\/HTTP\/HTTPMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 161,
+      "length": 5,
+      "value": "\"GET\""
+    },
+    {
+      "filePath": "\/Users\/eliasferreira\/Developer\/carota\/ios\/ios-carota-service\/CarotaService\/Classes\/HTTP\/HTTPMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 183,
+      "length": 6,
+      "value": "\"POST\""
+    },
+    {
+      "filePath": "\/Users\/eliasferreira\/Developer\/carota\/ios\/ios-carota-service\/CarotaService\/Classes\/HTTP\/HTTPMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 205,
+      "length": 5,
+      "value": "\"PUT\""
+    },
+    {
+      "filePath": "\/Users\/eliasferreira\/Developer\/carota\/ios\/ios-carota-service\/CarotaService\/Classes\/HTTP\/HTTPMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 228,
+      "length": 7,
+      "value": "\"PATCH\""
+    },
+    {
+      "filePath": "\/Users\/eliasferreira\/Developer\/carota\/ios\/ios-carota-service\/CarotaService\/Classes\/HTTP\/HTTPMethod.swift",
+      "kind": "StringLiteral",
+      "offset": 254,
+      "length": 8,
+      "value": "\"DELETE\""
+    }
+  ]
+}
