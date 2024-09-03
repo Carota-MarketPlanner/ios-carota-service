@@ -8,57 +8,75 @@ set -x
 # Set bash script to exit immediately if any commands fail
 set -e
 
-moduleName="CarotaService"
+# Directory to search for .podspec files
+SEARCH_DIR="."
 
-iphoneosArchiveDirectoryPath="/$moduleName-iphoneos.xcarchive"
-iphoneosArchiveDirectory="$( pwd; )$iphoneosArchiveDirectoryPath"
+# Find all .podspec files and extract name and version from each
+find "$SEARCH_DIR" -name '*.podspec' | while read -r PODSPEC_FILE; do
+    # Extract the name and version number
 
-iphoneosArchiveDirectoryPath="/$moduleName-iphonesimulator.xcarchive"
-iphoneosSimulatorDirectory="$( pwd; )$iphoneosArchiveDirectoryPath"
+    version=$(grep 's.version' $PODSPEC_FILE | sed -n -e 's/^.*s.version *= *//p'| tr -d '"' | tr -d "'")
+    moduleName=$(grep 's.name' $PODSPEC_FILE | sed -n -e 's/^.*s.name *= *//p'| tr -d '"' | tr -d "'")
 
-outputDirectory="$( pwd; )/Release/$moduleName.xcframework"
+    # Output the results
+    if [ -n "$moduleName" ]; then
+        echo "Name: $moduleName"
+    else
+        echo "Name not found."
+        exit 1
+    fi
 
-## Cleanup
+    # if [ -n "$VERSION" ]; then
+    #     echo "Version: $VERSION"
+    # else
+    #     echo "Version not found."
+    #     exit 1
+    # fi
 
-rm -rf $iphoneosArchiveDirectory
-rm -rf $iphoneosSimulatorDirectory
-rm -rf $outputDirectory
+    iphoneosArchiveDirectoryPath="/$moduleName-iphoneos.xcarchive"
+    iphoneosArchiveDirectory="$( pwd; )$iphoneosArchiveDirectoryPath"
+
+    iphoneosArchiveDirectoryPath="/$moduleName-iphonesimulator.xcarchive"
+    iphoneosSimulatorDirectory="$( pwd; )$iphoneosArchiveDirectoryPath"
+
+    outputDirectory="$( pwd; )/Release/$moduleName.xcframework"
+
+    ## Cleanup
+
+    rm -rf $iphoneosArchiveDirectory
+    rm -rf $iphoneosSimulatorDirectory
+    rm -rf $outputDirectory
 
 
-# Archive
-xcodebuild archive -workspace ./Example/$moduleName.xcworkspace \
-     -scheme $moduleName \
-     -archivePath $iphoneosArchiveDirectory \
-     -sdk iphoneos \
-     SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
-      
-xcodebuild archive -workspace ./Example/$moduleName.xcworkspace \
-     -scheme $moduleName \
-     -archivePath $iphoneosSimulatorDirectory \
-     -sdk iphonesimulator \
-     SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+    # Archive
+    xcodebuild archive -workspace ./Example/$moduleName.xcworkspace \
+        -scheme $moduleName \
+        -archivePath $iphoneosArchiveDirectory \
+        -sdk iphoneos \
+        SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+        
+    xcodebuild archive -workspace ./Example/$moduleName.xcworkspace \
+        -scheme $moduleName \
+        -archivePath $iphoneosSimulatorDirectory \
+        -sdk iphonesimulator \
+        SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
 
-## XCFramework
-xcodebuild -create-xcframework \
-    -framework "$iphoneosArchiveDirectory/Products/Library/Frameworks/$moduleName.framework" \
-    -framework "$iphoneosSimulatorDirectory/Products/Library/Frameworks/$moduleName.framework" \
-    -output $outputDirectory
+    ## XCFramework
+    xcodebuild -create-xcframework \
+        -framework "$iphoneosArchiveDirectory/Products/Library/Frameworks/$moduleName.framework" \
+        -framework "$iphoneosSimulatorDirectory/Products/Library/Frameworks/$moduleName.framework" \
+        -output $outputDirectory
 
-## Cleanup
-rm -rf $iphoneosArchiveDirectory
-rm -rf $iphoneosSimulatorDirectory
+    ## Cleanup
+    rm -rf $iphoneosArchiveDirectory
+    rm -rf $iphoneosSimulatorDirectory
 
-#Publish Release
-while getopts v: flag
-do
-    case "${flag}" in
-        v) version=${OPTARG};;
-    esac
+    #Publish Release
+    git add .
+    git commit -m "Version $version"
+
+    git tag $version
+    git push --tags origin develop
+    pod repo push carota $moduleName.podspec --allow-warnings
+
 done
-
-git add .
-git commit -m "Version $version"
-
-git tag $version
-git push --tags origin develop
-pod repo push carota $moduleName.podspec --allow-warnings
