@@ -71,9 +71,12 @@ find "$SEARCH_DIR" -name '*.podspec' | while read -r PODSPEC_FILE; do
     rm -rf $iphoneosArchiveDirectory
     rm -rf $iphoneosSimulatorDirectory
 
-    # #Publish Release
-    # git tag $version
-    # git push --tags origin
-    # pod repo push carota $moduleName.podspec --allow-warnings
+    #Publish Release
+    git add .
+    git commit -m "build $version"
+
+    git tag $version
+    git push --tags origin develop
+    pod repo push carota $moduleName.podspec --allow-warnings
 
 done
