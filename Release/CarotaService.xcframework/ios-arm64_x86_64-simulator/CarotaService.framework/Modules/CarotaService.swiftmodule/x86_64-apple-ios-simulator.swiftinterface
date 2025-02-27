@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
 // swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name CarotaService
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
 @_exported import CarotaService
 import Foundation
 import Swift
@@ -24,15 +25,11 @@ extension CarotaService.CarotaService : CarotaService.Auth {
 }
 extension CarotaService.CarotaService : CarotaService.Service {
   public func request<T>(_ endpoint: Swift.String, method: CarotaService.HTTPMethod = .get, body: CarotaService.HTTPBody? = nil, completion: @escaping CarotaService.CarotaService.Handler<T>) where T : Swift.Decodable
-  #if compiler(>=5.3) && $AsyncAwait
   public func request<T>(_ endpoint: Swift.String, method: CarotaService.HTTPMethod = .get, body: CarotaService.HTTPBody? = nil) async throws -> T where T : Swift.Decodable
-  #endif
 }
 extension CarotaService.CarotaService : CarotaService.ServiceSingleton {
   public func request<T>(url convertible: any CarotaService.URLConvertible, method: CarotaService.HTTPMethod = .get, body: CarotaService.HTTPBody? = nil, completion: @escaping CarotaService.CarotaService.Handler<T>) where T : Swift.Decodable
-  #if compiler(>=5.3) && $AsyncAwait
   public func request<T>(url convertible: any CarotaService.URLConvertible, method: CarotaService.HTTPMethod = .get, body: CarotaService.HTTPBody? = nil) async throws -> T where T : Swift.Decodable
-  #endif
 }
 public enum CSError : Swift.Error {
   case invalidURL
@@ -82,28 +79,20 @@ public enum HTTPMethod : Swift.String {
 public protocol Service {
   typealias CSResult<T> = (Swift.Result<T, CarotaService.CSError>) -> Swift.Void where T : Swift.Decodable
   func request<T>(_ endpoint: Swift.String, method: CarotaService.HTTPMethod, body: CarotaService.HTTPBody?, completion: @escaping Self.CSResult<T>) where T : Swift.Decodable
-  #if compiler(>=5.3) && $AsyncAwait
   func request<T>(_ endpoint: Swift.String, method: CarotaService.HTTPMethod, body: CarotaService.HTTPBody?) async throws -> T where T : Swift.Decodable
-  #endif
 }
 extension CarotaService.Service {
   public func request<T>(_ endpoint: Swift.String, method: CarotaService.HTTPMethod = .get, body: CarotaService.HTTPBody? = nil, completion: @escaping Self.CSResult<T>) where T : Swift.Decodable
-  #if compiler(>=5.3) && $AsyncAwait
   public func request<T>(_ endpoint: Swift.String, method: CarotaService.HTTPMethod = .get, body: CarotaService.HTTPBody? = nil) async throws -> T where T : Swift.Decodable
-  #endif
 }
 public protocol ServiceSingleton {
   typealias CSResult<T> = (Swift.Result<T, CarotaService.CSError>) -> Swift.Void where T : Swift.Decodable
   func request<T>(url convertible: any CarotaService.URLConvertible, method: CarotaService.HTTPMethod, body: CarotaService.HTTPBody?, completion: @escaping Self.CSResult<T>) where T : Swift.Decodable
-  #if compiler(>=5.3) && $AsyncAwait
   func request<T>(url convertible: any CarotaService.URLConvertible, method: CarotaService.HTTPMethod, body: CarotaService.HTTPBody?) async throws -> T where T : Swift.Decodable
-  #endif
 }
 extension CarotaService.ServiceSingleton {
   public func request<T>(url convertible: any CarotaService.URLConvertible, method: CarotaService.HTTPMethod = .get, body: CarotaService.HTTPBody? = nil, completion: @escaping Self.CSResult<T>) where T : Swift.Decodable
-  #if compiler(>=5.3) && $AsyncAwait
   public func request<T>(url convertible: any CarotaService.URLConvertible, method: CarotaService.HTTPMethod = .get, body: CarotaService.HTTPBody? = nil) async throws -> T where T : Swift.Decodable
-  #endif
 }
 extension Swift.String : CarotaService.URLConvertible {
   public func asURL() -> Foundation.URL?
