@@ -1,5 +1,5 @@
 //
-//  MPService.swift
+//  CSCloudClient.swift
 //  MPService
 //
 //  Created by Elias Ferreira on 11/01/23.
@@ -7,25 +7,16 @@
 
 import Foundation
 
-public class CarotaService {
-    
-    public typealias Output<T> = Result<T, CSError>
-    public typealias Handler<T> = (Output<T>) -> Void
-    
-    var baseURL: URLConvertible?
+public class CSCloudClient {
     var authorization: HTTPAuthentication?
     
-    public static let shared = CarotaService() as (ServiceSingleton & Auth)
+    public static let shared = CSCloudClient() as (CSCloudService & Auth)
     
-    private init(baseURL: URLConvertible? = nil) {
-        self.baseURL = baseURL
-    }
+    private init() {}
     
-    public static func getInstance(for baseURL: URLConvertible) -> (Service & Auth) {
-        return CarotaService(baseURL: baseURL) as (Service & Auth)
-    }
-        
-    private func result<T: Decodable>(data: Data?, response: URLResponse?, error: Swift.Error?) -> Output<T> {
+    // MARK: - Using Completion
+    
+    private func result(data: Data?, response: URLResponse?, error: Swift.Error?) -> CSResponse {
         if let statusCodeError = getStatusCodeError(response) {
             return .failure(statusCodeError)
         }
@@ -38,16 +29,26 @@ public class CarotaService {
             return .failure(.corruptData)
         }
         
-        do {
-            return .success(try JSONDecoder().decode(T.self, from: data))
-        } catch {
-            return .failure(.decodingError(error.localizedDescription))
+        return .success(data)
+    }
+    
+    private func decode<T: Decodable>(response: CSResponse) -> CSDecodedResponse<T> {
+        switch response {
+        case .success(let data):
+            do {
+                return .success(try JSONDecoder().decode(T.self, from: data))
+            } catch {
+                return .failure(.decodingError(error.localizedDescription))
+            }
+        
+        case .failure(let error):
+            return .failure(error)
         }
     }
     
-    // MARK:  Using Concurrency
+    // MARK: - Using Concurrency
     
-    private func result<T: Decodable>(request: URLRequest) async throws -> T {
+    private func result(request: URLRequest) async throws -> Data {
         do {
             let (data, response) = try await URLSession.shared.data(for: request)
         
@@ -55,15 +56,21 @@ public class CarotaService {
                 throw statusCodeError
             }
             
-            do {
-                return try JSONDecoder().decode(T.self, from: data)
-            } catch {
-                throw CSError.decodingError(error.localizedDescription)
-            }
+            return data
         } catch {
             throw CSError.dataTaskError(error.localizedDescription)
         }
     }
+    
+    private func decode<T: Decodable>(data: Data) throws -> T {
+        do {
+            return try JSONDecoder().decode(T.self, from: data)
+        } catch {
+            throw CSError.decodingError(error.localizedDescription)
+        }
+    }
+    
+    // MARK: - Prepare Request
     
     private func getRequest(for url: URL, and method: HTTPMethod, body: HTTPBody?) -> URLRequest? {
         var request = URLRequest(url: url)
@@ -84,6 +91,8 @@ public class CarotaService {
         
         return request
     }
+    
+    // MARK: - Status Code
     
     private func getStatusCodeError(_ response: URLResponse?) -> CSError? {
         guard let httpResponse = response as? HTTPURLResponse else {
@@ -110,7 +119,7 @@ public class CarotaService {
 
 // MARK: - Auth functions
 
-extension CarotaService: Auth {
+extension CSCloudClient: Auth {
     public func setAuthorization(_ auth: HTTPAuthentication) {
         self.authorization = auth
     }
@@ -122,10 +131,9 @@ extension CarotaService: Auth {
 
 // MARK: - Service For Instances
 
-extension CarotaService: Service {
-    
-    public func request<T: Decodable>(_ endpoint: String, method: HTTPMethod = .get, body: HTTPBody? = nil, completion: @escaping Handler<T>) {
-        guard let url = baseURL?.asURL()?.appendingPathComponent(endpoint) else {
+extension CSCloudClient: CSCloudService {
+    public func request(url convertible: URLConvertible, method: HTTPMethod = .get, body: HTTPBody? = nil, completion: @escaping CSCompletion) {
+        guard let url = convertible.asURL() else {
             completion(.failure(.invalidURL))
             return
         }
@@ -140,10 +148,18 @@ extension CarotaService: Service {
         }.resume()
     }
     
-    // MARK:  Using Concurrency
+    // MARK: Decoded
     
-    public func request<T: Decodable>(_ endpoint: String, method: HTTPMethod = .get, body: HTTPBody? = nil) async throws -> T {
-        guard let url = baseURL?.asURL()?.appendingPathComponent(endpoint) else {
+    public func request<T: Decodable>(url convertible: URLConvertible, method: HTTPMethod = .get, body: HTTPBody? = nil, completion: @escaping CSDecodedCompletion<T>) {
+        request(url: convertible, method: method, body: body) { response in
+            completion(self.decode(response: response))
+        }
+    }
+    
+    // MARK: - Using Concurrency
+    
+    public func request(url convertible: any URLConvertible, method: HTTPMethod, body: HTTPBody?) async throws -> Data {
+        guard let url = convertible.asURL() else {
             throw CSError.invalidURL
         }
         
@@ -151,52 +167,13 @@ extension CarotaService: Service {
             throw CSError.encodingError
         }
         
-        do {
-            return try await result(request: request)
-        } catch {
-            throw error
-        }
+        return try await result(request: request)
     }
     
-}
-
-// MARK: - For Singleton
-
-extension CarotaService: ServiceSingleton {
-    
-    public func request<T: Decodable>(url convertible: URLConvertible, method: HTTPMethod = .get,  body: HTTPBody? = nil, completion: @escaping Handler<T>) {
-        guard let url = convertible.asURL() else {
-            completion(.failure(.invalidURL))
-            return
-        }
-
-        guard let request = getRequest(for: url, and: method, body: body) else {
-            completion(.failure(.encodingError))
-            return
-        }
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            completion(self.result(data: data, response: response, error: error))
-        }.resume()
-    }
-    
-    // MARK:  Using Concurrency
+    // MARK: Decoded
     
     public func request<T: Decodable>(url convertible: URLConvertible, method: HTTPMethod = .get, body: HTTPBody? = nil) async throws -> T {
-        guard let url = convertible.asURL() else {
-            throw CSError.invalidURL
-        }
-        
-        guard let request = getRequest(for: url, and: method, body: body) else {
-            throw CSError.encodingError
-        }
-        
-        do {
-            return try await result(request: request)
-        } catch {
-            throw error
-        }
+        let data = try await request(url: convertible, method: method, body: body)
+        return try decode(data: data)
     }
-    
 }
-

@@ -14,7 +14,7 @@ class UsersViewModel: ObservableObject {
     @Published var showAlert = false
     @Published var errorMessage: String?
     
-    var service = CarotaService.getInstance(for: "https://jsonplaceholder.typicode.com")
+    var service = CSCloudClient.shared
     
     @MainActor
     func fetchUsers() async {
@@ -23,7 +23,7 @@ class UsersViewModel: ObservableObject {
             isLoading.toggle()
         }
         do {
-            users = try await service.request("/users")
+            users = try await service.request(url: "https://jsonplaceholder.typicode.com/users")
         } catch {
             showAlert = true
             errorMessage = error.localizedDescription

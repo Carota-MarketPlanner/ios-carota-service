@@ -10,13 +10,13 @@ import CarotaService
 
 class TesteLogadoViewModel {
     
-    static let service = CarotaService.getInstance(for: "http://localhost:3333")
+    static let service = CSCloudClient.shared
     
     static func testConection(token: String) {
         
         service.setAuthorization(.bearer(token: token))
         
-        service.request("/user/getUsers") { (result: Result<[UserLogado], CSError>) in
+        service.request(url: "http://localhost:3333/user/getUsers") { (result: Result<[UserLogado], CSError>) in
             switch result {
             case .success(let users):
                 print("Sucesso - \(users)")

@@ -15,9 +15,9 @@ class PostViewModel: ObservableObject {
     @Published var errorMessage: String?
     
     var userId: Int
-    var service = CarotaService.getInstance(for: "https://jsonplaceholder.typicode.com")
+    var service = CSCloudClient.shared
     
-    typealias PostsResult = CarotaService.Output<[Post]>
+    typealias PostsResult = Result<[Post], CSError>
     
     init(userId: Int) {
         self.userId = userId
@@ -26,7 +26,7 @@ class PostViewModel: ObservableObject {
     @MainActor
     func fetchPosts() {
         isLoading.toggle()
-        service.request("/users/\(userId)/posts") { (result: PostsResult) in
+        service.request(url: "https://jsonplaceholder.typicode.com/users/\(userId)/posts") { (result: PostsResult) in
             defer {
                 DispatchQueue.main.async {
                     self.isLoading.toggle()
@@ -48,7 +48,7 @@ class PostViewModel: ObservableObject {
     }
     
     func createPost(user: User) {
-        service.request("/posts", method: .post, body: .json(object: user)) { (result: CarotaService.Output<User>) in
+        service.request(url: "https://jsonplaceholder.typicode.com/posts", method: .post, body: .json(object: user)) { (result: Result<User, CSError>) in
             switch result {
             case .success(let postcreated):
                 DispatchQueue.main.async {
