@@ -9,10 +9,27 @@ on:
 
 jobs:
   build:
-
-    runs-on: macos-latest
+    name: Build iOS App
+    runs-on: macos-latest  # Usa uma máquina macOS
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Build
-      run: swift build -v
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+
+      - name: Configurar Versão do Xcode
+        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+      - name: Instalar Dependências do CocoaPods
+        run: |
+          gem install cocoapods
+          pod install
+        working-directory: ./Example # Mude caso seu Podfile esteja em outro lugar
+
+      - name: Compilar o Projeto
+        run: |
+          xcodebuild clean build \
+          -workspace CarotaService.xcworkspace \
+          -scheme CarotaService \
+          -sdk iphoneos \
+          -configuration Debug \
+          CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
