@@ -23,6 +23,12 @@ jobs:
           gem install cocoapods
           pod install
         working-directory: ./Example # Mude caso seu Podfile esteja em outro lugar
+        
+      - name: Limpar Cache da Build
+        run: |
+          rm -rf ~/Library/Developer/Xcode/DerivedData
+          rm -rf ~/Library/Caches/com.apple.dt.Xcode
+          xcodebuild clean -scheme CarotaService
 
       - name: Compilar e Criar .xcframework
         run: |
