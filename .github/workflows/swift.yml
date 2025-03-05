@@ -54,7 +54,7 @@ jobs:
 
       - name: Upload .xcframework para Artifactory
         env:
-          ARTIFACTORY_URL: "https://artifactory.carotaapp.com/artifactory/ios-repo/"
+          ARTIFACTORY_URL: "https://artifactory.carotaapp.com/artifactory/ios-repo/CarotaService/"
           ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
           ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
         run: |
