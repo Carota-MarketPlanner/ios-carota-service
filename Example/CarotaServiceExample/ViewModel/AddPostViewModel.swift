@@ -9,7 +9,7 @@ import Foundation
 import CarotaService
 
 class AddPostViewModel: ObservableObject {
-    var service = CarotaService.getInstance(for: "https://jsonplaceholder.typicode.com")
+    var service = CSCloudClient.shared
     
     @Published var title: String = ""
     @Published var body: String = ""
@@ -23,7 +23,7 @@ class AddPostViewModel: ObservableObject {
     func addPost() {
         let post = Post(userId: userId, id: 101, title: self.title, body: self.body)
         
-        service.request("/posts", method: .post, body: .json(object: post)) { (result: CarotaService.Output<Post>) in
+        service.request(url: "https://jsonplaceholder.typicode.com/posts", method: .post, body: .json(object: post)) { (result: Result<Post, CSError>) in
             switch result {
             case .success(let postcreated):
                 DispatchQueue.main.async {
