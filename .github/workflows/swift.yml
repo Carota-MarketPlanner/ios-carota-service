@@ -30,5 +30,22 @@ jobs:
           -workspace Example/CarotaService.xcworkspace \
           -scheme CarotaService \
           -sdk iphoneos \
-          -configuration Debug \
+          -archivePath build/CarotaService.xcarchive \
           CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+
+      - name: Exportar o Build para .ipa
+        run: |
+          xcodebuild -exportArchive \
+          -archivePath build/CarotaService.xcarchive \
+          -exportPath build/output \
+          -exportOptionsPlist exportOptions.plist
+
+      - name: Upload para Artifactory
+        env:
+          ARTIFACTORY_URL: "http://artifactory.carotaapp.com/artifactory/ios-repo/"
+          ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
+          ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+        run: |
+          curl -u "$ARTIFACTORY_USER:$ARTIFACTORY_PASSWORD" \
+          -T build/output/CarotaService.ipa \
+          "$ARTIFACTORY_URL/CarotaService.ipa"
