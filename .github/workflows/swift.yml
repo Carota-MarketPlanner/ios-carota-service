@@ -27,7 +27,7 @@ jobs:
       - name: Compilar o Projeto
         run: |
           xcodebuild clean build \
-          -workspace CarotaService.xcworkspace \
+          -workspace Example/CarotaService.xcworkspace \
           -scheme CarotaService \
           -sdk iphoneos \
           -configuration Debug \
