@@ -36,7 +36,6 @@ jobs:
 
           xcodebuild archive -workspace ./Example/CarotaService.xcworkspace \
           -scheme CarotaService \
-          -target CarotaService \
           -destination "generic/platform=iOS Simulator" \
           -archivePath build/ios-simulator.xcarchive \
           -sdk iphonesimulator \
