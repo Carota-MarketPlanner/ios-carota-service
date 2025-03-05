@@ -51,11 +51,11 @@ jobs:
           zip -r CarotaService.xcframework.zip CarotaService.xcframework
 
       - name: Upload .xcframework para Artifactory
-          env:
-            ARTIFACTORY_URL: "http://artifactory.carotaapp.com/artifactory/ios-repo/"
-            ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
-            ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
-          run: |
-            curl -u "$ARTIFACTORY_USER:$ARTIFACTORY_PASSWORD" \
-            -T build/CarotaService.xcframework.zip \
-            "$ARTIFACTORY_URL/CarotaService.xcframework.zip"
+        env:
+          ARTIFACTORY_URL: "http://artifactory.carotaapp.com/artifactory/ios-repo/"
+          ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
+          ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+        run: |
+          curl -u "$ARTIFACTORY_USER:$ARTIFACTORY_PASSWORD" \
+          -T build/CarotaService.xcframework.zip \
+          "$ARTIFACTORY_URL/CarotaService.xcframework.zip"
