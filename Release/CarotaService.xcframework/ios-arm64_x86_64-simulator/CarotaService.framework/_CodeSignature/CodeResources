@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/CarotaService-Swift.h</key>
 		<data>
-		1ivAFSrqSFqQDBbl/o+7sYrYIRY=
+		9HilPYZp94gC3Kn5XP8BYJUVc7Y=
 		</data>
 		<key>Headers/CarotaService-umbrella.h</key>
 		<data>
@@ -14,47 +14,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		d3CykoDRX5p5bzboucNKK7TxYMA=
+		5uChlIrFXd1MYmnZuzS1lxE1Os0=
 		</data>
 		<key>Modules/CarotaService.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		cdgFv728Yw/LA7L5cH69/T2Oh7Q=
+		/5/1a8i5Rm1jAofQidoma3xD9v4=
 		</data>
 		<key>Modules/CarotaService.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		mFlR8w6F04zzUpbsHfUdpuCdy5I=
+		vNw6A0sngWYTCeAYyHbKM5Wbk1w=
 		</data>
 		<key>Modules/CarotaService.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		MfZsTPvhxrPibyTWTt9ikJM4zPA=
+		PFG1MrWKHxPyxeuPeOMQ9P0tEYs=
 		</data>
 		<key>Modules/CarotaService.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		mFlR8w6F04zzUpbsHfUdpuCdy5I=
+		vNw6A0sngWYTCeAYyHbKM5Wbk1w=
 		</data>
 		<key>Modules/CarotaService.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		63z8a2TVNTJLg81EQHpTc1H9M9Q=
+		9YdSPY7Z29o4gGDXp1QOXeLdyhk=
 		</data>
 		<key>Modules/CarotaService.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		cdgFv728Yw/LA7L5cH69/T2Oh7Q=
+		/5/1a8i5Rm1jAofQidoma3xD9v4=
 		</data>
 		<key>Modules/CarotaService.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		Kktr/O9/nTp9zQ2L0g4cxxczFZo=
+		C3/JiCQTWRgUXi5ii3//Apga/fc=
 		</data>
 		<key>Modules/CarotaService.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Hf3I+SmdbE5RriMvmYRLFO6uerE=
+		BqVsxdaOwxtH0pT22HTbKFSoQ24=
 		</data>
 		<key>Modules/CarotaService.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		Kktr/O9/nTp9zQ2L0g4cxxczFZo=
+		C3/JiCQTWRgUXi5ii3//Apga/fc=
 		</data>
 		<key>Modules/CarotaService.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		RDWoG3E8aCd4QGpU8zZ6dAlRZi4=
+		s1YQpOhuOJOBjv771ydxPyoWC3c=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -67,7 +67,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5Hel3Pyi5GcGITVYAsZmR/iNjNqQHY7qBDwvOeCKuis=
+			FGSfQIRbcTkeMcad0R4bh1alPzjsMzW8XxLlq1dR1G8=
 			</data>
 		</dict>
 		<key>Headers/CarotaService-umbrella.h</key>
@@ -81,70 +81,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FrX2KWKIews4Q2Cuy0uotY9u9nRuPcRPRnCYXyLCIRw=
+			KBVxoSLzTEoUWbMfgj/U3JnqVyRFpoM8lkhoG2u+xcU=
 			</data>
 		</dict>
 		<key>Modules/CarotaService.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uJl5BHMwa38vT+kTOz8PQNogwrFxDSiOc/21IZrxt3E=
+			Slvy38u2nGhyxmyNmRxvC+HFsYydVBDW5cbND83DEQk=
 			</data>
 		</dict>
 		<key>Modules/CarotaService.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3lpwwTMeSpEewn2SoGCCIuavIKgZvkCxtS3sVpx8pZM=
+			z+H4zLk702+CnzZq0G3lAwwM/N314T9+xwycuD97EtE=
 			</data>
 		</dict>
 		<key>Modules/CarotaService.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uJl5BHMwa38vT+kTOz8PQNogwrFxDSiOc/21IZrxt3E=
+			Slvy38u2nGhyxmyNmRxvC+HFsYydVBDW5cbND83DEQk=
 			</data>
 		</dict>
 		<key>Modules/CarotaService.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			V+BsYuPgyG8vFNQOPi6CIHfzPvJmJp/n4j88tMTkDvg=
+			nyI0FFpDoTN4g12ul6jI0Cz1LgBsxuSwN43fPDHsGm8=
 			</data>
 		</dict>
 		<key>Modules/CarotaService.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FrX2KWKIews4Q2Cuy0uotY9u9nRuPcRPRnCYXyLCIRw=
+			KBVxoSLzTEoUWbMfgj/U3JnqVyRFpoM8lkhoG2u+xcU=
 			</data>
 		</dict>
 		<key>Modules/CarotaService.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Nd/bQ7B1Q27KkSgWa5c1IXJAa9/4pf8ABTEEuIS76Fw=
+			EMW+SnkpFyjT9NcB1L1/UT6Nv+DdSSkbJzH0/Klec1w=
 			</data>
 		</dict>
 		<key>Modules/CarotaService.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YSrogkfVXMeOZcjslnMlbHnp+4l7S7ROoYJ9WBvbSlg=
+			NgKHHK3GCW8Nabkpw+Ni9LBwibWM6AMhCWCA1AscuW8=
 			</data>
 		</dict>
 		<key>Modules/CarotaService.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Nd/bQ7B1Q27KkSgWa5c1IXJAa9/4pf8ABTEEuIS76Fw=
+			EMW+SnkpFyjT9NcB1L1/UT6Nv+DdSSkbJzH0/Klec1w=
 			</data>
 		</dict>
 		<key>Modules/CarotaService.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+7W/568K3lBh9+QyxMY/a11zcH3vcYF4FElgVBVUC8Q=
+			rjG1T005wO0Vcst47B0h/2qYgH+HY5WGslFaNjdZYbU=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

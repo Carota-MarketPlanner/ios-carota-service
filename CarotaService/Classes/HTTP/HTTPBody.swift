@@ -17,6 +17,7 @@ extension HTTPBody {
         switch self {
         case .json(_):
             return "application/json"
+            
         case .formData:
             return "multipart/form-data"
         }
@@ -32,6 +33,7 @@ extension HTTPBody {
             } catch {
                 return nil
             }
+            
         case .formData:
             // Future implementation of form data
             return Data()
