@@ -24,28 +24,38 @@ jobs:
           pod install
         working-directory: ./Example # Mude caso seu Podfile esteja em outro lugar
 
-      - name: Compilar o Projeto
+      - name: Compilar e Criar .xcframework
         run: |
-          xcodebuild clean build \
-          -workspace Example/CarotaService.xcworkspace \
+          xcodebuild archive \
           -scheme CarotaService \
+          -destination "generic/platform=iOS" \
+          -archivePath build/ios.xcarchive \
           -sdk iphoneos \
-          -archivePath build/CarotaService.xcarchive \
-          CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+          SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
 
-      - name: Exportar o Build para .ipa
-        run: |
-          xcodebuild -exportArchive \
-          -archivePath build/CarotaService.xcarchive \
-          -exportPath build/output \
-          -exportOptionsPlist exportOptions.plist
+          xcodebuild archive \
+          -scheme CarotaService \
+          -destination "generic/platform=iOS Simulator" \
+          -archivePath build/ios-simulator.xcarchive \
+          -sdk iphonesimulator \
+          SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
 
-      - name: Upload para Artifactory
-        env:
-          ARTIFACTORY_URL: "http://artifactory.carotaapp.com/artifactory/ios-repo/"
-          ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
-          ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+          xcodebuild -create-xcframework \
+          -framework build/ios.xcarchive/Products/Library/Frameworks/CarotaService.framework \
+          -framework build/ios-simulator.xcarchive/Products/Library/Frameworks/CarotaService.framework \
+          -output build/CarotaService.xcframework
+
+      - name: Compactar .xcframework
         run: |
-          curl -u "$ARTIFACTORY_USER:$ARTIFACTORY_PASSWORD" \
-          -T build/output/CarotaService.ipa \
-          "$ARTIFACTORY_URL/CarotaService.ipa"
+          cd build
+          zip -r CarotaService.xcframework.zip CarotaService.xcframework
+
+      - name: Upload .xcframework para Artifactory
+          env:
+            ARTIFACTORY_URL: "http://artifactory.carotaapp.com/artifactory/ios-repo/"
+            ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
+            ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+          run: |
+            curl -u "$ARTIFACTORY_USER:$ARTIFACTORY_PASSWORD" \
+            -T build/CarotaService.xcframework.zip \
+            "$ARTIFACTORY_URL/CarotaService.xcframework.zip"
