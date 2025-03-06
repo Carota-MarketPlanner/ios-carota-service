@@ -47,11 +47,6 @@ jobs:
           -framework build/ios-simulator.xcarchive/Products/Library/Frameworks/CarotaService.framework \
           -output build/CarotaService.xcframework
 
-      - name: Compactar .xcframework
-        run: |
-          cd build
-          tar -czvf CarotaService.tar.gz CarotaService.xcframework
-
       - name: Upload .xcframework para Artifactory
         env:
           ARTIFACTORY_URL: "https://artifactory.carotaapp.com/artifactory/ios-repo/CarotaService"
@@ -59,5 +54,5 @@ jobs:
           ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
         run: |
           curl -u "$ARTIFACTORY_USER:$ARTIFACTORY_PASSWORD" \
-          -T build/CarotaService.tar.gz \
-          "$ARTIFACTORY_URL/CarotaService.tar.gz"
+          -T build/CarotaService.xcframework \
+          "$ARTIFACTORY_URL/CarotaService.xcframework"
