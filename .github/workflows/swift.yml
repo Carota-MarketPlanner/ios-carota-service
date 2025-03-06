@@ -52,16 +52,11 @@ jobs:
           cd build
           zip -r CarotaService.zip CarotaService.xcframework
 
-      - name: Instalar JFrog CLI
-        run: curl -fL https://install-cli.jfrog.io | sh
-
-      - name: Configurar JFrog CLI
-        run: |
-          jf c add meu-artifactory \
-            --url=https://artifactory.carotaapp.com/artifactory \
-            --user=${{ secrets.ARTIFACTORY_USER }} \
-            --password=${{ secrets.ARTIFACTORY_PASSWORD }}
-
-      - name: Upload com JFrog CLI
-        run: |
-          jf rt u "build/CarotaService.zip" "ios-repo/CarotaService/1.1.11/CarotaService.zip"
+      - name: Upload via REST API
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: "https://artifactory.carotaapp.com/artifactory/ios-repo/CarotaService/CarotaService.zip"
+          method: "PUT"
+          username: ${{ secrets.ARTIFACTORY_USER }}
+          password: ${{ secrets.ARTIFACTORY_PASSWORD }}
+          data: "@build/CarotaService.zip"
