@@ -47,12 +47,21 @@ jobs:
           -framework build/ios-simulator.xcarchive/Products/Library/Frameworks/CarotaService.framework \
           -output build/CarotaService.xcframework
 
-      - name: Upload .xcframework para Artifactory
-        env:
-          ARTIFACTORY_URL: "https://artifactory.carotaapp.com/artifactory/ios-repo/CarotaService"
-          ARTIFACTORY_USER: ${{ secrets.ARTIFACTORY_USER }}
-          ARTIFACTORY_PASSWORD: ${{ secrets.ARTIFACTORY_PASSWORD }}
+      - name: Compactar .xcframework
         run: |
-          curl -u "$ARTIFACTORY_USER:$ARTIFACTORY_PASSWORD" \
-          -T build/CarotaService.xcframework \
-          "$ARTIFACTORY_URL/CarotaService.xcframework"
+          cd build
+          zip -r CarotaService.zip CarotaService.xcframework
+
+      - name: Instalar JFrog CLI
+        run: curl -fL https://install-cli.jfrog.io | sh
+
+      - name: Configurar JFrog CLI
+        run: |
+          jf c add meu-artifactory \
+            --url=https://artifactory.carotaapp.com/artifactory \
+            --user=${{ secrets.ARTIFACTORY_USER }} \
+            --password=${{ secrets.ARTIFACTORY_PASSWORD }}
+
+      - name: Upload com JFrog CLI
+        run: |
+          jf rt u "build/CarotaService.zip" "ios-repo/CarotaService/1.1.11/CarotaService.zip"
