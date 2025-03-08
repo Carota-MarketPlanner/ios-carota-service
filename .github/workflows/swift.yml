@@ -27,26 +27,24 @@ jobs:
         run: |
           PODSPEC_FILE=$(find ./ -name "*.podspec" | head -n 1)
           NAME=$(grep 's.name' $PODSPEC_FILE | sed -n -e 's/^.*s.version *= *//p'| tr -d '"' | tr -d "'")
-          echo "NAME=${NAME}" >> $GITHUB_ENV  # Armazenando o nome como variável de ambiente
 
       - name: Extrair versão do Podspec
         id: extract_version
         run: |
           VERSION=$(grep 's.version' $PODSPEC_FILE | sed -n -e 's/^.*s.version *= *//p'| tr -d '"' | tr -d "'")
-          echo "VERSION=${VERSION}" >> $GITHUB_ENV  # Armazenando a versão como variável de ambiente
 
       - name: Compilar e Criar .xcframework
         run: |
-          xcodebuild archive -workspace ./Example/${{ env.NAME }}.xcworkspace \
-          -scheme ${{ env.NAME }} \
+          xcodebuild archive -workspace ./Example/$NAME.xcworkspace \
+          -scheme $NAME \
           -destination "generic/platform=iOS" \
           -archivePath build/ios.xcarchive \
           -sdk iphoneos \
           SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
           IPHONEOS_DEPLOYMENT_TARGET=15.0
 
-          xcodebuild archive -workspace ./Example/${{ env.NAME }}.xcworkspace \
-          -scheme ${{ env.NAME }} \
+          xcodebuild archive -workspace ./Example/$NAME.xcworkspace \
+          -scheme $NAME \
           -destination "generic/platform=iOS Simulator" \
           -archivePath build/ios-simulator.xcarchive \
           -sdk iphonesimulator \
@@ -54,20 +52,20 @@ jobs:
           IPHONEOS_DEPLOYMENT_TARGET=15.0
 
           xcodebuild -create-xcframework \
-          -framework build/ios.xcarchive/Products/Library/Frameworks/${{ env.NAME }}.framework \
-          -framework build/ios-simulator.xcarchive/Products/Library/Frameworks/${{ env.NAME }}.framework \
+          -framework build/ios.xcarchive/Products/Library/Frameworks/$NAME.framework \
+          -framework build/ios-simulator.xcarchive/Products/Library/Frameworks/$NAME.framework \
           -output build/${{ env.NAME }}.xcframework
 
       - name: Compactar .xcframework
         run: |
           cd build
-          zip -r ${{ env.NAME }}.zip ${{ env.NAME }}.xcframework
+          zip -r $NAME.zip $NAME.xcframework
 
       - name: Upload via REST API
         uses: fjogeleit/http-request-action@v1
         with:
-          url: "https://artifactory.carotaapp.com/artifactory/ios-repo/${{ env.NAME }}/${{ env.VERSION }}/${{ env.NAME }}.zip"  # Usando o nome e a versão extraídos
+          url: "https://artifactory.carotaapp.com/artifactory/ios-repo/$NAME/$VERSION/$NAME.zip"  # Usando o nome e a versão extraídos
           method: "PUT"
           username: ${{ secrets.ARTIFACTORY_USER }}
           password: ${{ secrets.ARTIFACTORY_PASSWORD }}
-          data: "@build/${{ env.NAME }}.zip"
+          data: "@build/$NAME.zip"
