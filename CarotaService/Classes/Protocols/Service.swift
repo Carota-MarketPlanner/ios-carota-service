@@ -23,13 +23,13 @@ public protocol CSCloudService {
                                body: HTTPBody?,
                                completion: @escaping CSDecodedCompletion<T>)
     
-    func request(url convertible: URLConvertible,
-                 method: HTTPMethod,
-                 body: HTTPBody?) async throws -> Data
-    
-    func request<T: Decodable>(url convertible: URLConvertible,
-                               method: HTTPMethod,
-                               body: HTTPBody?) async throws -> T
+//    func request(url convertible: URLConvertible,
+//                 method: HTTPMethod,
+//                 body: HTTPBody?) async throws -> Data
+//    
+//    func request<T: Decodable>(url convertible: URLConvertible,
+//                               method: HTTPMethod,
+//                               body: HTTPBody?) async throws -> T
 }
 
 extension CSCloudService {
@@ -61,27 +61,27 @@ extension CSCloudService {
         )
     }
     
-    public func request(
-        url convertible: URLConvertible,
-        method: HTTPMethod = .get,
-        body: HTTPBody? = nil
-    ) async throws -> Data {
-        try await request(
-            url: convertible,
-            method: method,
-            body: body
-        )
-    }
-    
-    public func request<T: Decodable>(
-        url convertible: URLConvertible,
-        method: HTTPMethod = .get,
-        body: HTTPBody? = nil
-    ) async throws -> T {
-        try await request(
-            url: convertible,
-            method: method,
-            body: body
-        )
-    }
+//    public func request(
+//        url convertible: URLConvertible,
+//        method: HTTPMethod = .get,
+//        body: HTTPBody? = nil
+//    ) async throws -> Data {
+//        try await request(
+//            url: convertible,
+//            method: method,
+//            body: body
+//        )
+//    }
+//    
+//    public func request<T: Decodable>(
+//        url convertible: URLConvertible,
+//        method: HTTPMethod = .get,
+//        body: HTTPBody? = nil
+//    ) async throws -> T {
+//        try await request(
+//            url: convertible,
+//            method: method,
+//            body: body
+//        )
+//    }
 }
