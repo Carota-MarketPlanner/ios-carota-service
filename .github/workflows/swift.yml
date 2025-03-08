@@ -25,8 +25,8 @@ jobs:
       - name: Extrair nome do Podspec
         id: extract_namee
         run: |
-          PODSPEC_FILE=$(find ./ -name "*.podspec" | head -n 1)
-          NAME=$(grep 's.name' $PODSPEC_FILE | sed -n -e 's/^.*s.version *= *//p'| tr -d '"' | tr -d "'")
+          PODSPEC_FILE=$(find . -name "*.podspec")
+          NAME=$(grep 's.name' $PODSPEC_FILE | sed -n -e 's/^.*s.name *= *//p'| tr -d '"' | tr -d "'")
 
       - name: Extrair versão do Podspec
         id: extract_version
