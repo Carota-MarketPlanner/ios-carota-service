@@ -25,14 +25,14 @@ jobs:
       - name: Extrair nome do Podspec
         id: extract_namee
         run: |
-          PODSPEC_FILE=$(find ./Example -name "*.podspec" | head -n 1)
-          NAME=$(grep -oP 's.name\s*=\s*"[^"]+' "$PODSPEC_FILE" | cut -d'"' -f2)
+          PODSPEC_FILE=$(find ./ -name "*.podspec" | head -n 1)
+          NAME=$(sed -n 's/.*s.version *= *"\([^"]*\)".*/\1/p' $PODSPEC_FILE )
           echo "NAME=${NAME}" >> $GITHUB_ENV  # Armazenando o nome como variável de ambiente
 
       - name: Extrair versão do Podspec
         id: extract_version
         run: |
-          VERSION=$(grep -oP 's.name\s*=\s*"[^"]+' ./Example/${{ env.NAME }}.podspec | cut -d'"' -f2)
+          VERSION=$(sed -n 's/.*s.version *= *"\([^"]*\)".*/\1/p' ${{ env.NAME }}.podspec)
           echo "VERSION=${VERSION}" >> $GITHUB_ENV  # Armazenando a versão como variável de ambiente
 
       - name: Compilar e Criar .xcframework
