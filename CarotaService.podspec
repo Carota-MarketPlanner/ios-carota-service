@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CarotaService'
-  s.version          = '1.1.4'
+  s.version          = '1.1.5'
   s.summary          = 'A Network Service provider to supply MarketPlanner App.'
 
   s.description      = <<-DESC
@@ -15,13 +15,11 @@ Pod::Spec.new do |s|
 
   s.platforms = { :ios => '15.0' }
   s.ios.deployment_target = '15.0'
-    
-  s.pod_target_xcconfig = { "ENABLE_BITECODE" => "NO", "SKIP_INSTALL" => "NO" }
 
   s.default_subspecs = "Binary"
 
   s.subspec 'Binary' do |release|
-    release.vendored_frameworks = 'Release/CarotaService.xcframework'
+    release.vendored_frameworks = 'CarotaService.xcframework'
   end
 
   s.subspec 'Source' do |debug|
