@@ -38,16 +38,16 @@ jobs:
 
       - name: Compilar e Criar .xcframework
         run: |
-          xcodebuild archive -workspace ./Example/${{ env.NAME }}..xcworkspace \
-          -scheme ${{ env.NAME }}. \
+          xcodebuild archive -workspace ./Example/${{ env.NAME }}.xcworkspace \
+          -scheme ${{ env.NAME }} \
           -destination "generic/platform=iOS" \
           -archivePath build/ios.xcarchive \
           -sdk iphoneos \
           SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
           IPHONEOS_DEPLOYMENT_TARGET=15.0
 
-          xcodebuild archive -workspace ./Example/${{ env.NAME }}..xcworkspace \
-          -scheme ${{ env.NAME }}. \
+          xcodebuild archive -workspace ./Example/${{ env.NAME }}.xcworkspace \
+          -scheme ${{ env.NAME }} \
           -destination "generic/platform=iOS Simulator" \
           -archivePath build/ios-simulator.xcarchive \
           -sdk iphonesimulator \
@@ -55,20 +55,20 @@ jobs:
           IPHONEOS_DEPLOYMENT_TARGET=15.0
 
           xcodebuild -create-xcframework \
-          -framework build/ios.xcarchive/Products/Library/Frameworks/${{ env.NAME }}..framework \
-          -framework build/ios-simulator.xcarchive/Products/Library/Frameworks/${{ env.NAME }}..framework \
+          -framework build/ios.xcarchive/Products/Library/Frameworks/${{ env.NAME }}.framework \
+          -framework build/ios-simulator.xcarchive/Products/Library/Frameworks/${{ env.NAME }}.framework \
           -output build/${{ env.NAME }}.xcframework
 
       - name: Compactar .xcframework
         run: |
           cd build
-          zip -r $NAME.zip $NAME.xcframework
+          zip -r ${{ env.NAME }}.zip ${{ env.NAME }}.xcframework
 
       - name: Upload via REST API
         uses: fjogeleit/http-request-action@v1
         with:
-          url: "https://artifactory.carotaapp.com/artifactory/ios-repo/${{ env.NAME }}./${{ env.VERSION }}./${{ env.NAME }}..zip"  # Usando o nome e a versão extraídos
+          url: "https://artifactory.carotaapp.com/artifactory/ios-repo/${{ env.NAME }}/${{ env.VERSION }}/${{ env.NAME }}.zip"  # Usando o nome e a versão extraídos
           method: "PUT"
           username: ${{ secrets.ARTIFACTORY_USER }}
           password: ${{ secrets.ARTIFACTORY_PASSWORD }}
-          data: "@build/${{ env.NAME }}..zip"
+          data: "@build/${{ env.NAME }}.zip"
