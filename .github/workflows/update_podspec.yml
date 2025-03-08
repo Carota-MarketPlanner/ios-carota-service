@@ -1,4 +1,4 @@
-name: Atualizar Podspec no GitHub
+name: Atualizar Podspec
 
 on:
   workflow_dispatch:  # Permite rodar manualmente
