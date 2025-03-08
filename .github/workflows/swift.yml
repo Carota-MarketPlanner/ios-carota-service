@@ -10,33 +10,28 @@ jobs:
     runs-on: macos-latest  # Usa uma máquina macOS
 
     steps:
-      - name: Checkout do Código
+      - name: Code Checkout
         uses: actions/checkout@v4
 
-      - name: Configurar Versão do Xcode
+      - name: Config Xcode Vresion
         run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
 
-      - name: Instalar Dependências do CocoaPods
+      - name: Install CocoaPods Dependencies
         run: |
           gem install cocoapods
           pod install
         working-directory: ./Example # Mude caso seu Podfile esteja em outro lugar
 
-      - name: Extrair nome do Podspec
+      - name: Extact name and version from Podspec
         id: extract_namee
         run: |
           PODSPEC_FILE=$(find . -name "*.podspec")
           NAME=$(grep 's.name' $PODSPEC_FILE | sed -n -e 's/^.*s.name *= *//p'| tr -d '"' | tr -d "'")
           echo "NAME=${NAME}" >> $GITHUB_ENV
-
-      - name: Extrair versão do Podspec
-        id: extract_version
-        run: |
-          PODSPEC_FILE=$(find . -name "*.podspec")
           VERSION=$(grep 's.version' $PODSPEC_FILE | sed -n -e 's/^.*s.version *= *//p'| tr -d '"' | tr -d "'")
           echo "VERSION=${VERSION}" >> $GITHUB_ENV
 
-      - name: Compilar e Criar .xcframework
+      - name: Build and Create .xcframework
         run: |
           xcodebuild archive -workspace ./Example/${{ env.NAME }}.xcworkspace \
           -scheme ${{ env.NAME }} \
@@ -59,12 +54,12 @@ jobs:
           -framework build/ios-simulator.xcarchive/Products/Library/Frameworks/${{ env.NAME }}.framework \
           -output build/${{ env.NAME }}.xcframework
 
-      - name: Compactar .xcframework
+      - name: Compact .xcframework
         run: |
           cd build
           zip -r ${{ env.NAME }}.zip ${{ env.NAME }}.xcframework
 
-      - name: Upload via REST API
+      - name: Upload to Artifactory
         uses: fjogeleit/http-request-action@v1
         with:
           url: "https://artifactory.carotaapp.com/artifactory/ios-repo/${{ env.NAME }}/${{ env.VERSION }}/${{ env.NAME }}.zip"  # Usando o nome e a versão extraídos
