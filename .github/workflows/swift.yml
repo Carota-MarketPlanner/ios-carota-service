@@ -32,7 +32,7 @@ jobs:
       - name: Extrair versão do Podspec
         id: extract_version
         run: |
-          VERSION=$(grep -oP 's.version\s*=\s*"\K[^\"]+' ./Example/${{ env.NAME }}.podspec)
+          VERSION=$(grep -oP 's.name\s*=\s*"[^"]+' ./Example/${{ env.NAME }}.podspec | cut -d'"' -f2)
           echo "VERSION=${VERSION}" >> $GITHUB_ENV  # Armazenando a versão como variável de ambiente
 
       - name: Compilar e Criar .xcframework
