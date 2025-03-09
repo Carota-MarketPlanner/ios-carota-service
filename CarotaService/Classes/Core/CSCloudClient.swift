@@ -52,27 +52,27 @@ public class CSCloudClient {
     
     // MARK: - Using Concurrency
     
-//    private func result(request: URLRequest) async throws -> Data {
-//        do {
-//            let (data, response) = try await URLSession.shared.data(for: request)
-//        
-//            if let statusCodeError = getStatusCodeError(response) {
-//                throw statusCodeError
-//            }
-//            
-//            return data
-//        } catch {
-//            throw CSError.dataTaskError(error.localizedDescription)
-//        }
-//    }
-//    
-//    private func decode<T: Decodable>(data: Data) throws -> T {
-//        do {
-//            return try JSONDecoder().decode(T.self, from: data)
-//        } catch {
-//            throw CSError.decodingError(error.localizedDescription)
-//        }
-//    }
+    private func result(request: URLRequest) async throws -> Data {
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+        
+            if let statusCodeError = getStatusCodeError(response) {
+                throw statusCodeError
+            }
+            
+            return data
+        } catch {
+            throw CSError.dataTaskError(error.localizedDescription)
+        }
+    }
+    
+    private func decode<T: Decodable>(data: Data) throws -> T {
+        do {
+            return try JSONDecoder().decode(T.self, from: data)
+        } catch {
+            throw CSError.decodingError(error.localizedDescription)
+        }
+    }
     
     // MARK: - Prepare Request
     
@@ -196,38 +196,38 @@ extension CSCloudClient: CSCloudService {
     
     // MARK: - Using Concurrency
     
-//    public func request(
-//        url convertible: any URLConvertible,
-//        method: HTTPMethod,
-//        body: HTTPBody?
-//    ) async throws -> Data {
-//        guard let url = convertible.asURL() else {
-//            throw CSError.invalidURL
-//        }
-//        
-//        guard let request = getRequest(
-//            for: url,
-//            and: method,
-//            body: body
-//        ) else {
-//            throw CSError.encodingError
-//        }
-//        
-//        return try await result(request: request)
-//    }
-//    
-//    // MARK: Decoded
-//    
-//    public func request<T: Decodable>(
-//        url convertible: URLConvertible,
-//        method: HTTPMethod = .get,
-//        body: HTTPBody? = nil
-//    ) async throws -> T {
-//        let data = try await request(
-//            url: convertible,
-//            method: method,
-//            body: body
-//        )
-//        return try decode(data: data)
-//    }
+    public func request(
+        url convertible: any URLConvertible,
+        method: HTTPMethod,
+        body: HTTPBody?
+    ) async throws -> Data {
+        guard let url = convertible.asURL() else {
+            throw CSError.invalidURL
+        }
+        
+        guard let request = getRequest(
+            for: url,
+            and: method,
+            body: body
+        ) else {
+            throw CSError.encodingError
+        }
+        
+        return try await result(request: request)
+    }
+    
+    // MARK: Decoded
+    
+    public func request<T: Decodable>(
+        url convertible: URLConvertible,
+        method: HTTPMethod = .get,
+        body: HTTPBody? = nil
+    ) async throws -> T {
+        let data = try await request(
+            url: convertible,
+            method: method,
+            body: body
+        )
+        return try decode(data: data)
+    }
 }
