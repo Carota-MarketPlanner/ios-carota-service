@@ -2,11 +2,22 @@ name: Build App
 
 on:
   workflow_call:
+    outputs:
+      name:
+        description: "Pod Name"
+        value: ${{ jobs.build-xcframework.outputs.name }}
+      version: 
+        description: "Pod Version"
+        value: ${{ jobs.build-xcframework.outputs.version }}
 
 jobs:
   build-xcframework:
     name: Build iOS App
     runs-on: macos-latest  # Usa uma máquina macOS
+
+    outputs:
+      name: ${{ steps.extract_info.outputs.name }}
+      version: ${{ steps.extract_info.outputs.version }}
 
     steps:
       - name: Code Checkout
@@ -22,13 +33,15 @@ jobs:
         working-directory: ./Example # Mude caso seu Podfile esteja em outro lugar
 
       - name: Extact name and version from Podspec
-        id: extract_namee
+        id: extract_info
         run: |
           PODSPEC_FILE=$(find . -name "*.podspec")
           NAME=$(grep 's.name' $PODSPEC_FILE | sed -n -e 's/^.*s.name *= *//p'| tr -d '"' | tr -d "'")
           echo "NAME=${NAME}" >> $GITHUB_ENV
+          echo "name=${NAME}" >> $GITHUB_OUTPUT
           VERSION=$(grep 's.version' $PODSPEC_FILE | sed -n -e 's/^.*s.version *= *//p'| tr -d '"' | tr -d "'")
           echo "VERSION=${VERSION}" >> $GITHUB_ENV
+          echo "version=${VERSION}" >> $GITHUB_OUTPUT
 
       - name: Build and Create .xcframework
         run: |
