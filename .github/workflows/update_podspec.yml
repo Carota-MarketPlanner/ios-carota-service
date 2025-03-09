@@ -8,7 +8,7 @@ on:
 
 jobs:
   update-podspec:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout do repositório atual
         uses: actions/checkout@v3
