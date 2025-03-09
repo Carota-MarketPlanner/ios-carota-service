@@ -59,11 +59,15 @@ jobs:
           cd build
           tar -czf ${{ env.NAME }}.tar.gz ${{ env.NAME }}.xcframework
 
-      - name: Upload to Artifactory
-        uses: fjogeleit/http-request-action@v1
-        with:
-          url: "https://artifactory.carotaapp.com/artifactory/ios-repo/${{ env.NAME }}/${{ env.VERSION }}/${{ env.NAME }}.tar.gz"  # Usando o nome e a versão extraídos
-          method: "PUT"
-          username: ${{ secrets.ARTIFACTORY_USER }}
-          password: ${{ secrets.ARTIFACTORY_PASSWORD }}
-          data: "@build/${{ env.NAME }}.tar.gz"
+      - name: Upload para o Artifactory com curl
+        run: |
+          RESPONSE=$(curl -u "${{ secrets.ARTIFACTORY_USER }}:${{ secrets.ARTIFACTORY_PASSWORD }}" \
+          -T "build/${{ env.NAME }}.tar.gz" \
+          "https://artifactory.carotaapp.com/artifactory/ios-repo/${{ env.NAME }}/${{ env.VERSION }}/${{ env.NAME }}.tar.gz")
+
+          if [[ "$RESPONSE" =~ ^2 ]]; then
+            echo "✅ Upload bem-sucedido! Código HTTP: $RESPONSE"
+          else
+            echo "❌ Falha no upload! Código HTTP: $RESPONSE"
+            exit 1
+          fi
