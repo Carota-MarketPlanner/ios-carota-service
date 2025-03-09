@@ -1,0 +1,29 @@
+name: Build And Publish Release
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    name: Build
+    uses: ./.github/workflows/build.yml
+    secrets: inherit
+
+  publish:
+    name: Publish Release
+    uses: ./.github/workflows/publish.yml
+    with: 
+      name: ${{ needs.build.outputs.name }}
+      version: ${{ needs.build.outputs.version }}
+    needs: [build]
+    secrets: inherit
+
+  update-podspec:
+    name: Update Podspec
+    uses: ./.github/workflows/update-podspecs.yml
+    with: 
+      name: ${{ needs.publish.outputs.name }}
+      version: ${{ needs.publish.outputs.version }}
+    needs: [publish]
+    secrets: inherit
