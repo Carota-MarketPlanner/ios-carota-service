@@ -1,8 +1,7 @@
 name: Build App
 
 on:
-  push:
-    branches: [ "develop" ]
+  workflow_call:
 
 jobs:
   build-xcframework:

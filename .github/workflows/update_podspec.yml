@@ -1,9 +1,7 @@
 name: Atualizar Podspec
 
 on:
-  push:
-    branches:
-      - develop
+  workflow_call:
 
 jobs:
   update-podspec:

@@ -5,10 +5,12 @@ on:
     branches: [ "develop" ]
 
 jobs:
+  build:
+    uses: build.yml@v1
+
   publish:
     name: Build iOS App
     runs-on: macos-latest  # Usa uma máquina macOS
-    needs: [build-xcframework]
 
     steps:
       - name: Code Checkout
