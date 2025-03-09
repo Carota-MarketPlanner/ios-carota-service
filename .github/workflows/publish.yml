@@ -19,6 +19,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Get Info
+        run: |
           NAME=${{ needs.build.outputs.name }}
           VERSION=${{ needs.build.outputs.version }}
 
