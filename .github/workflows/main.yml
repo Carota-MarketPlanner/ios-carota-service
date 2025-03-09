@@ -15,4 +15,4 @@ jobs:
     uses: ./.github/workflows/publish.yml
     with: 
       name: ${{ needs.build.outputs.name }}
-      verions: ${{ needs.build.outputs.version }}
+      version: ${{ needs.build.outputs.version }}
