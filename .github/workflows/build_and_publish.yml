@@ -59,6 +59,19 @@ jobs:
           cd build
           zip -r ${{ env.NAME }}.zip ${{ env.NAME }}.xcframework
 
+      - name: Verificar se o arquivo já existe no Artifactory
+        run: |
+          URL="https://artifactory.carotaapp.com/artifactory/ios-repo/${{ env.NAME }}/${{ env.VERSION }}/${{ env.NAME }}.zip"
+
+          # Verifica se o arquivo já existe (HEAD request)
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -u "${{ secrets.ARTIFACTORY_USER }}:${{ secrets.ARTIFACTORY_PASSWORD }}" -I "$URL")
+
+          if [[ "$RESPONSE" == "200" ]]; then
+            echo "⚠️ Arquivo já existe no Artifactory! Código HTTP: $RESPONSE"
+            echo "Arquivo: $URL"
+            exit 1  # Se quiser impedir o upload, falhe aqui
+          fi
+
       - name: Upload para o Artifactory com curl
         run: |
           RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -u "${{ secrets.ARTIFACTORY_USER }}:${{ secrets.ARTIFACTORY_PASSWORD }}" \
