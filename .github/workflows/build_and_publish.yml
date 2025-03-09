@@ -62,7 +62,7 @@ jobs:
       - name: Upload to Artifactory
         uses: fjogeleit/http-request-action@v1
         with:
-          url: "https://artifactory.carotaapp.com/artifactory/ios-repo/${{ env.NAME }}/${{ env.NAME }}.tar.gz"  # Usando o nome e a versão extraídos
+          url: "https://artifactory.carotaapp.com/artifactory/ios-repo/${{ env.NAME }}/${{ env.VERSION }}/${{ env.NAME }}.tar.gz"  # Usando o nome e a versão extraídos
           method: "PUT"
           username: ${{ secrets.ARTIFACTORY_USER }}
           password: ${{ secrets.ARTIFACTORY_PASSWORD }}
