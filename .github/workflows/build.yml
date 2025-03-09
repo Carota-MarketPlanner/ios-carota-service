@@ -13,7 +13,7 @@ on:
 jobs:
   build-xcframework:
     name: Build iOS App
-    runs-on: macos-latest  # Usa uma máquina macOS
+    runs-on: macos-latest
 
     outputs:
       name: ${{ steps.extract_info.outputs.name }}
@@ -30,7 +30,7 @@ jobs:
         run: |
           gem install cocoapods
           pod install
-        working-directory: ./Example # Mude caso seu Podfile esteja em outro lugar
+        working-directory: ./Example
 
       - name: Extact name and version from Podspec
         id: extract_info
@@ -67,5 +67,5 @@ jobs:
       - name: Upload XCFramework como Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: xcframework-${{ env.NAME }}
+          name: xcframework-${{ env.NAME }}-${{ env.VERSION }}
           path: build/${{ env.NAME }}.xcframework
