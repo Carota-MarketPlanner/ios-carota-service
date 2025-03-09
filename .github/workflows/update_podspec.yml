@@ -26,7 +26,7 @@ jobs:
         run: |
           ARTIFACTORY_URL="https://artifactory.carotaapp.com/artifactory/ios-repo/${{ env.NAME }}/${{ env.VERSION }}/${{ env.NAME }}.zip"
           
-          sed -i "s|s.source *= *{[^}]*}|s.source       = { :http => \"${ARTIFACTORY_URL}\" }|" ${{ env.NAME }}.podspec
+          sed -i '' "s|s.source *= *{[^}]*}|s.source         = { :http => \"${ARTIFACTORY_URL}\" }|" ${{ env.NAME }}.podspec
 
       - name: Checkout do repositório de Specs
         uses: actions/checkout@v3
