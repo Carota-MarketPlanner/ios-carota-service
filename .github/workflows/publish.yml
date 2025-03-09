@@ -26,17 +26,17 @@ jobs:
       - name: Baixar XCFramework do primeiro workflow
         uses: actions/download-artifact@v4
         with:
-          name: xcframework-${NAME}
-          path: build/${NAME}.xcframework
+          name: xcframework-$NAME
+          path: build/$NAME.xcframework
 
       - name: Compact .xcframework
         run: |
           cd build
-          zip -r ${NAME}.zip ${NAME}.xcframework
+          zip -r $NAME.zip $NAME.xcframework
 
       - name: Verificar se o arquivo já existe no Artifactory
         run: |
-          URL="https://artifactory.carotaapp.com/artifactory/ios-repo/${NAME}/${VERSION}/${NAME}.zip"
+          URL="https://artifactory.carotaapp.com/artifactory/ios-repo/$NAME/$VERSION/$NAME.zip"
 
           # Verifica se o arquivo já existe (HEAD request)
           RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -u "${{ secrets.ARTIFACTORY_USER }}:${{ secrets.ARTIFACTORY_PASSWORD }}" -I "$URL")
