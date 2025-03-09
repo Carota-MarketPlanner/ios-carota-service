@@ -48,7 +48,7 @@ jobs:
           URL="https://artifactory.carotaapp.com/artifactory/ios-repo/${{ inputs.name }}/${{ inputs.version }}/${{ inputs.name }}.zip"
 
           RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -u "${{ secrets.ARTIFACTORY_USER }}:${{ secrets.ARTIFACTORY_PASSWORD }}" \
-          -T "build/${NAME}.zip" \
+          -T "build/${{ inputs.name }}.zip" \
           "$URL")
 
           if [[ "$RESPONSE" =~ ^2 ]]; then
