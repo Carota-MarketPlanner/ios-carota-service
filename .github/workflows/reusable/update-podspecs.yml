@@ -12,6 +12,7 @@ on:
 
 jobs:
   update-podspec:
+    name: Update Podspec Version and Upload It
     runs-on: macos-latest
     steps:
       - name: Checkout do repositório atual

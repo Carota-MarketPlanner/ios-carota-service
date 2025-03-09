@@ -20,7 +20,7 @@ on:
       
 jobs:
   publish:
-    name: Publish Release
+    name: Publish to Artifactory
     runs-on: macos-latest
 
     steps:
