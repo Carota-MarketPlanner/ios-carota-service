@@ -6,10 +6,11 @@ on:
 
 jobs:
   build:
-    uses: build.yml@v1
+    uses: .github/workflows/build.yml@v1
+    secrets: inherit
 
   publish:
-    name: Build iOS App
+    name: Publish Release
     runs-on: macos-latest  # Usa uma máquina macOS
 
     steps:
