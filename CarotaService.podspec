@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CarotaService'
-  s.version          = '1.1.17'
+  s.version          = '1.1.18'
   s.summary          = 'A Network Service provider to supply MarketPlanner App.'
 
   s.description      = <<-DESC
