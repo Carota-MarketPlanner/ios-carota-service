@@ -12,56 +12,55 @@ on:
       
 jobs:
   publish:
-      name: Publish Release
-      runs-on: macos-latest
-      needs: [build]
+    name: Publish Release
+    runs-on: macos-latest
 
-      steps:
-        - name: Code Checkout
-          uses: actions/checkout@v4
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
 
-        - name: Get Info
-          run: |
-            NAME=${{ inputs.name }}
-            echo "NAME=${NAME}" >> $GITHUB_ENV
-            VERSION=${{ inputs.version }}
-            echo "VERSION=${VERSION}" >> $GITHUB_ENV
+      - name: Get Info
+        run: |
+          NAME=${{ inputs.name }}
+          echo "NAME=${NAME}" >> $GITHUB_ENV
+          VERSION=${{ inputs.version }}
+          echo "VERSION=${VERSION}" >> $GITHUB_ENV
 
-        - name: Baixar XCFramework
-          uses: actions/download-artifact@v4
-          with:
-            name: xcframework-${{ env.NAME }}
-            path: build/${{ env.NAME }}.xcframework
+      - name: Baixar XCFramework
+        uses: actions/download-artifact@v4
+        with:
+          name: xcframework-${{ env.NAME }}
+          path: build/${{ env.NAME }}.xcframework
 
-        - name: Compact .xcframework
-          run: |
-            cd build
-            zip -r ${{ env.NAME }}.zip ${{ env.NAME }}.xcframework
+      - name: Compact .xcframework
+        run: |
+          cd build
+          zip -r ${{ env.NAME }}.zip ${{ env.NAME }}.xcframework
 
-        - name: Verificar se o arquivo já existe no Artifactory
-          run: |
-            URL="https://artifactory.carotaapp.com/artifactory/ios-repo/${{ env.NAME }}/${{ env.VERSION }}/${{ env.NAME }}.zip"
+      - name: Verificar se o arquivo já existe no Artifactory
+        run: |
+          URL="https://artifactory.carotaapp.com/artifactory/ios-repo/${{ env.NAME }}/${{ env.VERSION }}/${{ env.NAME }}.zip"
 
-            # Verifica se o arquivo já existe (HEAD request)
-            RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -u "${{ secrets.ARTIFACTORY_USER }}:${{ secrets.ARTIFACTORY_PASSWORD }}" -I "$URL")
+          # Verifica se o arquivo já existe (HEAD request)
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -u "${{ secrets.ARTIFACTORY_USER }}:${{ secrets.ARTIFACTORY_PASSWORD }}" -I "$URL")
 
-            if [[ "$RESPONSE" == "200" ]]; then
-              echo "⚠️ Arquivo já existe no Artifactory! Código HTTP: $RESPONSE"
-              echo "Arquivo: $URL"
-              exit 1  # Se quiser impedir o upload, falhe aqui
-            fi
+          if [[ "$RESPONSE" == "200" ]]; then
+            echo "⚠️ Arquivo já existe no Artifactory! Código HTTP: $RESPONSE"
+            echo "Arquivo: $URL"
+            exit 1  # Se quiser impedir o upload, falhe aqui
+          fi
 
-        - name: Upload para o Artifactory com curl
-          run: |
-            URL="https://artifactory.carotaapp.com/artifactory/ios-repo/${{ env.NAME }}/${{ env.VERSION }}/${{ env.NAME }}.zip"
+      - name: Upload para o Artifactory com curl
+        run: |
+          URL="https://artifactory.carotaapp.com/artifactory/ios-repo/${{ env.NAME }}/${{ env.VERSION }}/${{ env.NAME }}.zip"
 
-            RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -u "${{ secrets.ARTIFACTORY_USER }}:${{ secrets.ARTIFACTORY_PASSWORD }}" \
-            -T "build/${NAME}.zip" \
-            "$URL")
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -u "${{ secrets.ARTIFACTORY_USER }}:${{ secrets.ARTIFACTORY_PASSWORD }}" \
+          -T "build/${NAME}.zip" \
+          "$URL")
 
-            if [[ "$RESPONSE" =~ ^2 ]]; then
-              echo "✅ Upload bem-sucedido! Código HTTP: $RESPONSE"
-            else
-              echo "❌ Falha no upload! Código HTTP: $RESPONSE"
-              exit 1
-            fi
+          if [[ "$RESPONSE" =~ ^2 ]]; then
+            echo "✅ Upload bem-sucedido! Código HTTP: $RESPONSE"
+          else
+            echo "❌ Falha no upload! Código HTTP: $RESPONSE"
+            exit 1
+          fi
