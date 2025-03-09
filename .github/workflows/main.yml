@@ -16,4 +16,5 @@ jobs:
     with: 
       name: ${{ needs.build.outputs.name }}
       version: ${{ needs.build.outputs.version }}
+    needs: [build]
     secrets: inherit
