@@ -19,27 +19,20 @@ jobs:
       - name: Code Checkout
         uses: actions/checkout@v4
 
-      - name: Get Info
-        run: |
-          NAME=${{ inputs.name }}
-          echo "NAME=${NAME}" >> $GITHUB_ENV
-          VERSION=${{ inputs.version }}
-          echo "VERSION=${VERSION}" >> $GITHUB_ENV
-
       - name: Baixar XCFramework
         uses: actions/download-artifact@v4
         with:
-          name: xcframework-${{ env.NAME }}
-          path: build/${{ env.NAME }}.xcframework
+          name: xcframework-${{ inputs.name }}
+          path: build/${{ inputs.name }}.xcframework
 
       - name: Compact .xcframework
         run: |
           cd build
-          zip -r ${{ env.NAME }}.zip ${{ env.NAME }}.xcframework
+          zip -r ${{ inputs.name }}.zip ${{ inputs.name }}.xcframework
 
       - name: Verificar se o arquivo já existe no Artifactory
         run: |
-          URL="https://artifactory.carotaapp.com/artifactory/ios-repo/${{ env.NAME }}/${{ env.VERSION }}/${{ env.NAME }}.zip"
+          URL="https://artifactory.carotaapp.com/artifactory/ios-repo/${{ inputs.name }}/${{ inputs.version }}/${{ inputs.name }}.zip"
 
           # Verifica se o arquivo já existe (HEAD request)
           RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -u "${{ secrets.ARTIFACTORY_USER }}:${{ secrets.ARTIFACTORY_PASSWORD }}" -I "$URL")
@@ -52,7 +45,7 @@ jobs:
 
       - name: Upload para o Artifactory com curl
         run: |
-          URL="https://artifactory.carotaapp.com/artifactory/ios-repo/${{ env.NAME }}/${{ env.VERSION }}/${{ env.NAME }}.zip"
+          URL="https://artifactory.carotaapp.com/artifactory/ios-repo/${{ inputs.name }}/${{ inputs.version }}/${{ inputs.name }}.zip"
 
           RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -u "${{ secrets.ARTIFACTORY_USER }}:${{ secrets.ARTIFACTORY_PASSWORD }}" \
           -T "build/${NAME}.zip" \
