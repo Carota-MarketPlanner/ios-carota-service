@@ -23,10 +23,10 @@ jobs:
           NAME=${{ needs.build.outputs.name }}
           VERSION=${{ needs.build.outputs.version }}
 
-      - name: Baixar XCFramework do primeiro workflow
+      - name: Baixar XCFramework
         uses: actions/download-artifact@v4
         with:
-          name: xcframework-$NAME
+          name: xcframework-${{ NAME }}
           path: build/$NAME.xcframework
 
       - name: Compact .xcframework
