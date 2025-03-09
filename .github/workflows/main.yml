@@ -7,12 +7,12 @@ on:
 jobs:
   build:
     name: Build
-    uses: ./.github/workflows/reusable/build.yml
+    uses: ./.github/workflows/build.yml
     secrets: inherit
 
   publish:
     name: Publish Release
-    uses: ./.github/workflows/reusable/publish.yml
+    uses: ./.github/workflows/publish.yml
     with: 
       name: ${{ needs.build.outputs.name }}
       version: ${{ needs.build.outputs.version }}
@@ -21,7 +21,7 @@ jobs:
 
   update-podspec:
     name: Update Podspec
-    uses: ./.github/workflows/reusable/update-podspecs.yml
+    uses: ./.github/workflows/update-podspecs.yml
     with: 
       name: ${{ needs.publish.outputs.name }}
       version: ${{ needs.publish.outputs.version }}
