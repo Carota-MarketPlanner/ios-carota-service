@@ -11,7 +11,8 @@ jobs:
 
   publish:
     name: Publish Release
-    runs-on: macos-latest  # Usa uma máquina macOS
+    runs-on: macos-latest
+    needs: [build]
 
     steps:
       - name: Code Checkout
