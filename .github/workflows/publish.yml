@@ -9,6 +9,14 @@ on:
       version:
         required: true
         type: string
+
+    outputs:
+      name:
+        description: "Pod Name"
+        value: ${{ inputs.name }}
+      version: 
+        description: "Pod Version"
+        value: ${{ inputs.version }}
       
 jobs:
   publish:
