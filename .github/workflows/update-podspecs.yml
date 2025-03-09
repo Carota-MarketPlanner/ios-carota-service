@@ -1,0 +1,48 @@
+name: Update Podspecs
+
+on:
+  workflow_call:
+    inputs:
+        name:
+          required: true
+          type: string
+        version:
+          required: true
+          type: string
+
+jobs:
+  update-podspec:
+    name: Update Podspec Version and Upload It
+    runs-on: macos-latest
+    steps:
+      - name: Checkout do repositório atual
+        uses: actions/checkout@v3
+
+      - name: Atualizar o s.source no Podspec
+        run: |
+          ARTIFACTORY_URL="https://artifactory.carotaapp.com/artifactory/ios-repo/${{ inputs.name }}/${{ inputs.version }}/${{ inputs.name }}.zip"
+          
+          sed -i '' "s|s.source *= *{[^}]*}|s.source           = { :http => \"${ARTIFACTORY_URL}\" }|" ${{ inputs.name }}.podspec
+
+      - name: Checkout do repositório de Specs
+        uses: actions/checkout@v3
+        with:
+          repository: "Carota-MarketPlanner/Specs"
+          token: ${{ secrets.PAT_GITHUB }}
+          path: specs_repo  # Clona o repositório dentro da pasta specs_repo
+
+      - name: Copiar o Podspec para o repositório de Specs
+        run: |
+          NAME=${{ inputs.name }}
+          VERSION=${{ inputs.version }}
+          mkdir -p specs_repo/${NAME}/${VERSION}
+          cp ${NAME}.podspec specs_repo/${NAME}/${VERSION}/${NAME}.podspec
+
+      - name: Commit e Push para o repositório de Specs
+        run: |
+          cd specs_repo
+          git config --global user.email "seu@email.com"
+          git config --global user.name "Seu Nome"
+          git add ${{ inputs.name }}/${{ inputs.version }}/${{ inputs.name }}.podspec
+          git commit -m "Atualizando o ${{ inputs.name }} para a versão ${{ inputs.version }}"
+          git push

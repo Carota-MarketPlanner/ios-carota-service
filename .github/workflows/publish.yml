@@ -1,0 +1,67 @@
+name: Publish App
+
+on:
+  workflow_call:
+    inputs:
+      name:
+        required: true
+        type: string
+      version:
+        required: true
+        type: string
+
+    outputs:
+      name:
+        description: "Pod Name"
+        value: ${{ inputs.name }}
+      version: 
+        description: "Pod Version"
+        value: ${{ inputs.version }}
+      
+jobs:
+  publish:
+    name: Publish to Artifactory
+    runs-on: macos-latest
+
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+
+      - name: Baixar XCFramework
+        uses: actions/download-artifact@v4
+        with:
+          name: xcframework-${{ inputs.name }}
+          path: build/${{ inputs.name }}.xcframework
+
+      - name: Compact .xcframework
+        run: |
+          cd build
+          zip -r ${{ inputs.name }}.zip ${{ inputs.name }}.xcframework
+
+      - name: Verificar se o arquivo já existe no Artifactory
+        run: |
+          URL="https://artifactory.carotaapp.com/artifactory/ios-repo/${{ inputs.name }}/${{ inputs.version }}/${{ inputs.name }}.zip"
+
+          # Verifica se o arquivo já existe (HEAD request)
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -u "${{ secrets.ARTIFACTORY_USER }}:${{ secrets.ARTIFACTORY_PASSWORD }}" -I "$URL")
+
+          if [[ "$RESPONSE" == "200" ]]; then
+            echo "⚠️ Arquivo já existe no Artifactory! Código HTTP: $RESPONSE"
+            echo "Arquivo: $URL"
+            exit 1  # Se quiser impedir o upload, falhe aqui
+          fi
+
+      - name: Upload para o Artifactory com curl
+        run: |
+          URL="https://artifactory.carotaapp.com/artifactory/ios-repo/${{ inputs.name }}/${{ inputs.version }}/${{ inputs.name }}.zip"
+
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -u "${{ secrets.ARTIFACTORY_USER }}:${{ secrets.ARTIFACTORY_PASSWORD }}" \
+          -T "build/${{ inputs.name }}.zip" \
+          "$URL")
+
+          if [[ "$RESPONSE" =~ ^2 ]]; then
+            echo "✅ Upload bem-sucedido! Código HTTP: $RESPONSE"
+          else
+            echo "❌ Falha no upload! Código HTTP: $RESPONSE"
+            exit 1
+          fi
