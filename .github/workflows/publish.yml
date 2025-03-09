@@ -4,6 +4,10 @@ on:
   pull_request:
     branches: [ "develop" ]
 
+env:
+  NAME: ${{ needs.build.outputs.name }}
+  VERSION: ${{ needs.build.outputs.version }}
+
 jobs:
   build:
     uses: ./.github/workflows/build.yml
@@ -17,11 +21,6 @@ jobs:
     steps:
       - name: Code Checkout
         uses: actions/checkout@v4
-
-      - name: Get Info
-        run: |
-          NAME=${{ needs.build.outputs.name }}
-          VERSION=${{ needs.build.outputs.version }}
 
       - name: Baixar XCFramework
         uses: actions/download-artifact@v4
