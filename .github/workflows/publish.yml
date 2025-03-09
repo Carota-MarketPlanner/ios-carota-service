@@ -18,11 +18,13 @@ jobs:
       - name: Code Checkout
         uses: actions/checkout@v4
 
+      - name: Get Info
+          NAME=${{ needs.build.outputs.name }}
+          VERSION=${{ needs.build.outputs.version }}
+
       - name: Baixar XCFramework do primeiro workflow
         uses: actions/download-artifact@v4
         with:
-          NAME=${{ needs.build.outputs.name }}
-          VERSION=${{ needs.build.outputs.version }}
           name: xcframework-${NAME}
           path: build/${NAME}.xcframework
 
