@@ -1,8 +1,7 @@
 name: Atualizar Podspec
 
 on:
-  workflow_dispatch:  # Permite rodar manualmente
-  pull_request:
+  push:
     branches:
       - develop
 

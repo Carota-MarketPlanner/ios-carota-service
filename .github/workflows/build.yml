@@ -1,0 +1,61 @@
+name: Build App
+
+on:
+  push:
+    branches: [ "develop" ]
+
+jobs:
+  build-xcframework:
+    name: Build iOS App
+    runs-on: macos-latest  # Usa uma máquina macOS
+
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+
+      - name: Config Xcode Vresion
+        run: sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+      - name: Install CocoaPods Dependencies
+        run: |
+          gem install cocoapods
+          pod install
+        working-directory: ./Example # Mude caso seu Podfile esteja em outro lugar
+
+      - name: Extact name and version from Podspec
+        id: extract_namee
+        run: |
+          PODSPEC_FILE=$(find . -name "*.podspec")
+          NAME=$(grep 's.name' $PODSPEC_FILE | sed -n -e 's/^.*s.name *= *//p'| tr -d '"' | tr -d "'")
+          echo "NAME=${NAME}" >> $GITHUB_ENV
+          VERSION=$(grep 's.version' $PODSPEC_FILE | sed -n -e 's/^.*s.version *= *//p'| tr -d '"' | tr -d "'")
+          echo "VERSION=${VERSION}" >> $GITHUB_ENV
+
+      - name: Build and Create .xcframework
+        run: |
+          xcodebuild archive -workspace ./Example/${{ env.NAME }}.xcworkspace \
+          -scheme ${{ env.NAME }} \
+          -destination "generic/platform=iOS" \
+          -archivePath build/ios.xcarchive \
+          -sdk iphoneos \
+          SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+          IPHONEOS_DEPLOYMENT_TARGET=15.0
+
+          xcodebuild archive -workspace ./Example/${{ env.NAME }}.xcworkspace \
+          -scheme ${{ env.NAME }} \
+          -destination "generic/platform=iOS Simulator" \
+          -archivePath build/ios-simulator.xcarchive \
+          -sdk iphonesimulator \
+          SKIP_INSTALL=NO BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+          IPHONEOS_DEPLOYMENT_TARGET=15.0
+
+          xcodebuild -create-xcframework \
+          -framework build/ios.xcarchive/Products/Library/Frameworks/${{ env.NAME }}.framework \
+          -framework build/ios-simulator.xcarchive/Products/Library/Frameworks/${{ env.NAME }}.framework \
+          -output build/${{ env.NAME }}.xcframework
+
+      - name: Upload XCFramework como Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: xcframework-${{ env.NAME }}
+          path: build/${{ env.NAME }}.xcframework
