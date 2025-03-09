@@ -1,7 +1,7 @@
 name: Build And Test
 
 on:
-  push: # change to pull_request
+  ppull_request:
     types:
       - edited
       - opened

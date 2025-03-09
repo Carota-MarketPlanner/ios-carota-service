@@ -1,7 +1,7 @@
 name: Build And Publish Release
 
 on:
-  pull_request: # change to push
+  push:
     branches: [ "develop" ]
 
 jobs:
