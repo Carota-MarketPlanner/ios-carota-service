@@ -61,7 +61,7 @@ jobs:
 
       - name: Upload para o Artifactory com curl
         run: |
-          RESPONSE=$(curl -u "${{ secrets.ARTIFACTORY_USER }}:${{ secrets.ARTIFACTORY_PASSWORD }}" \
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -u "${{ secrets.ARTIFACTORY_USER }}:${{ secrets.ARTIFACTORY_PASSWORD }}" \
           -T "build/${{ env.NAME }}.tar.gz" \
           "https://artifactory.carotaapp.com/artifactory/ios-repo/${{ env.NAME }}/${{ env.VERSION }}/${{ env.NAME }}.tar.gz")
 
