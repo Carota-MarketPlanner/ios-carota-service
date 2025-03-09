@@ -57,13 +57,13 @@ jobs:
       - name: Compact .xcframework
         run: |
           cd build
-          zip -r ${{ env.NAME }}.zip ${{ env.NAME }}.xcframework
+          tar -czf ${{ env.NAME }}.tar.gz ${{ env.NAME }}.xcframework
 
       - name: Upload to Artifactory
         uses: fjogeleit/http-request-action@v1
         with:
-          url: "https://artifactory.carotaapp.com/artifactory/ios-repo/${{ env.NAME }}/${{ env.VERSION }}/${{ env.NAME }}.zip"  # Usando o nome e a versão extraídos
+          url: "https://artifactory.carotaapp.com/artifactory/ios-repo/${{ env.NAME }}/${{ env.NAME }}.tar.gz"  # Usando o nome e a versão extraídos
           method: "PUT"
           username: ${{ secrets.ARTIFACTORY_USER }}
           password: ${{ secrets.ARTIFACTORY_PASSWORD }}
-          data: "@build/${{ env.NAME }}.zip"
+          data: "@build/${{ env.NAME }}.tar.gz"

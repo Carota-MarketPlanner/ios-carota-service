@@ -24,7 +24,7 @@ jobs:
 
       - name: Atualizar o s.source no Podspec
         run: |
-          ARTIFACTORY_URL="https://artifactory.carotaapp.com/artifactory/ios-repo/${{ env.NAME }}/${{ env.VERSION }}/${{ env.NAME }}.zip"
+          ARTIFACTORY_URL="https://artifactory.carotaapp.com/artifactory/ios-repo/${{ env.NAME }}/${{ env.VERSION }}/${{ env.NAME }}.tar.gz"
           
           sed -i '' "s|s.source *= *{[^}]*}|s.source           = { :http => \"${ARTIFACTORY_URL}\" }|" ${{ env.NAME }}.podspec
 
@@ -48,5 +48,5 @@ jobs:
           git config --global user.email "seu@email.com"
           git config --global user.name "Seu Nome"
           git add ${{ env.NAME }}/${{ env.VERSION }}/${{ env.NAME }}.podspec
-          git commit -m "Atualizando o Podspec para a versão ${{ env.VERSION }}"
+          git commit -m "Atualizando o ${{ env.NAME }} para a versão ${{ env.VERSION }}"
           git push
