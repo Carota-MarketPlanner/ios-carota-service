@@ -54,7 +54,7 @@ jobs:
           -output build/${{ env.NAME }}.xcframework
 
       - name: Upload XCFramework como Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: xcframework-${{ env.NAME }}
           path: build/${{ env.NAME }}.xcframework
