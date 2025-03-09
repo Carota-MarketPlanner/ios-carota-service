@@ -30,7 +30,7 @@ jobs:
       - name: Baixar XCFramework
         uses: actions/download-artifact@v4
         with:
-          name: xcframework-${{ inputs.name }}
+          name: xcframework-${{ inputs.name }}-${{ inputs.version }}
           path: build/${{ inputs.name }}.xcframework
 
       - name: Compact .xcframework
@@ -40,7 +40,7 @@ jobs:
 
       - name: Verificar se o arquivo já existe no Artifactory
         run: |
-          URL="https://artifactory.carotaapp.com/artifactory/ios-repo/${{ inputs.name }}/${{ inputs.version }}/${{ inputs.name }}.zip"
+          URL="https://artifactory.carotaapp.com/artifactory/carota-ios-modules/${{ inputs.name }}/${{ inputs.version }}/${{ inputs.name }}.zip"
 
           # Verifica se o arquivo já existe (HEAD request)
           RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -u "${{ secrets.ARTIFACTORY_USER }}:${{ secrets.ARTIFACTORY_PASSWORD }}" -I "$URL")
@@ -53,7 +53,7 @@ jobs:
 
       - name: Upload para o Artifactory com curl
         run: |
-          URL="https://artifactory.carotaapp.com/artifactory/ios-repo/${{ inputs.name }}/${{ inputs.version }}/${{ inputs.name }}.zip"
+          URL="https://artifactory.carotaapp.com/artifactory/carota-ios-modules/${{ inputs.name }}/${{ inputs.version }}/${{ inputs.name }}.zip"
 
           RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -u "${{ secrets.ARTIFACTORY_USER }}:${{ secrets.ARTIFACTORY_PASSWORD }}" \
           -T "build/${{ inputs.name }}.zip" \
