@@ -12,7 +12,7 @@ jobs:
 
   publish:
     name: Publish Release
-    uses: ./.github/workflows/publish-artifctory.yml
+    uses: ./.github/workflows/publish-artifactory.yml
     with: 
       name: ${{ needs.build.outputs.name }}
       version: ${{ needs.build.outputs.version }}
