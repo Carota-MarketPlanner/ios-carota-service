@@ -45,7 +45,7 @@ jobs:
             git push origin $TAG
           fi
 
-      - name: Baixar XCFramework # Step to remove
+      - name: Baixar XCFramework
         uses: actions/download-artifact@v4
         with:
           name: xcframework-${{ inputs.name }}-${{ inputs.version }}
@@ -54,14 +54,14 @@ jobs:
       - name: Compact .xcframework
         run: |
           mkdir -p compacted
-          zip -r compacted/${{ inputs.name }}.zip ${{ inputs.name }}.xcframework
+          zip -r compacted/${{ inputs.name }}-${{ inputs.version }}.zip ${{ inputs.name }}.xcframework
 
       - name: Criar Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ inputs.version }}
           name: Release ${{ inputs.version }}
-          files: compacted/* # Line to remove
+          files: compacted/*
           body: |
             Release automática da versão ${{ inputs.version }}
           draft: false

@@ -18,15 +18,6 @@ jobs:
       - name: Checkout do repositório atual
         uses: actions/checkout@v3
 
-      - name: Atualizar o s.version no Podspec
-        run: |
-          # sed -i '' "s|s.version *= *['\"][^'\"]*['\"]|s.version          = '${{ inputs.version }}'|" ${{ inputs.name }}.podspec
-
-          ARTIFACTORY_URL="https://github.com/Carota-MarketPlanner/ios-carota-service/releases/download/${{ inputs.version }}/CarotaService.zip"
-          
-          sed -i '' "s|s.source *= *{[^}]*}|s.source           = { :http => \"${ARTIFACTORY_URL}\" }|" ${{ inputs.name }}.podspec
-
-
       - name: Checkout do repositório de Specs
         uses: actions/checkout@v3
         with:

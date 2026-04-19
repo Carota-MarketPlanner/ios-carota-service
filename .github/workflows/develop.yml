@@ -18,7 +18,7 @@ jobs:
     uses: ./.github/workflows/publish-github-source.yml
     with: 
       name: ${{ needs.build.outputs.name }}
-      version: ${{ needs.build.outputs.version }} #-dev
+      version: ${{ needs.build.outputs.version }}-dev
     needs: [build]
     secrets: inherit
 
