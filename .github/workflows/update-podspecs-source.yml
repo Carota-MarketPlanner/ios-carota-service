@@ -12,7 +12,7 @@ on:
 
 jobs:
   update-podspec:
-    name: Update Podspec Version and Upload Develop
+    name: Update Podspec Version and Upload Sources
     runs-on: macos-latest
     steps:
       - name: Checkout do repositório atual
@@ -20,7 +20,7 @@ jobs:
 
       - name: Atualizar o s.version no Podspec
         run: |
-          sed -i '' "s|s.version *= *['\"][^'\"]*['\"]|s.version           = '${{ inputs.version }}-dev'|" ${{ inputs.name }}.podspec
+          sed -i '' "s|s.version *= *['\"][^'\"]*['\"]|s.version           = '${{ inputs.version }}'|" ${{ inputs.name }}.podspec
 
       - name: Checkout do repositório de Specs
         uses: actions/checkout@v3
@@ -32,7 +32,7 @@ jobs:
       - name: Copiar o Podspec para o repositório de Specs
         run: |
           NAME=${{ inputs.name }}
-          VERSION=${{ inputs.version }}-dev
+          VERSION=${{ inputs.version }}
           mkdir -p specs_repo/${NAME}/${VERSION}
           cp ${NAME}.podspec specs_repo/${NAME}/${VERSION}/${NAME}.podspec
 
@@ -41,6 +41,6 @@ jobs:
           cd specs_repo
           git config --global user.email "github-actions@github.com"
           git config --global user.name "github-actions"
-          git add ${{ inputs.name }}/${{ inputs.version }}-dev/${{ inputs.name }}.podspec
-          git commit -m "Atualizando o ${{ inputs.name }} para a versão ${{ inputs.version }}-dev"
+          git add ${{ inputs.name }}/${{ inputs.version }}/${{ inputs.name }}.podspec
+          git commit -m "Atualizando o ${{ inputs.name }} para a versão ${{ inputs.version }}"
           git push

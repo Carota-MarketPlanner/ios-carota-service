@@ -15,16 +15,16 @@ jobs:
 
   publish:
     name: Publish Develop
-    uses: ./.github/workflows/publish-develop.yml
+    uses: ./.github/workflows/publish-github-source.yml
     with: 
       name: ${{ needs.build.outputs.name }}
-      version: ${{ needs.build.outputs.version }}
+      version: ${{ needs.build.outputs.version }}-dev
     needs: [build]
     secrets: inherit
 
   update-podspec:
     name: Update Podspec
-    uses: ./.github/workflows/update-podspecs-develop.yml
+    uses: ./.github/workflows/update-podspecs-source.yml
     with: 
       name: ${{ needs.publish.outputs.name }}
       version: ${{ needs.publish.outputs.version }}
