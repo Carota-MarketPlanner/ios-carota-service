@@ -53,15 +53,15 @@ jobs:
 
       - name: Compact .xcframework
         run: |
-          cd build
-          zip -r ${{ inputs.name }}.zip ${{ inputs.name }}.xcframework
+          # cd build
+          zip -r compacted/${{ inputs.name }}.zip build/${{ inputs.name }}.xcframework
 
       - name: Criar Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ inputs.version }}
           name: Release ${{ inputs.version }}
-          files: ${{ inputs.name }}.zip # Line to remove
+          files: compacted/* # Line to remove
           body: |
             Release automática da versão ${{ inputs.version }}
           draft: false
