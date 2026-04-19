@@ -37,6 +37,8 @@ jobs:
           VERSION=${{ inputs.version }}
           TAG="$VERSION-dev"
 
+          git fetch --tags
+
           # verifica se a tag já existe
           if git rev-parse "$TAG" >/dev/null 2>&1; then
             echo "Tag já existe"
