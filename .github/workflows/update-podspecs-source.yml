@@ -20,7 +20,7 @@ jobs:
 
       - name: Atualizar o s.version no Podspec
         run: |
-          sed -i '' "s|s.version *= *['\"][^'\"]*['\"]|s.version           = '${{ inputs.version }}'|" ${{ inputs.name }}.podspec
+          sed -i '' "s|s.version *= *['\"][^'\"]*['\"]|s.version          = '${{ inputs.version }}'|" ${{ inputs.name }}.podspec
 
       - name: Checkout do repositório de Specs
         uses: actions/checkout@v3
