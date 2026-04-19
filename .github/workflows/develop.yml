@@ -21,3 +21,12 @@ jobs:
       version: ${{ needs.build.outputs.version }}
     needs: [build]
     secrets: inherit
+
+  update-podspec:
+    name: Update Podspec
+    uses: ./.github/workflows/update-podspecs-develop.yml
+    with: 
+      name: ${{ needs.publish.outputs.name }}
+      version: ${{ needs.publish.outputs.version }}
+    needs: [publish]
+    secrets: inherit
