@@ -45,11 +45,18 @@ jobs:
             git push origin $TAG
           fi
 
+      - name: Baixar XCFramework # Step to remove
+        uses: actions/download-artifact@v4
+        with:
+          name: xcframework-${{ inputs.name }}-${{ inputs.version }}
+          path: build/${{ inputs.name }}.xcframework
+
       - name: Criar Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ inputs.version }}
           name: Release ${{ inputs.version }}
+          files: build/${{ inputs.name }}.xcframework. # Line to remove
           body: |
             Release automática da versão ${{ inputs.version }}
           draft: false
