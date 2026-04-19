@@ -39,7 +39,7 @@ jobs:
 
           # verifica se a tag já existe
           if git ls-remote --tags origin | grep -q "refs/tags/$TAG$"; then
-            echo "Tag already exists: $TAG | Can't be overwritten!"
+            echo "Tag $TAG already exists | Can't be overwritten!"
             exit 1  # Se quiser impedir o próximo step, falhe aqui!
           else
             git tag $TAG
