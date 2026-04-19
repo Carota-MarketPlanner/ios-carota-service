@@ -49,13 +49,13 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: xcframework-${{ inputs.name }}-${{ inputs.version }}
-          path: build/${{ inputs.name }}.xcframework
+          path: ${{ inputs.name }}.xcframework
 
       - name: Compact .xcframework
         run: |
           # cd build
           mkdir -p compacted
-          zip -r compacted/${{ inputs.name }}.zip build/${{ inputs.name }}.xcframework
+          zip -r compacted/${{ inputs.name }}.zip ${{ inputs.name }}.xcframework
 
       - name: Criar Release
         uses: softprops/action-gh-release@v1

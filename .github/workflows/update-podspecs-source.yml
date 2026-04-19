@@ -22,7 +22,7 @@ jobs:
         run: |
           # sed -i '' "s|s.version *= *['\"][^'\"]*['\"]|s.version          = '${{ inputs.version }}'|" ${{ inputs.name }}.podspec
 
-          ARTIFACTORY_URL="https://github.com/Carota-MarketPlanner/ios-carota-service/releases/download/s.version.to_s/CarotaService.zip"
+          ARTIFACTORY_URL="https://github.com/Carota-MarketPlanner/ios-carota-service/releases/download/${{ inputs.version }}/CarotaService.zip"
           
           sed -i '' "s|s.source *= *{[^}]*}|s.source           = { :http => \"${ARTIFACTORY_URL}\" }|" ${{ inputs.name }}.podspec
 
