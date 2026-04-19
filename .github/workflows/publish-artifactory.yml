@@ -35,7 +35,7 @@ jobs:
 
       - name: Compact .xcframework
         run: |
-          cd build
+          # cd build
           zip -r ${{ inputs.name }}.zip ${{ inputs.name }}.xcframework
 
       - name: Verificar se o arquivo já existe no Artifactory
