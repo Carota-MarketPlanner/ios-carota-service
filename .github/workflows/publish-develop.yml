@@ -1,0 +1,60 @@
+name: Publish Develop App
+
+on:
+  workflow_call:
+    inputs:
+      name:
+        required: true
+        type: string
+      version:
+        required: true
+        type: string
+
+    outputs:
+      name:
+        description: "Pod Name"
+        value: ${{ inputs.name }}
+      version: 
+        description: "Pod Version"
+        value: ${{ inputs.version }}
+      
+jobs:
+  publish:
+    name: Publish to Develop Sources
+    runs-on: macos-latest
+
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+      - name: Criar tag
+        run: |
+          VERSION=${{ inputs.version }}
+          TAG="$VERSION-dev"
+
+          # verifica se a tag já existe
+          if git rev-parse "$TAG" >/dev/null 2>&1; then
+            echo "Tag já existe"
+            exit 1  # Se quiser impedir o job de atualizar podspec, falhe aqui!
+          else
+            git tag $TAG
+            git push origin $TAG
+          fi
+
+      - name: Criar Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ inputs.version }}
+          name: Release v${{ inputs.version }}
+          body: |
+            Release automática da versão v${{ inputs.version }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

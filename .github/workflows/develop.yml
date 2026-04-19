@@ -1,15 +1,20 @@
-name: Build And Test
+name: Build And Publish Develop
 
 on:
-  pull_request:
-    types:
-      - edited
-      - opened
-      - synchronize
-    branches: [ "main", "develop" ]
+  push:
+    branches: [ "develop" ]
 
 jobs:
   build:
     name: Build
     uses: ./.github/workflows/build.yml
+    secrets: inherit
+
+  publish:
+    name: Publish Develop
+    uses: ./.github/workflows/publish-develop.yml
+    with: 
+      name: ${{ needs.build.outputs.name }}
+      version: ${{ needs.build.outputs.version }}
+    needs: [build]
     secrets: inherit
