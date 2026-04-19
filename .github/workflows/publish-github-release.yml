@@ -54,7 +54,7 @@ jobs:
       - name: Compact .xcframework
         run: |
           mkdir -p compacted
-          zip -r compacted/${{ inputs.name }}-${{ inputs.version }}.zip ${{ inputs.name }}.xcframework
+          zip -r compacted/${{ inputs.name }}.zip ${{ inputs.name }}.xcframework
 
       - name: Criar Release
         uses: softprops/action-gh-release@v1
