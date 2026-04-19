@@ -54,6 +54,7 @@ jobs:
       - name: Compact .xcframework
         run: |
           # cd build
+          mkdir -p compacted
           zip -r compacted/${{ inputs.name }}.zip build/${{ inputs.name }}.xcframework
 
       - name: Criar Release
