@@ -37,12 +37,10 @@ jobs:
           VERSION=${{ inputs.version }}
           TAG="$VERSION-dev"
 
-          # git fetch --tags
-
           # verifica se a tag já existe
           if git ls-remote --tags origin | grep -q "refs/tags/$TAG$"; then
             echo "Tag already exists: $TAG | Can't be overwritten!"
-            exit 1  # Se quiser impedir o job de atualizar podspec, falhe aqui!
+            exit 1  # Se quiser impedir o próximo step, falhe aqui!
           else
             git tag $TAG
             git push origin $TAG
