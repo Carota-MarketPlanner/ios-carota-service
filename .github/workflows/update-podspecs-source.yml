@@ -18,14 +18,17 @@ jobs:
       - name: Checkout do repositório atual
         uses: actions/checkout@v3
 
-      - name: Atualizar o s.version no Podspec
+      - name: Extact homepage from Podspec
+        id: extract_homepage
         run: |
-          # sed -i '' "s|s.version *= *['\"][^'\"]*['\"]|s.version          = '${{ inputs.version }}'|" ${{ inputs.name }}.podspec
+          PODSPEC_FILE=$(find . -name "*.podspec")
+          HOMEPAGE=$(grep 's.homepage' $PODSPEC_FILE | sed -n -e 's/^.*s.homepage *= *//p'| tr -d '"' | tr -d "'")
+          echo "HOMEPAGE=${HOMEPAGE}" >> $GITHUB_ENV
 
-          # ARTIFACTORY_URL="https://github.com/Carota-MarketPlanner/ios-carota-service/releases/download/${{ inputs.version }}/CarotaService.zip"
-          
-          # sed -i '' "s|s.source *= *{[^}]*}|s.source           = { :http => \"${ARTIFACTORY_URL}\" }|" ${{ inputs.name }}.podspec
-
+      - name: Atualizar o s.version e s.source no Podspec
+        run: |
+          sed -i '' "s|s.version *= *['\"][^'\"]*['\"]|s.version          = '${{ inputs.version }}'|" ${{ inputs.name }}.podspec
+          sed -i '' "s|s.source *= *{[^}]*}|s.source           = { :http => \"${env.HOMEPAGE}\", :tag => s.version.to_s }|" ${{ inputs.name }}.podspec
 
       - name: Checkout do repositório de Specs
         uses: actions/checkout@v3
