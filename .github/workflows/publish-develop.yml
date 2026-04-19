@@ -49,10 +49,10 @@ jobs:
       - name: Criar Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: v${{ inputs.version }}
-          name: Release v${{ inputs.version }}
+          tag_name: ${{ inputs.version }}-dev
+          name: Release ${{ inputs.version }}-dev
           body: |
-            Release automática da versão v${{ inputs.version }}
+            Release automática da versão ${{ inputs.version }}-dev
           draft: false
           prerelease: false
         env:
