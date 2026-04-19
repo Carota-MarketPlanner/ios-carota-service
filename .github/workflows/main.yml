@@ -12,7 +12,7 @@ jobs:
 
   publish:
     name: Publish Release
-    uses: ./.github/workflows/publish-artifactory.yml
+    uses: ./.github/workflows/publish-github-release.yml
     with: 
       name: ${{ needs.build.outputs.name }}
       version: ${{ needs.build.outputs.version }}
@@ -21,7 +21,7 @@ jobs:
 
   update-podspec:
     name: Update Podspec
-    uses: ./.github/workflows/update-podspecs-artifactory.yml
+    uses: ./.github/workflows/update-podspecs-release.yml
     with: 
       name: ${{ needs.publish.outputs.name }}
       version: ${{ needs.publish.outputs.version }}
