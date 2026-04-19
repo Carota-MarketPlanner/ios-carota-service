@@ -1,0 +1,59 @@
+name: Publish Develop App
+
+on:
+  workflow_call:
+    inputs:
+      name:
+        required: true
+        type: string
+      version:
+        required: true
+        type: string
+
+    outputs:
+      name:
+        description: "Pod Name"
+        value: ${{ inputs.name }}
+      version: 
+        description: "Pod Version"
+        value: ${{ inputs.version }}
+      
+jobs:
+  publish:
+    name: Publish GitHub Release Sources
+    runs-on: macos-latest
+
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+      - name: Criar tag
+        run: |
+          TAG=${{ inputs.version }}
+
+          # verifica se a tag já existe
+          if git ls-remote --tags origin | grep -q "refs/tags/$TAG$"; then
+            echo "Tag $TAG already exists | Can't be overwritten!"
+            exit 1  # Se quiser impedir o próximo step, falhe aqui!
+          else
+            git tag $TAG
+            git push origin $TAG
+          fi
+
+      - name: Criar Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ inputs.version }}
+          name: Release ${{ inputs.version }}
+          body: |
+            Release automática da versão ${{ inputs.version }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

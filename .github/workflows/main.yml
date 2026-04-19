@@ -4,6 +4,9 @@ on:
   push:
     branches: [ "main" ]
 
+permissions:
+      contents: write
+
 jobs:
   build:
     name: Build
@@ -12,7 +15,7 @@ jobs:
 
   publish:
     name: Publish Release
-    uses: ./.github/workflows/publish.yml
+    uses: ./.github/workflows/publish-github-release.yml
     with: 
       name: ${{ needs.build.outputs.name }}
       version: ${{ needs.build.outputs.version }}
@@ -21,7 +24,7 @@ jobs:
 
   update-podspec:
     name: Update Podspec
-    uses: ./.github/workflows/update-podspecs.yml
+    uses: ./.github/workflows/update-podspecs-release.yml
     with: 
       name: ${{ needs.publish.outputs.name }}
       version: ${{ needs.publish.outputs.version }}

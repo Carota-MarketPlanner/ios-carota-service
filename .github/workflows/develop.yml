@@ -1,15 +1,32 @@
-name: Build And Test
+name: Build And Publish Develop
 
 on:
-  pull_request:
-    types:
-      - edited
-      - opened
-      - synchronize
-    branches: [ "main", "develop" ]
+  push:
+    branches: [ "develop" ]
+
+permissions:
+      contents: write
 
 jobs:
   build:
     name: Build
     uses: ./.github/workflows/build.yml
+    secrets: inherit
+
+  publish:
+    name: Publish Develop
+    uses: ./.github/workflows/publish-github-source.yml
+    with: 
+      name: ${{ needs.build.outputs.name }}
+      version: ${{ needs.build.outputs.version }}-dev
+    needs: [build]
+    secrets: inherit
+
+  update-podspec:
+    name: Update Podspec
+    uses: ./.github/workflows/update-podspecs-source.yml
+    with: 
+      name: ${{ needs.publish.outputs.name }}
+      version: ${{ needs.publish.outputs.version }}
+    needs: [publish]
     secrets: inherit
