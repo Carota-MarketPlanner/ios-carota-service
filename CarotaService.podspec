@@ -18,7 +18,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '15.0'
 
   s.vendored_frameworks = 'CarotaService.xcframework'
-
   s.source_files = 'CarotaService/Classes/**/*'
   
 end

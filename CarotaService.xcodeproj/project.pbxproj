@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B0CAAF15A363A6E41C561B7 /* Pods_CarotaService_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82C401671BA6D1CC62599DBA /* Pods_CarotaService_Example.framework */; };
+		10BE5623FFFBDD03F4E7A5FB /* Pods_CarotaServiceExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 468B052A95413237FB71E13D /* Pods_CarotaServiceExample.framework */; };
 		DE0912DA29724BAC00EAA9D8 /* AddPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0912D929724BAC00EAA9D8 /* AddPostView.swift */; };
 		DE0912DE2972618900EAA9D8 /* AddPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0912DD2972618900EAA9D8 /* AddPostViewModel.swift */; };
 		DEA9F2BA296F9C3D0085E6F1 /* CarotaServiceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F2B9296F9C3D0085E6F1 /* CarotaServiceApp.swift */; };
@@ -21,17 +21,56 @@
 		DEA9F2D4296FA2030085E6F1 /* PostsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F2D3296FA2020085E6F1 /* PostsViewModel.swift */; };
 		DEA9F2D7296FA26B0085E6F1 /* UsersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F2D6296FA26B0085E6F1 /* UsersView.swift */; };
 		DEA9F2D9296FA2AA0085E6F1 /* PostsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA9F2D8296FA2AA0085E6F1 /* PostsView.swift */; };
+		DEE0B0272F9692C50076D2BF /* CarotaService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE0B0212F9692C50076D2BF /* CarotaService.framework */; };
+		DEE0B0282F9692C50076D2BF /* CarotaService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DEE0B0212F9692C50076D2BF /* CarotaService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DEE0B0682F9692DD0076D2BF /* CSCloudClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0B0522F9692DD0076D2BF /* CSCloudClient.swift */; };
+		DEE0B0692F9692DD0076D2BF /* String+URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0B0542F9692DD0076D2BF /* String+URLConvertible.swift */; };
+		DEE0B06A2F9692DD0076D2BF /* URL+URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0B0552F9692DD0076D2BF /* URL+URLConvertible.swift */; };
+		DEE0B06B2F9692DD0076D2BF /* HTTPAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0B0572F9692DD0076D2BF /* HTTPAuthentication.swift */; };
+		DEE0B06C2F9692DD0076D2BF /* HTTPBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0B0582F9692DD0076D2BF /* HTTPBody.swift */; };
+		DEE0B06D2F9692DD0076D2BF /* HTTPHeaderFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0B0592F9692DD0076D2BF /* HTTPHeaderFields.swift */; };
+		DEE0B06E2F9692DD0076D2BF /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0B05A2F9692DD0076D2BF /* HTTPMethod.swift */; };
+		DEE0B06F2F9692DD0076D2BF /* CSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0B05C2F9692DD0076D2BF /* CSError.swift */; };
+		DEE0B0702F9692DD0076D2BF /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0B05D2F9692DD0076D2BF /* Empty.swift */; };
+		DEE0B0712F9692DD0076D2BF /* CarotaAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0B05F2F9692DD0076D2BF /* CarotaAuth.swift */; };
+		DEE0B0722F9692DD0076D2BF /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0B0602F9692DD0076D2BF /* Service.swift */; };
+		DEE0B0732F9692DD0076D2BF /* URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0B0612F9692DD0076D2BF /* URLConvertible.swift */; };
 		DEF70EB82980751000698770 /* TesteLogadoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF70EB72980751000698770 /* TesteLogadoViewModel.swift */; };
 		DEF70EBA2980754200698770 /* UserLogado.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF70EB92980754200698770 /* UserLogado.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		DEE0B0252F9692C50076D2BF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DEA9F2AE296F9C3D0085E6F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEE0B0202F9692C50076D2BF;
+			remoteInfo = CarotaService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DEE0B0292F9692C50076D2BF /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DEE0B0282F9692C50076D2BF /* CarotaService.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		82C401671BA6D1CC62599DBA /* Pods_CarotaService_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarotaService_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		03E96E2C2FE1460AB20503FF /* Pods-CarotaServiceExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarotaServiceExample.debug.xcconfig"; path = "Target Support Files/Pods-CarotaServiceExample/Pods-CarotaServiceExample.debug.xcconfig"; sourceTree = "<group>"; };
+		468B052A95413237FB71E13D /* Pods_CarotaServiceExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CarotaServiceExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21D1D6456951D859062A35A /* Pods-CarotaService_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarotaService_Example.release.xcconfig"; path = "Target Support Files/Pods-CarotaService_Example/Pods-CarotaService_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C2CCD7AC02D6853561776D06 /* Pods-CarotaService_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarotaService_Example.debug.xcconfig"; path = "Target Support Files/Pods-CarotaService_Example/Pods-CarotaService_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DE0912D929724BAC00EAA9D8 /* AddPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostView.swift; sourceTree = "<group>"; };
 		DE0912DD2972618900EAA9D8 /* AddPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewModel.swift; sourceTree = "<group>"; };
-		DEA9F2B6296F9C3D0085E6F1 /* CarotaService_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarotaService_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEA9F2B6296F9C3D0085E6F1 /* CarotaServiceExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarotaServiceExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA9F2B9296F9C3D0085E6F1 /* CarotaServiceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarotaServiceApp.swift; sourceTree = "<group>"; };
 		DEA9F2BD296F9C3F0085E6F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEA9F2C0296F9C3F0085E6F1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -43,8 +82,24 @@
 		DEA9F2D3296FA2020085E6F1 /* PostsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewModel.swift; sourceTree = "<group>"; };
 		DEA9F2D6296FA26B0085E6F1 /* UsersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersView.swift; sourceTree = "<group>"; };
 		DEA9F2D8296FA2AA0085E6F1 /* PostsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsView.swift; sourceTree = "<group>"; };
+		DEE0B0212F9692C50076D2BF /* CarotaService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CarotaService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEE0B0502F9692DD0076D2BF /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		DEE0B0522F9692DD0076D2BF /* CSCloudClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSCloudClient.swift; sourceTree = "<group>"; };
+		DEE0B0542F9692DD0076D2BF /* String+URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+URLConvertible.swift"; sourceTree = "<group>"; };
+		DEE0B0552F9692DD0076D2BF /* URL+URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+URLConvertible.swift"; sourceTree = "<group>"; };
+		DEE0B0572F9692DD0076D2BF /* HTTPAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPAuthentication.swift; sourceTree = "<group>"; };
+		DEE0B0582F9692DD0076D2BF /* HTTPBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPBody.swift; sourceTree = "<group>"; };
+		DEE0B0592F9692DD0076D2BF /* HTTPHeaderFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeaderFields.swift; sourceTree = "<group>"; };
+		DEE0B05A2F9692DD0076D2BF /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		DEE0B05C2F9692DD0076D2BF /* CSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSError.swift; sourceTree = "<group>"; };
+		DEE0B05D2F9692DD0076D2BF /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
+		DEE0B05F2F9692DD0076D2BF /* CarotaAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarotaAuth.swift; sourceTree = "<group>"; };
+		DEE0B0602F9692DD0076D2BF /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		DEE0B0612F9692DD0076D2BF /* URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConvertible.swift; sourceTree = "<group>"; };
+		DEE0B0632F9692DD0076D2BF /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		DEF70EB72980751000698770 /* TesteLogadoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesteLogadoViewModel.swift; sourceTree = "<group>"; };
 		DEF70EB92980754200698770 /* UserLogado.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLogado.swift; sourceTree = "<group>"; };
+		FA4FF0164CDB753CC991C63B /* Pods-CarotaServiceExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CarotaServiceExample.release.xcconfig"; path = "Target Support Files/Pods-CarotaServiceExample/Pods-CarotaServiceExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +107,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B0CAAF15A363A6E41C561B7 /* Pods_CarotaService_Example.framework in Frameworks */,
+				DEE0B0272F9692C50076D2BF /* CarotaService.framework in Frameworks */,
+				10BE5623FFFBDD03F4E7A5FB /* Pods_CarotaServiceExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DEE0B01E2F9692C50076D2BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +127,8 @@
 			children = (
 				C2CCD7AC02D6853561776D06 /* Pods-CarotaService_Example.debug.xcconfig */,
 				B21D1D6456951D859062A35A /* Pods-CarotaService_Example.release.xcconfig */,
+				03E96E2C2FE1460AB20503FF /* Pods-CarotaServiceExample.debug.xcconfig */,
+				FA4FF0164CDB753CC991C63B /* Pods-CarotaServiceExample.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -71,7 +136,7 @@
 		4E0E6B7F5507EBC12B4F9FFD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				82C401671BA6D1CC62599DBA /* Pods_CarotaService_Example.framework */,
+				468B052A95413237FB71E13D /* Pods_CarotaServiceExample.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -80,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				DEA9F2B8296F9C3D0085E6F1 /* CarotaServiceExample */,
+				DEE0B0652F9692DD0076D2BF /* CarotaService */,
 				DEA9F2B7296F9C3D0085E6F1 /* Products */,
 				4B05CB5B6D13AB9201B5C9CD /* Pods */,
 				4E0E6B7F5507EBC12B4F9FFD /* Frameworks */,
@@ -89,7 +155,8 @@
 		DEA9F2B7296F9C3D0085E6F1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DEA9F2B6296F9C3D0085E6F1 /* CarotaService_Example.app */,
+				DEA9F2B6296F9C3D0085E6F1 /* CarotaServiceExample.app */,
+				DEE0B0212F9692C50076D2BF /* CarotaService.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,27 +231,133 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		DEE0B0512F9692DD0076D2BF /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DEE0B0502F9692DD0076D2BF /* .gitkeep */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		DEE0B0532F9692DD0076D2BF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				DEE0B0522F9692DD0076D2BF /* CSCloudClient.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		DEE0B0562F9692DD0076D2BF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DEE0B0542F9692DD0076D2BF /* String+URLConvertible.swift */,
+				DEE0B0552F9692DD0076D2BF /* URL+URLConvertible.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		DEE0B05B2F9692DD0076D2BF /* HTTP */ = {
+			isa = PBXGroup;
+			children = (
+				DEE0B0572F9692DD0076D2BF /* HTTPAuthentication.swift */,
+				DEE0B0582F9692DD0076D2BF /* HTTPBody.swift */,
+				DEE0B0592F9692DD0076D2BF /* HTTPHeaderFields.swift */,
+				DEE0B05A2F9692DD0076D2BF /* HTTPMethod.swift */,
+			);
+			path = HTTP;
+			sourceTree = "<group>";
+		};
+		DEE0B05E2F9692DD0076D2BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DEE0B05C2F9692DD0076D2BF /* CSError.swift */,
+				DEE0B05D2F9692DD0076D2BF /* Empty.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DEE0B0622F9692DD0076D2BF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DEE0B05F2F9692DD0076D2BF /* CarotaAuth.swift */,
+				DEE0B0602F9692DD0076D2BF /* Service.swift */,
+				DEE0B0612F9692DD0076D2BF /* URLConvertible.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		DEE0B0642F9692DD0076D2BF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DEE0B0532F9692DD0076D2BF /* Core */,
+				DEE0B0562F9692DD0076D2BF /* Extension */,
+				DEE0B05B2F9692DD0076D2BF /* HTTP */,
+				DEE0B05E2F9692DD0076D2BF /* Model */,
+				DEE0B0622F9692DD0076D2BF /* Protocols */,
+				DEE0B0632F9692DD0076D2BF /* .gitkeep */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		DEE0B0652F9692DD0076D2BF /* CarotaService */ = {
+			isa = PBXGroup;
+			children = (
+				DEE0B0512F9692DD0076D2BF /* Assets */,
+				DEE0B0642F9692DD0076D2BF /* Classes */,
+			);
+			path = CarotaService;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		DEE0B01C2F9692C50076D2BF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		DEA9F2B5296F9C3D0085E6F1 /* CarotaService_Example */ = {
+		DEA9F2B5296F9C3D0085E6F1 /* CarotaServiceExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DEA9F2C4296F9C3F0085E6F1 /* Build configuration list for PBXNativeTarget "CarotaService_Example" */;
+			buildConfigurationList = DEA9F2C4296F9C3F0085E6F1 /* Build configuration list for PBXNativeTarget "CarotaServiceExample" */;
 			buildPhases = (
 				69060BA3380B83AA73788022 /* [CP] Check Pods Manifest.lock */,
 				DEA9F2B2296F9C3D0085E6F1 /* Sources */,
 				DEA9F2B3296F9C3D0085E6F1 /* Frameworks */,
 				DEA9F2B4296F9C3D0085E6F1 /* Resources */,
-				63E7E313E32E2C209C1C4D86 /* [CP] Embed Pods Frameworks */,
+				DEE0B0292F9692C50076D2BF /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DEE0B0262F9692C50076D2BF /* PBXTargetDependency */,
+			);
+			name = CarotaServiceExample;
+			productName = MPService;
+			productReference = DEA9F2B6296F9C3D0085E6F1 /* CarotaServiceExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DEE0B0202F9692C50076D2BF /* CarotaService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEE0B02C2F9692C50076D2BF /* Build configuration list for PBXNativeTarget "CarotaService" */;
+			buildPhases = (
+				DEE0B01C2F9692C50076D2BF /* Headers */,
+				DEE0B01D2F9692C50076D2BF /* Sources */,
+				DEE0B01E2F9692C50076D2BF /* Frameworks */,
+				DEE0B01F2F9692C50076D2BF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CarotaService_Example;
-			productName = MPService;
-			productReference = DEA9F2B6296F9C3D0085E6F1 /* CarotaService_Example.app */;
-			productType = "com.apple.product-type.application";
+			name = CarotaService;
+			productName = CarotaService;
+			productReference = DEE0B0212F9692C50076D2BF /* CarotaService.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -193,11 +366,14 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 2630;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					DEA9F2B5296F9C3D0085E6F1 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					DEE0B0202F9692C50076D2BF = {
+						CreatedOnToolsVersion = 26.3;
 					};
 				};
 			};
@@ -214,7 +390,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DEA9F2B5296F9C3D0085E6F1 /* CarotaService_Example */,
+				DEA9F2B5296F9C3D0085E6F1 /* CarotaServiceExample */,
+				DEE0B0202F9692C50076D2BF /* CarotaService */,
 			);
 		};
 /* End PBXProject section */
@@ -229,26 +406,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		63E7E313E32E2C209C1C4D86 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
+		DEE0B01F2F9692C50076D2BF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CarotaService_Example/Pods-CarotaService_Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-CarotaService_Example/Pods-CarotaService_Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CarotaService_Example/Pods-CarotaService_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
 		69060BA3380B83AA73788022 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -264,7 +431,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CarotaService_Example-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-CarotaServiceExample-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -294,7 +461,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DEE0B01D2F9692C50076D2BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEE0B0682F9692DD0076D2BF /* CSCloudClient.swift in Sources */,
+				DEE0B0692F9692DD0076D2BF /* String+URLConvertible.swift in Sources */,
+				DEE0B06A2F9692DD0076D2BF /* URL+URLConvertible.swift in Sources */,
+				DEE0B06B2F9692DD0076D2BF /* HTTPAuthentication.swift in Sources */,
+				DEE0B06C2F9692DD0076D2BF /* HTTPBody.swift in Sources */,
+				DEE0B06D2F9692DD0076D2BF /* HTTPHeaderFields.swift in Sources */,
+				DEE0B06E2F9692DD0076D2BF /* HTTPMethod.swift in Sources */,
+				DEE0B06F2F9692DD0076D2BF /* CSError.swift in Sources */,
+				DEE0B0702F9692DD0076D2BF /* Empty.swift in Sources */,
+				DEE0B0712F9692DD0076D2BF /* CarotaAuth.swift in Sources */,
+				DEE0B0722F9692DD0076D2BF /* Service.swift in Sources */,
+				DEE0B0732F9692DD0076D2BF /* URLConvertible.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DEE0B0262F9692C50076D2BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEE0B0202F9692C50076D2BF /* CarotaService */;
+			targetProxy = DEE0B0252F9692C50076D2BF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		DEA9F2C2296F9C3F0085E6F1 /* Debug */ = {
@@ -413,7 +607,7 @@
 		};
 		DEA9F2C5296F9C3F0085E6F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2CCD7AC02D6853561776D06 /* Pods-CarotaService_Example.debug.xcconfig */;
+			baseConfigurationReference = 03E96E2C2FE1460AB20503FF /* Pods-CarotaServiceExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -444,7 +638,7 @@
 		};
 		DEA9F2C6296F9C3F0085E6F1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B21D1D6456951D859062A35A /* Pods-CarotaService_Example.release.xcconfig */;
+			baseConfigurationReference = FA4FF0164CDB753CC991C63B /* Pods-CarotaServiceExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -473,6 +667,93 @@
 			};
 			name = Release;
 		};
+		DEE0B02A2F9692C50076D2BF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VV557L4WY2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.elias.CarotaService;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DEE0B02B2F9692C50076D2BF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VV557L4WY2;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.elias.CarotaService;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -485,11 +766,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DEA9F2C4296F9C3F0085E6F1 /* Build configuration list for PBXNativeTarget "CarotaService_Example" */ = {
+		DEA9F2C4296F9C3F0085E6F1 /* Build configuration list for PBXNativeTarget "CarotaServiceExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DEA9F2C5296F9C3F0085E6F1 /* Debug */,
 				DEA9F2C6296F9C3F0085E6F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEE0B02C2F9692C50076D2BF /* Build configuration list for PBXNativeTarget "CarotaService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEE0B02A2F9692C50076D2BF /* Debug */,
+				DEE0B02B2F9692C50076D2BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
