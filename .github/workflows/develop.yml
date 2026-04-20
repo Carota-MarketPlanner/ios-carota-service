@@ -1,4 +1,4 @@
-name: Build And Publish Develop
+name: Build And Publish Developer
 
 on:
   push:
@@ -13,20 +13,30 @@ jobs:
     uses: ./.github/workflows/build.yml
     secrets: inherit
 
-  publish:
-    name: Publish Develop
-    uses: ./.github/workflows/publish-github-source.yml
+  create-tag:
+    name: Creates Tag
+    uses: ./.github/workflows/publish-tag.yml
     with: 
       name: ${{ needs.build.outputs.name }}
       version: ${{ needs.build.outputs.version }}-dev
     needs: [build]
     secrets: inherit
 
+  publish:
+    name: Publish Developer
+    uses: ./.github/workflows/publish-github-developer.yml
+    with: 
+      name: ${{ needs.create-tag.outputs.name }}
+      version: ${{ needs.create-tag.outputs.version }}
+    needs: [create-tag]
+    secrets: inherit
+
   update-podspec:
-    name: Update Podspec
-    uses: ./.github/workflows/update-podspecs-source.yml
+    name: Update Podspec With Developer
+    uses: ./.github/workflows/update-podspecs-developer.yml
     with: 
       name: ${{ needs.publish.outputs.name }}
       version: ${{ needs.publish.outputs.version }}
     needs: [publish]
     secrets: inherit
+    
