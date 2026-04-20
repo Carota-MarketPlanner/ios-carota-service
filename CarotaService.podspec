@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CarotaService'
-  s.version          = '1.2.0'
+  s.version          = '1.2.1'
   s.summary          = 'A Network Service provider to supply MarketPlanner App.'
 
   s.description      = <<-DESC
@@ -18,7 +18,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '15.0'
 
   s.vendored_frameworks = 'CarotaService.xcframework'
-
   s.source_files = 'CarotaService/Classes/**/*'
   
 end
