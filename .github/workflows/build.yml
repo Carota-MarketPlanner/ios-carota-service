@@ -30,6 +30,7 @@ jobs:
         run: |
           gem install cocoapods
           pod install
+        working-directory: ./
 
       - name: Extact name and version from Podspec
         id: extract_info
