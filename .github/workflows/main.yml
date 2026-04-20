@@ -1,4 +1,4 @@
-name: Build And Publish Release
+name: Build And Publish Production
 
 on:
   push:
@@ -13,20 +13,30 @@ jobs:
     uses: ./.github/workflows/build.yml
     secrets: inherit
 
-  publish:
-    name: Publish Release
-    uses: ./.github/workflows/publish-github-release.yml
+  create-tag:
+    name: Creates Tag
+    uses: ./.github/workflows/publish-tag.yml
     with: 
       name: ${{ needs.build.outputs.name }}
       version: ${{ needs.build.outputs.version }}
     needs: [build]
     secrets: inherit
 
+  publish:
+    name: Publish Production
+    uses: ./.github/workflows/publish-github-production.yml
+    with: 
+      name: ${{ needs.create-tag.outputs.name }}
+      version: ${{ needs.create-tag.outputs.version }}
+    needs: [create-tag]
+    secrets: inherit
+
   update-podspec:
-    name: Update Podspec
-    uses: ./.github/workflows/update-podspecs-release.yml
+    name: Update Podspec With Production
+    uses: ./.github/workflows/update-podspecs-production.yml
     with: 
       name: ${{ needs.publish.outputs.name }}
       version: ${{ needs.publish.outputs.version }}
     needs: [publish]
     secrets: inherit
+    

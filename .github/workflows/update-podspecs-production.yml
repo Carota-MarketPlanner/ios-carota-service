@@ -1,4 +1,4 @@
-name: Update Podspecs
+name: Update Production Podspecs
 
 on:
   workflow_call:
@@ -12,39 +12,27 @@ on:
 
 jobs:
   update-podspec:
-    name: Update Podspec Version and Upload Sources
+    name: Upload Production Podspecs
     runs-on: macos-latest
     steps:
-      - name: Checkout do repositório atual
+      - name: Checkout Module Repository
         uses: actions/checkout@v3
 
-      - name: Extact homepage from Podspec
-        id: extract_homepage
-        run: |
-          PODSPEC_FILE=$(find . -name "*.podspec")
-          HOMEPAGE=$(grep 's.homepage' $PODSPEC_FILE | sed -n -e 's/^.*s.homepage *= *//p'| tr -d '"' | tr -d "'")
-          echo "HOMEPAGE=${HOMEPAGE}" >> $GITHUB_ENV
-
-      - name: Atualizar o s.version e s.source no Podspec
-        run: |
-          sed -i '' "s|s.version *= *['\"][^'\"]*['\"]|s.version          = '${{ inputs.version }}'|" ${{ inputs.name }}.podspec
-          sed -i '' "s|s.source *= *{.*}|s.source           = { :git => \"${{ env.HOMEPAGE }}\", :tag => s.version.to_s }|" ${{ inputs.name }}.podspec
-
-      - name: Checkout do repositório de Specs
+      - name: Checkout Specs Repository
         uses: actions/checkout@v3
         with:
           repository: "Carota-MarketPlanner/Specs"
           token: ${{ secrets.PAT_GITHUB }}
           path: specs_repo
 
-      - name: Copiar o Podspec para o repositório de Specs
+      - name: Update Specs Repository with new Podspec
         run: |
           NAME=${{ inputs.name }}
           VERSION=${{ inputs.version }}
           mkdir -p specs_repo/${NAME}/${VERSION}
           cp ${NAME}.podspec specs_repo/${NAME}/${VERSION}/${NAME}.podspec
 
-      - name: Commit e Push para o repositório de Specs
+      - name: Commit and Push on Specs Repository
         run: |
           cd specs_repo
           git config --global user.email "github-actions@github.com"
