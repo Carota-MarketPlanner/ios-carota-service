@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'CarotaService'
-  s.version          = '1.2.20'
+  s.version          = '1.2.21'
   s.summary          = 'A Network Service provider to supply MarketPlanner App.'
 
   s.description      = <<-DESC
@@ -14,16 +14,11 @@ Pod::Spec.new do |s|
   s.source           = { :http => "https://github.com/Carota-MarketPlanner/ios-carota-service/releases/download/#{s.version}/CarotaService-#{s.version}.zip" }
 
   s.platforms = { :ios => '15.0' }
+
   s.ios.deployment_target = '15.0'
 
-  # s.default_subspecs = "Binary"
-
-  # s.subspec 'Binary' do |release|
   s.vendored_frameworks = 'CarotaService.xcframework'
-  # end
 
-  # s.subspec 'Source' do |debug|
   s.source_files = 'CarotaService/Classes/**/*'
-  # end
   
 end
