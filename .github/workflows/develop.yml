@@ -18,7 +18,7 @@ jobs:
     uses: ./.github/workflows/publish-tag.yml
     with: 
       name: ${{ needs.build.outputs.name }}
-      version: ${{ needs.build.outputs.version }}
+      version: ${{ needs.build.outputs.version }}-dev
     needs: [build]
     secrets: inherit
 
@@ -27,7 +27,7 @@ jobs:
     uses: ./.github/workflows/publish-github-developer.yml
     with: 
       name: ${{ needs.create-tag.outputs.name }}
-      version: ${{ needs.create-tag.outputs.version }}-dev
+      version: ${{ needs.create-tag.outputs.version }}
     needs: [create-tag]
     secrets: inherit
 
