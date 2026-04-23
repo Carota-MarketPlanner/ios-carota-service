@@ -1,9 +1,9 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.8
 import PackageDescription
 
 let package = Package(
     name: "CarotaService",
-    platforms: [.iOS(.v12), .macOS(.v10_14), .tvOS(.v12), .watchOS(.v5)],
+    platforms: [.iOS(.v15), .macOS(.v10_14), .tvOS(.v12), .watchOS(.v5)],
     products: [
         .library(name: "CarotaService", targets: ["CarotaService"])
     ],
