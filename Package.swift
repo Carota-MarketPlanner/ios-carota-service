@@ -3,7 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "CarotaService",
-    platforms: [.iOS(.v12), .macOS(.v10_14), .tvOS(.v12), .watchOS(.v5)],
+    platforms: [.iOS(.v15)],
     products: [
         .library(name: "CarotaService", targets: ["CarotaService"])
     ],
