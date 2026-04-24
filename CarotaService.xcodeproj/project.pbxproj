@@ -32,8 +32,6 @@
 		DEE0B06E2F9692DD0076D2BF /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0B05A2F9692DD0076D2BF /* HTTPMethod.swift */; };
 		DEE0B06F2F9692DD0076D2BF /* CSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0B05C2F9692DD0076D2BF /* CSError.swift */; };
 		DEE0B0702F9692DD0076D2BF /* Empty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0B05D2F9692DD0076D2BF /* Empty.swift */; };
-		DEE0B0712F9692DD0076D2BF /* CarotaAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0B05F2F9692DD0076D2BF /* CarotaAuth.swift */; };
-		DEE0B0722F9692DD0076D2BF /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0B0602F9692DD0076D2BF /* Service.swift */; };
 		DEE0B0732F9692DD0076D2BF /* URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE0B0612F9692DD0076D2BF /* URLConvertible.swift */; };
 		DEF70EB82980751000698770 /* TesteLogadoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF70EB72980751000698770 /* TesteLogadoViewModel.swift */; };
 		DEF70EBA2980754200698770 /* UserLogado.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF70EB92980754200698770 /* UserLogado.swift */; };
@@ -93,8 +91,6 @@
 		DEE0B05A2F9692DD0076D2BF /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		DEE0B05C2F9692DD0076D2BF /* CSError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSError.swift; sourceTree = "<group>"; };
 		DEE0B05D2F9692DD0076D2BF /* Empty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Empty.swift; sourceTree = "<group>"; };
-		DEE0B05F2F9692DD0076D2BF /* CarotaAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarotaAuth.swift; sourceTree = "<group>"; };
-		DEE0B0602F9692DD0076D2BF /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		DEE0B0612F9692DD0076D2BF /* URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConvertible.swift; sourceTree = "<group>"; };
 		DEE0B0632F9692DD0076D2BF /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		DEF70EB72980751000698770 /* TesteLogadoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesteLogadoViewModel.swift; sourceTree = "<group>"; };
@@ -279,8 +275,6 @@
 		DEE0B0622F9692DD0076D2BF /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				DEE0B05F2F9692DD0076D2BF /* CarotaAuth.swift */,
-				DEE0B0602F9692DD0076D2BF /* Service.swift */,
 				DEE0B0612F9692DD0076D2BF /* URLConvertible.swift */,
 			);
 			path = Protocols;
@@ -474,8 +468,6 @@
 				DEE0B06E2F9692DD0076D2BF /* HTTPMethod.swift in Sources */,
 				DEE0B06F2F9692DD0076D2BF /* CSError.swift in Sources */,
 				DEE0B0702F9692DD0076D2BF /* Empty.swift in Sources */,
-				DEE0B0712F9692DD0076D2BF /* CarotaAuth.swift in Sources */,
-				DEE0B0722F9692DD0076D2BF /* Service.swift in Sources */,
 				DEE0B0732F9692DD0076D2BF /* URLConvertible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

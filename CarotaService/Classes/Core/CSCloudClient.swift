@@ -7,20 +7,21 @@
 
 import Foundation
 
-public class CSCloudClient {
-    var authorization: HTTPAuthentication?
+final public class CSCloudClient {
+    public typealias CSResponse = Result<Data, CSError>
+    public typealias CSDecodedResponse<T> = Result<T, CSError>
+    public typealias CSCompletion = (CSResponse) -> Void
+    public typealias CSDecodedCompletion<T: Decodable> = (CSDecodedResponse<T>) -> Void
     
-    public static let shared = CSCloudClient() as (CSCloudService & Auth)
+    private var authorization: HTTPAuthentication?
+    
+    public static let shared = CSCloudClient()
     
     private init() {}
     
     // MARK: - Using Completion
     
-    private func result(
-        data: Data?,
-        response: URLResponse?,
-        error: Swift.Error?
-    ) -> CSResponse {
+    private func result(data: Data?, response: URLResponse?, error: Swift.Error?) -> CSResponse {
         if let statusCodeError = getStatusCodeError(response) {
             return .failure(statusCodeError)
         }
@@ -76,31 +77,19 @@ public class CSCloudClient {
     
     // MARK: - Prepare Request
     
-    private func getRequest(
-        for url: URL,
-        and method: HTTPMethod,
-        body: HTTPBody?
-    ) -> URLRequest? {
+    private func getRequest(for url: URL, and method: HTTPMethod, body: HTTPBody?) -> URLRequest? {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         
         if let body = body {
-            guard let data = body.data else {
-                return nil
-            }
+            guard let data = body.data else { return nil }
             
             request.httpBody = data
-            request.addValue(
-                body.contentType,
-                forHTTPHeaderField: HTTPHeaderField.contentType.rawValue
-            )
+            request.addValue(body.contentType, forHTTPHeaderField: HTTPHeaderField.contentType.rawValue)
         }
         
         if let auth = self.authorization {
-            request.addValue(
-                auth.value,
-                forHTTPHeaderField: HTTPHeaderField.authorization.rawValue
-            )
+            request.addValue(auth.value, forHTTPHeaderField: HTTPHeaderField.authorization.rawValue)
         }
         
         return request
@@ -133,7 +122,7 @@ public class CSCloudClient {
 
 // MARK: - Auth Implementation
 
-extension CSCloudClient: Auth {
+extension CSCloudClient {
     public func setAuthorization(_ auth: HTTPAuthentication) {
         self.authorization = auth
     }
@@ -145,7 +134,7 @@ extension CSCloudClient: Auth {
 
 // MARK: - Cloud Service Implementation
 
-extension CSCloudClient: CSCloudService {
+extension CSCloudClient {
     public func request(
         url convertible: URLConvertible,
         method: HTTPMethod = .get,
@@ -157,23 +146,13 @@ extension CSCloudClient: CSCloudService {
             return
         }
         
-        guard let request = getRequest(
-            for: url,
-            and: method,
-            body: body
-        ) else {
+        guard let request = getRequest(for: url, and: method, body: body) else {
             completion(.failure(.encodingError))
             return
         }
         
-        URLSession.shared.dataTask(
-            with: request
-        ) { data, response, error in
-            completion(self.result(
-                data: data,
-                response: response,
-                error: error)
-            )
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            completion(self.result(data: data, response: response, error: error))
         }.resume()
     }
     
@@ -185,31 +164,23 @@ extension CSCloudClient: CSCloudService {
         body: HTTPBody? = nil,
         completion: @escaping CSDecodedCompletion<T>
     ) {
-        request(
-            url: convertible,
-            method: method,
-            body: body
-        ) { response in
+        request(url: convertible, method: method, body: body) { response in
             completion(self.decode(response: response))
         }
     }
     
-    // MARK: - Using Concurrency
+    // MARK: Using Concurrency
     
     public func request(
-        url convertible: any URLConvertible,
-        method: HTTPMethod,
-        body: HTTPBody?
+        url convertible: URLConvertible,
+        method: HTTPMethod = .get,
+        body: HTTPBody? = nil
     ) async throws -> Data {
         guard let url = convertible.asURL() else {
             throw CSError.invalidURL
         }
         
-        guard let request = getRequest(
-            for: url,
-            and: method,
-            body: body
-        ) else {
+        guard let request = getRequest(for: url, and: method, body: body) else {
             throw CSError.encodingError
         }
         
@@ -223,11 +194,7 @@ extension CSCloudClient: CSCloudService {
         method: HTTPMethod = .get,
         body: HTTPBody? = nil
     ) async throws -> T {
-        let data = try await request(
-            url: convertible,
-            method: method,
-            body: body
-        )
+        let data = try await request(url: convertible, method: method, body: body)
         return try decode(data: data)
     }
 }
