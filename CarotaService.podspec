@@ -8,10 +8,10 @@ Pod::Spec.new do |s|
   handled by this module
                        DESC
 
-  s.homepage         = 'https://github.com/Carota-MarketPlanner/ios-carota-service.git'
+  s.homepage         = 'https://github.com/Carota-MarketPlanner/ios-net-core.git'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Elias Ferreira' => 'eliasferreira.pro@gmail.com' }
-  s.source           = { :http => "https://github.com/Carota-MarketPlanner/ios-carota-service/releases/download/#{s.version}/NetCore-#{s.version}.zip" }
+  s.source           = { :http => "https://github.com/Carota-MarketPlanner/ios-net-core/releases/download/#{s.version}/NetCore-#{s.version}.zip" }
 
   s.platforms = { :ios => '15.0' }
 
