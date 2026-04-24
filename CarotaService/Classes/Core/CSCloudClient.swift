@@ -120,21 +120,35 @@ final public class CSCloudClient {
     
 }
 
-// MARK: - Auth Implementation
+// MARK: - Auth
 
 extension CSCloudClient {
+    /// Method to set an authorization to use in requests
+    ///
+    /// - auth: `HTTPAuthentication`, can be `basic` or `bearer`
+    ///
+    /// - Returns: `Void`
     public func setAuthorization(_ auth: HTTPAuthentication) {
         self.authorization = auth
     }
     
+    /// Method to clear the authorization previously setted.
+    ///
+    /// - Returns: `Void`
     public func clearAuthorization() {
         self.authorization = nil
     }
 }
 
-// MARK: - Cloud Service Implementation
+// MARK: - Network
 
 extension CSCloudClient {
+    
+    /// Request method using completion handler: `(Result<Data, CSError>) -> Void`
+    ///
+    /// - url: `URLConvertible`, `String` and` URL` implements it.
+    ///
+    /// - Returns: `Void`.
     public func request(
         url convertible: URLConvertible,
         method: HTTPMethod = .get,
@@ -156,8 +170,11 @@ extension CSCloudClient {
         }.resume()
     }
     
-    // MARK: Decoded
-    
+    /// Request method using completion handler: `(Result<T: Decodable, CSError>) -> Void`
+    ///
+    /// - url: `URLConvertible`, `String` and` URL` implements it.
+    ///
+    /// - Returns: `Void`.
     public func request<T: Decodable>(
         url convertible: URLConvertible,
         method: HTTPMethod = .get,
@@ -169,8 +186,12 @@ extension CSCloudClient {
         }
     }
     
-    // MARK: Using Concurrency
-    
+    /// Request method using `Concurrency` for `Data`
+    ///
+    /// - url: `URLConvertible`, `String` and` URL` implements it.
+    ///
+    /// - Returns: `Data`.
+    /// - Throws: `CSError`
     public func request(
         url convertible: URLConvertible,
         method: HTTPMethod = .get,
@@ -187,8 +208,12 @@ extension CSCloudClient {
         return try await result(request: request)
     }
     
-    // MARK: Decoded
-    
+    /// Request method using `Concurrency` for `Decodable`.
+    ///
+    /// - url: `URLConvertible`, `String` and` URL` implements it.
+    ///
+    /// - Returns: `T: Decodable`.
+    /// - Throws: `CSError`
     public func request<T: Decodable>(
         url convertible: URLConvertible,
         method: HTTPMethod = .get,

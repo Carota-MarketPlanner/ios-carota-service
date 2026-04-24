@@ -23,6 +23,7 @@ class UsersViewModel: ObservableObject {
             isLoading.toggle()
         }
         do {
+            service.
             users = try await service.request(url: "https://jsonplaceholder.typicode.com/users")
         } catch {
             showAlert = true
