@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'NetCore'
-  s.version          = '1.3.0'
+  s.version          = '1.3.1'
   s.summary          = 'A Network Service provider to supply Network requests.'
 
   s.description      = <<-DESC
