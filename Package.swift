@@ -2,15 +2,15 @@
 import PackageDescription
 
 let package = Package(
-    name: "CarotaService",
+    name: "NetCore",
     platforms: [.iOS(.v15), .macOS(.v10_14), .tvOS(.v12), .watchOS(.v5)],
     products: [
-        .library(name: "CarotaService", targets: ["CarotaService"])
+        .library(name: "NetCore", targets: ["NetCore"])
     ],
     targets: [
         .target(
-            name: "CarotaService",
-            path: "CarotaService/Classes"
+            name: "NetCore",
+            path: "NetCore/Classes"
         )
     ]
 )
