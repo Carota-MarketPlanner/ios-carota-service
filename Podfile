@@ -2,7 +2,7 @@ use_frameworks!
 
 platform :ios, '15.0'
 
-target 'CarotaServiceExample' do
+target 'NetCoreExample' do
  
 end
 
