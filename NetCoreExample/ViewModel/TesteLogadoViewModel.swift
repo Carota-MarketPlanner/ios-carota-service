@@ -16,7 +16,7 @@ class TesteLogadoViewModel {
         
         client.setAuthorization(.bearer(token: token))
         
-        client.request(url: "http://localhost:3333/user/getUsers") { (result: Result<[UserLogado], NCError>) in
+        client.request(url: "http://localhost:3333/user/getUsers") { (result: NCClient.NCDecodedResponse<[UserLogado]>) in
             switch result {
             case .success(let users):
                 print("Sucesso - \(users)")

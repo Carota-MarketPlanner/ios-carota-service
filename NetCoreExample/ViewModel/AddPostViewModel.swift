@@ -23,7 +23,7 @@ class AddPostViewModel: ObservableObject {
     func addPost() {
         let post = Post(userId: userId, id: 101, title: self.title, body: self.body)
         
-        client.request(url: "https://jsonplaceholder.typicode.com/posts", method: .post, body: .json(object: post)) { (result: Result<Post, NCError>) in
+        client.request(url: "https://jsonplaceholder.typicode.com/posts", method: .post, body: .json(object: post)) { (result: NCClient.NCDecodedResponse<Post>) in
             switch result {
             case .success(let postcreated):
                 DispatchQueue.main.async {

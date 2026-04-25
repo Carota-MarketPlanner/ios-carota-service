@@ -17,8 +17,6 @@ class PostViewModel: ObservableObject {
     var userId: Int
     var client = NCClient.shared
     
-    typealias PostsResult = Result<[Post], NCError>
-    
     init(userId: Int) {
         self.userId = userId
     }
@@ -26,7 +24,9 @@ class PostViewModel: ObservableObject {
     @MainActor
     func fetchPosts() {
         isLoading.toggle()
-        client.request(url: "https://jsonplaceholder.typicode.com/users/\(userId)/posts") { (result: PostsResult) in
+        client.request(
+            url: "https://jsonplaceholder.typicode.com/users/\(userId)/posts"
+        ) { (result: NCClient.NCDecodedResponse<[Post]>) in
             defer {
                 DispatchQueue.main.async {
                     self.isLoading.toggle()
@@ -48,7 +48,7 @@ class PostViewModel: ObservableObject {
     }
     
     func createPost(user: User) {
-        client.request(url: "https://jsonplaceholder.typicode.com/posts", method: .post, body: .json(object: user)) { (result: Result<User, NCError>) in
+        client.request(url: "https://jsonplaceholder.typicode.com/posts", method: .post, body: .json(object: user)) { (result: NCClient.NCDecodedResponse<User>) in
             switch result {
             case .success(let postcreated):
                 DispatchQueue.main.async {
