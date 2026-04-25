@@ -116,7 +116,7 @@ struct Post: Decodable {
     let body: String
 }
 
-client.request(url: urlString) { (result: Result<Post, NCError>) in
+client.request(url: urlString) { (result: NCClient.NCDecodedResponse<Post>) in
     switch result {
     case .success(let post):
         print("Post title: \(post.title)")
@@ -158,7 +158,7 @@ client.request(
     url: urlString,
     method: .post,
     body: .json(object: newPost)
-) { (result: Result<Post, NCError>) in
+) { (result: NCClient.NCDecodedResponse<Post>) in
     switch result {
     case .success(let post):
         print("Created post id: \(post.id)")
