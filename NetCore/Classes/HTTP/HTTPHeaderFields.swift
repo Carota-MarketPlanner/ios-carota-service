@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum HTTPHeaderField: String {
+public enum HTTPHeaderField: String {
     case contentType = "Content-Type"
     case authorization = "Authorization"
 }
