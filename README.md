@@ -90,11 +90,17 @@ Public methods:
 ```swift
 import NetCore
 
+// Network Client
+let client = NCClient.shared
+
 // Set authorization if your API requires it
-NCClient.shared.setAuthorization(.bearer(token: "YOUR_TOKEN"))
+client.setAuthorization(.bearer(token: "YOUR_TOKEN"))
+
+// URL String
+let urlString = "https://jsonplaceholder.typicode.com/posts/1"
 
 // 1) Completion-based raw data request
-NCClient.shared.request(url: "https://jsonplaceholder.typicode.com/posts/1") { result in
+client.request(url: urlString) { result in
     switch result {
     case .success(let data):
         print("Received data with size: \(data.count)")
@@ -110,7 +116,7 @@ struct Post: Decodable {
     let body: String
 }
 
-NCClient.shared.request(url: URL(string: "https://jsonplaceholder.typicode.com/posts/1")!, method: .get) { (result: Result<Post, NCError>) in
+client.request(url: urlString) { (result: Result<Post, NCError>) in
     switch result {
     case .success(let post):
         print("Post title: \(post.title)")
@@ -122,7 +128,7 @@ NCClient.shared.request(url: URL(string: "https://jsonplaceholder.typicode.com/p
 // 3) Async/await raw data request
 Task {
     do {
-        let data = try await NCClient.shared.request(url: "https://jsonplaceholder.typicode.com/posts/1")
+        let data = try await client.request(url: urlString)
         print("Async received data of length: \(data.count)")
     } catch {
         print("Async request error: \(error)")
@@ -132,7 +138,7 @@ Task {
 // 4) Async/await decoded request
 Task {
     do {
-        let post: Post = try await NCClient.shared.request(url: "https://jsonplaceholder.typicode.com/posts/1")
+        let post: Post = try await client.request(url: urlString)
         print("Async decoded post title: \(post.title)")
     } catch {
         print("Async decode error: \(error)")
@@ -147,8 +153,9 @@ struct NewPost: Encodable {
 }
 
 let newPost = NewPost(title: "Hello", body: "World", userId: 1)
-NCClient.shared.request(
-    url: "https://jsonplaceholder.typicode.com/posts",
+
+client.request(
+    url: urlString,
     method: .post,
     body: .json(object: newPost)
 ) { (result: Result<Post, NCError>) in
